@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase:  {
-    apiKey: "XXX",
-    authDomain: "XXX",
-    databaseURL: "XXX",
-    projectId: "XXX",
-    storageBucket: "XXX",
-    messagingSenderId: "XXX"
+    apiKey: "AIzaSyD6BuTbyu5bk-ZrNo2_m5-3wt2fou_XETg",
+    authDomain: "cyven-223eb.firebaseapp.com",
+    databaseURL: "https://cyven-223eb.firebaseio.com",
+    projectId: "cyven-223eb",
+    storageBucket: "cyven-223eb.appspot.com",
+    messagingSenderId: "669673405755"
   }
 };
 
