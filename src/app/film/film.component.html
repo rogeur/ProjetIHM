@@ -1,9 +1,17 @@
-<p>
-  tototototototto
-</p>
-
-
-<section *ngIf="movie">
-  <img [src]="getPath(movie.poster_path)" />
+<section *ngIf="movie" class="card type1" style="width: 8rem;">
+  <img class="card-img" [src]="getPath(movie.poster_path)" />
   <!--<pre>{{movie | json}}</pre>-->
+  <div class="card-body">
+    <h1 class="card-title">{{getTitle()}}</h1>
+    <p class="card-text">{{getSummary()}}</p>
+  </div>
 </section>
+
+
+<!--<div class="card type1" style="width: 8rem;">-->
+  <!--<img class="card-img-top img-responsive" src={{path}} alt={{title}}>-->
+  <!--<div class="card-body">-->
+    <!--<p class="card-title">{{title}}</p>-->
+    <!--<p class="card-text">{{description}}</p>-->
+  <!--</div>-->
+<!--</div>-->
