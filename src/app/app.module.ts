@@ -8,10 +8,12 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import { DropdownListComponent } from './dropdown-list/dropdown-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DropdownListComponent
   ],
   imports: [
     BrowserModule,
