@@ -1,17 +1,37 @@
-<section *ngIf="movie" class="card type1" style="width: 8rem;">
-  <img class="card-img" [src]="getPath(movie.poster_path)" />
-  <!--<pre>{{movie | json}}</pre>-->
-  <div class="card-body">
-    <h1 class="card-title">{{getTitle()}}</h1>
-    <p class="card-text">{{getSummary()}}</p>
+<!--<section *ngIf="movie" class="movie-{{type}} type1" style="">-->
+  <!--<img class="movie-img-{{type}}" [src]="getPath(movie.poster_path)" />-->
+  <!--<div class="movie-body-{{type}}">-->
+    <!--<h1 class="movie-title-{{type}}">{{getTitle()}}</h1>-->
+    <!--<p class="movie-text-{{type}}">{{getSummary()}}</p>-->
+     <!--&lt;!&ndash;trouver la condition pour que il le montre ou non voir le ngid&ndash;&gt;-->
+    <!--<div class="movie-time-{{type}}" *ngIf="type == 'medium' || type == 'grand'">-->
+      <!--<p class="movie-time-name">Durée : </p>-->
+      <!--<p class="movie-time-var">{{getTime()}}</p>-->
+  <!--</div>-->
+
+  <!--</div>-->
+<!--</section>-->
+
+<section *ngIf="movie" [ngClass]="{'petit': petit,'medium': medium}" >
+  <img [ngClass]="{'img-petit':petit,'img-medium': medium}" [src]="getPath(movie.poster_path)" />
+  <div [ngClass]="{'body-petit': petit, 'body-medium': medium}">
+    <h1 [ngClass]="{'title-petit': petit, 'title-medium': medium}">{{getTitle()}}</h1>
+    <p [ngClass]="{'text-petit': petit, 'text-medium': medium}">{{getSummary()}}</p>
+    <!--trouver la condition pour que il le montre ou non voir le ngid-->
+    <div [ngClass]="{'time-medium': medium}" *ngIf="medium || type == 'grand'">
+      <p class="time-name">Durée : </p>
+      <p class="time-var">{{getTime()}}</p>
+    </div>
+
   </div>
 </section>
 
+<!--<pre>{{movie | json}}</pre>-->
 
-<!--<div class="card type1" style="width: 8rem;">-->
-  <!--<img class="card-img-top img-responsive" src={{path}} alt={{title}}>-->
-  <!--<div class="card-body">-->
-    <!--<p class="card-title">{{title}}</p>-->
-    <!--<p class="card-text">{{description}}</p>-->
+<!--<div class="movie type1" style="width: 8rem;">-->
+  <!--<img class="movie-img-top img-responsive" src={{path}} alt={{title}}>-->
+  <!--<div class="movie-body">-->
+    <!--<p class="movie-title">{{title}}</p>-->
+    <!--<p class="movie-text">{{description}}</p>-->
   <!--</div>-->
 <!--</div>-->

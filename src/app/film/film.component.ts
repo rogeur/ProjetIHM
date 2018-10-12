@@ -13,6 +13,10 @@ export class FilmComponent implements OnInit {
 
   @Input() id: number;
 
+  @Input() type: String;
+
+
+
 
   constructor(private tmdb: TmdbService) {
     setTimeout( () =>
@@ -26,6 +30,15 @@ export class FilmComponent implements OnInit {
   ngOnInit() {
   }
 
+  get petit(){
+    return this.type == 'petit';
+  }
+
+  get medium(){
+    return this.type == 'medium';
+  }
+
+
   get movie(): MovieResponse {
     return this._movie;
   }
@@ -37,8 +50,17 @@ export class FilmComponent implements OnInit {
   getTitle(): String {
     return this._movie.title;
   }
+
   getSummary(): String {
     return this._movie.overview;
+  }
+
+  // get type(): String{
+  //   return this.type;
+  // }
+
+  getTime(): String{
+    return ((this._movie.runtime / 60) ^ 0).toString() + "h " + (this._movie.runtime % 60).toString() + "m";
   }
 
 }

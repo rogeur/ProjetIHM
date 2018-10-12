@@ -1,4 +1,111 @@
-.card {
+/*!*part little definition*!*/
+
+/*.movie-petit {*/
+  /*width: 8rem;*/
+  /*margin: 10px 10px 10px 10px;*/
+  /*-webkit-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);*/
+  /*-moz-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);*/
+  /*box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);*/
+  /*border-radius: 0 0 0 0;*/
+  /*border: none;*/
+/*}*/
+
+/*.movie-img-petit{*/
+  /*width : 8rem;*/
+  /*!*height: 8rem;*!*/
+  /*!*background-size: cover;*!*/
+/*}*/
+/*.movie-body-petit {*/
+  /*padding: 2px;*/
+  /*font-size: 0.8rem;*/
+/*}*/
+
+/*.movie-title-petit {*/
+  /*font-weight: bold;*/
+  /*!*font-size: 2em;*!*/
+  /*margin-bottom: 0px;*/
+  /*margin-top: 0px;*/
+/*}*/
+/*.movie-text-petit {*/
+  /*margin-top: 0px;*/
+  /*color: grey;*/
+  /*margin-bottom: 0;*/
+  /*white-space: nowrap;*/
+  /*text-overflow: ellipsis;*/
+  /*overflow: hidden;*/
+
+/*}*/
+
+/*!*part medium definition*!*/
+
+.time-medium {
+  /*font-size: 1.5em;*/
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.medium {
+  width: 40rem;
+  /*display: block;*/
+  margin: 10px 10px 10px 10px;
+  -webkit-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
+  border-radius: 0 0 0 0;
+  border: none;
+  display: -webkit-inline-box;
+}
+
+.img-medium{
+  width : 8rem;
+  /*height: 8rem;*/
+  /*background-size: cover;*/
+}
+.body-medium {
+  padding: 2px;
+  font-size: 1rem;
+  width: 30.3rem;
+  margin-left: 0.7rem;
+
+}
+
+.title-medium {
+  font-weight: bold;
+  /*font-size: ;*/
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.text-medium {
+  margin-top: 0px;
+  color: grey;
+  margin-bottom: 0;
+  /*white-space: nowrap;*/
+  /*text-overflow: ellipsis;*/
+  /*overflow: hidden;*/
+
+}
+
+/*!*part general*!*/
+.time-name {
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.time-var {
+  color: grey;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0.2em;
+  display: inline-block;
+}
+
+
+/*!*part little definition*!*/
+
+.petit {
+  width: 8rem;
   margin: 10px 10px 10px 10px;
   -webkit-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
@@ -7,32 +114,28 @@
   border: none;
 }
 
-.card-img{
+.img-petit{
   width : 8rem;
   /*height: 8rem;*/
   /*background-size: cover;*/
 }
-.card-body {
+.body-petit {
   padding: 2px;
-  font-size: 10px;
+  font-size: 0.8rem;
 }
 
-.card-title {
+.title-petit {
   font-weight: bold;
-  font-size: 2em;
+  /*font-size: 2em;*/
   margin-bottom: 0px;
   margin-top: 0px;
 }
-.card-text {
+.text-petit {
   margin-top: 0px;
   color: grey;
   margin-bottom: 0;
-  height: 8rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 
 }
-
-
-
