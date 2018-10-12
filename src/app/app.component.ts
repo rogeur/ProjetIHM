@@ -16,6 +16,7 @@ export class AppComponent {
   private _movie: MovieResponse;
   private _user: User;
   private dbData: Observable<any>;
+  private names: String[];
 
   constructor(private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.anAuth.user.pipe(filter( u => !!u )).subscribe( u => {
@@ -24,6 +25,7 @@ export class AppComponent {
       const lists = db.list(listsPath);
       lists.push('coucou');
       this.dbData = lists.valueChanges();
+      this.names = ['1', 'deux', 'tres'];
     });
     setTimeout( () =>
       tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
