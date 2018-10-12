@@ -9,6 +9,7 @@ import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { DropdownListComponent } from './dropdown-list/dropdown-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DropdownListComponent } from './dropdown-list/dropdown-list.component';
     HttpClientModule,
     AngularFireModule.initializeApp( environment.firebase ),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   providers: [TmdbService],
   bootstrap: [AppComponent]

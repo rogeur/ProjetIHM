@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, NgModule, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dropdown-list',
@@ -6,6 +6,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./dropdown-list.component.css']
 })
 export class DropdownListComponent implements OnInit {
+
+  public playlist: String;
 
   @Input() playlists: String[];
 
@@ -17,6 +19,10 @@ export class DropdownListComponent implements OnInit {
 
   getPlaylists(): String[] {
     return this.playlists;
+  }
+
+  onSubmit(): void {
+    console.log(this.playlist);
   }
 
 }

@@ -2,11 +2,19 @@
   okok
   {{getPlaylists()}}
   {{playlists}}
+  okok
+  {{playlist}}
 </p>
 
-<p>Elément sélectionné : ok {{item}}</p>
+<p>Elément sélectionné : </p>
 <label>
-  <select>
-    <option *ngFor="let item of playlists" value="{{item}}">{{item}}</option>
+  <select ngModel="temp">
+    <option *ngFor="let item of playlists" [value]="item">{{item}}</option>
   </select>
 </label>
+
+<select [(ngModel)]="playlist" id="category">
+  <option value="" disabled selected>select a category</option>
+  <option *ngFor="let item of playlists" [value]="item">{{item}}</option>
+</select>
+<span ng-bind="playlist"></span>
