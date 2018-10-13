@@ -30,6 +30,10 @@ export class FilmComponent implements OnInit {
   ngOnInit() {
   }
 
+  get big(){
+    return this.type== 'big';
+  }
+
   get petit(){
     return this.type == 'petit';
   }
@@ -53,6 +57,18 @@ export class FilmComponent implements OnInit {
 
   getSummary(): String {
     return this._movie.overview;
+  }
+
+  getStatus(): String {
+    return this._movie.status;
+  }
+
+  getBudget(): number {
+    return this._movie.budget;
+  }
+
+  getRecette(): number {
+    return this._movie.revenue;
   }
 
   // get type(): String{

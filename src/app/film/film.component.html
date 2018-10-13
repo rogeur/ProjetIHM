@@ -12,21 +12,63 @@
   <!--</div>-->
 <!--</section>-->
 
-<section *ngIf="movie" [ngClass]="{'petit': petit,'medium': medium}" >
-  <img [ngClass]="{'img-petit':petit,'img-medium': medium}" [src]="getPath(movie.poster_path)" />
-  <div [ngClass]="{'body-petit': petit, 'body-medium': medium}">
-    <h1 [ngClass]="{'title-petit': petit, 'title-medium': medium}">{{getTitle()}}</h1>
-    <p [ngClass]="{'text-petit': petit, 'text-medium': medium}">{{getSummary()}}</p>
-    <!--trouver la condition pour que il le montre ou non voir le ngid-->
-    <div [ngClass]="{'time-medium': medium}" *ngIf="medium || type == 'grand'">
-      <p class="time-name">Durée : </p>
-      <p class="time-var">{{getTime()}}</p>
+<section *ngIf="movie" >
+
+  <!--partie pour les film petit et les moyen-->
+  <!--ne pas oublier de rajouter le bouton voir plus-->
+  <section *ngIf="petit || medium" [ngClass]="{'petit': petit,'medium': medium}">
+    <img [ngClass]="{'img-petit':petit,'img-medium': medium}" [src]="getPath(movie.poster_path)" />
+    <div [ngClass]="{'body-petit': petit, 'body-medium': medium}">
+      <h1 [ngClass]="{'title-petit': petit, 'title-medium': medium}">{{getTitle()}}</h1>
+      <p [ngClass]="{'text-petit': petit, 'text-medium': medium}">{{getSummary()}}</p>
+      <!--trouver la condition pour que il le montre ou non voir le ngid-->
+      <div [ngClass]="{'time-medium': medium}" *ngIf="medium">
+        <p class="name">Durée : </p>
+        <p class="var">{{getTime()}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section *ngIf="big" [ngClass]="{'big': big}">
+
+    <div class="img-detail-big">
+      <img [ngClass]="{'img-big':big}" [src]="getPath(movie.poster_path)" />
+
+      <!--trouver la condition pour que il le montre ou non voir le ngid-->
+      <div [ngClass]="{'Statut-big': big}">
+        <p class="name">Status : </p>
+        <p class="var">{{getStatus()}}</p>
+      </div>
+      <div [ngClass]="{'time-big': big}">
+        <p class="name">Durée : </p>
+        <p class="var">{{getTime()}}</p>
+      </div>
+      <div [ngClass]="{'budget-big': big}">
+        <p class="name">Budget : </p>
+        <p class="var">${{getBudget()}}</p>
+      </div>
+      <div [ngClass]="{'recette-big': big}">
+        <p class="name">Recette : </p>
+        <p class="var">${{getRecette()}}</p>
+      </div>
     </div>
 
-  </div>
+
+    <div [ngClass]="{'body-big': big}">
+      <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
+      <p class="name">Synopsis</p>
+      <p [ngClass]="{'text-big': big}">{{getSummary()}}</p>
+      <input type="button" class="btn-big" value="Ajouter à une playlist">
+    </div>
+
+
+
+  </section>
+
+
 </section>
 
-<!--<pre>{{movie | json}}</pre>-->
+<pre>{{movie | json}}</pre>
 
 <!--<div class="movie type1" style="width: 8rem;">-->
   <!--<img class="movie-img-top img-responsive" src={{path}} alt={{title}}>-->
