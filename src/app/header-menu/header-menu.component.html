@@ -1,9 +1,35 @@
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-2 drop-container">
+      <button class="drop" (click)="handleClick()"><i class="fa fa-align-justify"></i><h1>Cyven</h1></button>
+    </div>
+
+    <div class="col-6 offset-1 form-group search">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <input type="text" class="form-control search-input" placeholder="Rechercher un film, une serie..." name="searchReq" ngModel>
+          <button class="search-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <div class="lien">
+          <a href="#">Recherche avancée</a>
+          </div>
+        </form>
+    </div>
+
+    <div class="col-1 offset-2">
+      <div class="user"><a href="#"><i class="fa fa-user"></i></a></div>
+    </div>
+
+  </div>
+</div>
+
+<!--
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
       <div class="form-group">
         <form>
-          <button class="drop"><i class="fa fa-align-justify"></i></button>
+          <button class="drop" (click)="handleClick()"><i class="fa fa-align-justify"></i></button>
           <h1>Cyven</h1>
           <input type="text" class="form-control recherche" placeholder="Rechercher un film, une serie...">
           <button class="search"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -14,3 +40,5 @@
     </div>
   </div>
 </div>
+-->
+

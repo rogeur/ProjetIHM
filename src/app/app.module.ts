@@ -9,22 +9,45 @@ import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
-import { SmallCardComponent } from './small-card/small-card.component';
+import { PlayslistMenuComponent } from './playslist-menu/playslist-menu.component';
+import {RouterModule} from '@angular/router';
+import { Routes } from '@angular/router';
+import { PlaylistComponent } from './playlist/playlist.component';
+import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule} from '@angular/forms';
+import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
+import {PlaylistService} from './playlist.service';
+
+const appRoutes: Routes = [
+  { path: '', component: HeaderMenuComponent },
+  { path: 'playlistMenu', component: PlayslistMenuComponent},
+  { path: 'home', component: HeaderMenuComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderMenuComponent,
-    SmallCardComponent
+    PlayslistMenuComponent,
+    PlaylistComponent,
+    AddPlaylistComponent,
+    RemovePlaylistComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AngularFireModule.initializeApp( environment.firebase ),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    RouterModule.forRoot(appRoutes),
+    MatSelectModule,
+    FormsModule
   ],
-  providers: [TmdbService],
+  providers: [
+    TmdbService,
+    PlaylistService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
