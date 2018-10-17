@@ -10,14 +10,16 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { FilmComponent } from './film/film.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material';
+import {MatCardModule, MatSliderModule} from '@angular/material';
 import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
+import { BandeauAdvancedScearchComponent } from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmComponent,
     BandeauResultSearchComponent,
+    BandeauAdvancedScearchComponent,
 
   ],
   imports: [
@@ -28,6 +30,7 @@ import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-re
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatSliderModule,
   ],
   providers: [TmdbService],
   bootstrap: [AppComponent]
