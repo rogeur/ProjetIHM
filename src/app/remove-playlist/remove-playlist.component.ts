@@ -9,9 +9,12 @@ import {Subscription} from 'rxjs';
   templateUrl: './remove-playlist.component.html',
   styleUrls: ['./remove-playlist.component.css']
 })
+
 export class RemovePlaylistComponent implements OnInit {
+
   playlistSubscription: Subscription;
   playlists: Playlist[];
+
   constructor(private playlistService: PlaylistService, private router: Router) {}
 
   ngOnInit() {
@@ -26,8 +29,8 @@ export class RemovePlaylistComponent implements OnInit {
   onSubmit(form: NgForm) {
     console.log(form.value.name);
   }
+
   onAnnule() {
     this.router.navigate(['home']);
   }
-
 }

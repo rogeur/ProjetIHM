@@ -6,7 +6,6 @@ import {NgForm} from '@angular/forms';
 import {SearchPeopleQuery} from '../tmdb-data/SearchPeople';
 import {SearchMovieResponse} from '../tmdb-data/searchMovie';
 
-
 @Component({
   selector: 'app-header-menu',
   templateUrl: './header-menu.component.html',
@@ -22,9 +21,11 @@ export class HeaderMenuComponent implements OnInit {
   constructor(private router: Router, private tmdb: TmdbService) { }
   ngOnInit() {
   }
+
   handleClick() {
     this.router.navigateByUrl('playlistMenu');
   }
+
   onSubmit(form: NgForm) {
     this.myQuery = form.value.searchReq;
     /* verification de l'encodage */
@@ -34,17 +35,18 @@ export class HeaderMenuComponent implements OnInit {
     console.log(this.myQuery);
     this.searchById();
   }
+
   searchByName() {
     this.tmdb.init('76a1a345942fd69cde4370065fed299e')
       .searchMovie(this.encode)
       .then( (m: SearchMovieResponse) => this.movies = m )
       .catch(err => console.error('Error getting movie:', err) );
   }
+
   searchById() {
     this.tmdb.init('76a1a345942fd69cde4370065fed299e')
       .getMovie(this.myQuery)
       .then( (m: MovieResponse) => console.log('Movie 13:', this.movie = m) )
       .catch(err => console.error('Error getting movie:', err) );
   }
-
 }

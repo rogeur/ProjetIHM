@@ -8,18 +8,13 @@ import {Subscription} from 'rxjs';
   templateUrl: './playslist-menu.component.html',
   styleUrls: ['./playslist-menu.component.css']
 })
+
 export class PlayslistMenuComponent implements OnInit, OnDestroy {
+
   remove = false;
   add = false;
   playlists: Playlist[];
   playlistSubscription: Subscription;
-  /*
-    = [
-    {name: 'humour-juif'},
-    {name: 'action'},
-    {name: 'thriller'}
-  ];
-  */
 
   constructor(private router: Router, private playlistService: PlaylistService) { }
 
@@ -31,13 +26,16 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
     );
     this.playlistService.emitPlaylistSubject();
   }
+
   handleClick() {
     this.router.navigate(['/home']);
   }
+
   handleAdd() {
     this.remove = false;
     this.add = !this.add;
   }
+
   handleDel() {
     this.add = false;
     this.remove = !this.remove;
@@ -46,5 +44,4 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.playlistSubscription.unsubscribe();
   }
-
 }

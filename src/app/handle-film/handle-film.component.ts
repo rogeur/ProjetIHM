@@ -9,9 +9,12 @@ import {Subscription} from 'rxjs';
   templateUrl: './handle-film.component.html',
   styleUrls: ['./handle-film.component.css']
 })
+
 export class HandleFilmComponent implements OnInit {
+
   playlistSubscription: Subscription;
   playlists: Playlist[];
+
   constructor(private playlistService: PlaylistService, private router: Router) {}
 
   ngOnInit(): void {
@@ -26,6 +29,7 @@ export class HandleFilmComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.playlistService.addPlaylist(form.value.name);
   }
+
   onAnnule() {
     this.router.navigate(['home']);
   }
