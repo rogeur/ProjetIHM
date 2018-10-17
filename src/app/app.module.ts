@@ -11,11 +11,13 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { FilmComponent } from './film/film.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material';
+import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmComponent,
+    BandeauResultSearchComponent,
 
   ],
   imports: [
