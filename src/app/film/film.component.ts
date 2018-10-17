@@ -11,9 +11,13 @@ export class FilmComponent implements OnInit {
 
   private _movie: MovieResponse;
 
-  @Input() id: number;
+  @Input()  id: number;
 
   @Input() type: String;
+
+  @Input() nbFilm: number;
+
+  @Input() nameplaylist: String;
 
 
 

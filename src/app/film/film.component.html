@@ -68,6 +68,11 @@
 
   <section *ngIf="playlist" [ngClass]="{'playlist': playlist}">
 
+     <div ngClass="NB-film">
+       <!--<mat-icon></mat-icon>-->
+       <p>{{nameplaylist}} ({{nbFilm}} films)</p>
+     </div>
+
       <div class="img-detail-playlist">
         <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
         <div class="detail-playlist">
