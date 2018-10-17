@@ -34,13 +34,25 @@ export class FilmComponent implements OnInit {
     return this.type== 'big';
   }
 
-  get petit(){
+  get petit() {
     return this.type == 'petit';
+  }
+
+  get little(){
+    return this.type == 'little';
   }
 
   get medium(){
     return this.type == 'medium';
   }
+
+   get playlist(){
+    return this.type == 'playlist';
+   }
+
+   get toto(){
+    return this.type == 'toto';
+   }
 
 
   get movie(): MovieResponse {
@@ -69,6 +81,10 @@ export class FilmComponent implements OnInit {
 
   getRecette(): number {
     return this._movie.revenue;
+  }
+
+  getOriginalTitle(): String {
+    return  this._movie.original_title;
   }
 
   // get type(): String{

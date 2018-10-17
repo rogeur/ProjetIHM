@@ -26,6 +26,7 @@
         <p class="name">Durée : </p>
         <p class="var">{{getTime()}}</p>
       </div>
+      <input *ngIf="medium" type="button" value="Voir plus ..." class="medium-button">
     </div>
   </section>
 
@@ -35,6 +36,7 @@
       <img [ngClass]="{'img-big':big}" [src]="getPath(movie.poster_path)" />
 
       <!--trouver la condition pour que il le montre ou non voir le ngid-->
+
       <div [ngClass]="{'Statut-big': big}">
         <p class="name">Status : </p>
         <p class="var">{{getStatus()}}</p>
@@ -51,24 +53,86 @@
         <p class="name">Recette : </p>
         <p class="var">${{getRecette()}}</p>
       </div>
-    </div>
 
+      </div>
 
     <div [ngClass]="{'body-big': big}">
       <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
       <p class="name">Synopsis</p>
-      <p [ngClass]="{'text-big': big}">{{getSummary()}}</p>
+      <p [ngClass]="{'text-playlist': big}">{{getSummary()}}</p>
       <input type="button" class="btn-big" value="Ajouter à une playlist">
     </div>
-
-
 
   </section>
 
 
+  <section *ngIf="playlist" [ngClass]="{'playlist': playlist}">
+
+      <div class="img-detail-playlist">
+        <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
+        <div class="detail-playlist">
+          <div [ngClass]="'Titre-playlist'">
+            <p class="name"> Titre Original : </p>
+            <p clasa="var">{{getOriginalTitle()}}</p>
+          </div>
+        <!--trouver la condition pour que il le montre ou non voir le ngid-->
+        <div [ngClass]="{'Statut-playlist': playlist}">
+          <p class="name">Status : </p>
+          <p class="var">{{getStatus()}}</p>
+        </div>
+        <div [ngClass]="{'time-playlist': playlist}">
+          <p class="name">Durée : </p>
+          <p class="var">{{getTime()}}</p>
+        </div>
+        <div [ngClass]="{'budget-playlist': playlist}">
+          <p class="name">Budget : </p>
+          <p class="var">${{getBudget()}}</p>
+        </div>
+        <div [ngClass]="{'recette-playlist': playlist}">
+          <p class="name">Recette : </p>
+          <p class="var">${{getRecette()}}</p>
+        </div>
+      </div>
+      </div>
+
+      <div [ngClass]="{'body-playlist': playlist}">
+
+        <p class="name">Synopsis</p>
+        <p [ngClass]="{'text-playlist': playlist}">{{getSummary()}}</p>
+        <input type="button" class="btn-playlist" value="Supprimer">
+      </div>
+
+
+
+    </section>
+
+
+  <!--<mat-card *ngIf="little || medium" [ngClass]="{'card-little' : little, 'card-medium': medium}" >-->
+    <!--<img mat-card-image [ngClass]="{'card-img-little' : little, 'card-img-medium': medium}" [src]="getPath(movie.poster_path)"/>-->
+
+    <!--<div [ngClass]="{'card-body-medium': medium}">-->
+      <!--<mat-card-title [ngClass]="{'card-title-little' : little, 'card-tittle-medium': medium}">{{getTitle()}}</mat-card-title>-->
+      <!--<mat-card-content [ngClass]="{'card-content-little' : little, 'card-content-medium': medium}">{{getSummary()}}</mat-card-content>-->
+      <!--<div [ngClass]="{'card-time-medium': medium}" *ngIf="medium">-->
+        <!--<p class="name">Durée : </p>-->
+        <!--<p class="var">{{getTime()}}</p>-->
+      <!--</div>-->
+      <!--<mat-card-actions>-->
+        <!--<input mat-button	 *ngIf="medium" type="button" value="Voir plus ..." class="card-medium-button">-->
+      <!--</mat-card-actions>-->
+    <!--</div>-->
+
+  <!--</mat-card>-->
+
+
 </section>
 
-<pre>{{movie | json}}</pre>
+
+
+
+
+
+<!--<pre>{{movie | json}}</pre>-->
 
 <!--<div class="movie type1" style="width: 8rem;">-->
   <!--<img class="movie-img-top img-responsive" src={{path}} alt={{title}}>-->

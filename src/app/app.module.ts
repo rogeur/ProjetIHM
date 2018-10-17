@@ -9,18 +9,23 @@ import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { FilmComponent } from './film/film.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilmComponent
+    FilmComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AngularFireModule.initializeApp( environment.firebase ),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    BrowserAnimationsModule,
+    MatCardModule,
   ],
   providers: [TmdbService],
   bootstrap: [AppComponent]
