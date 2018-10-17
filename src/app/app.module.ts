@@ -18,6 +18,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
 import {PlaylistService} from './playlist.service';
+import { HandleFilmComponent } from './handle-film/handle-film.component';
 
 const appRoutes: Routes = [
   { path: '', component: HeaderMenuComponent },
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     PlaylistComponent,
     AddPlaylistComponent,
     RemovePlaylistComponent,
+    HandleFilmComponent,
   ],
   imports: [
     BrowserModule,

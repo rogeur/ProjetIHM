@@ -9,8 +9,13 @@
                     (value)="playlist.getName()">{{playlist.getName()}}</option>
           </select>
         </div>
-        <button class="btn supprimer" type="submit">Supprimer</button>
-        <button class="btn annuler" (click)="onAnnule()">Annuler</button>
+
+        <label for="add">Nom de la playlist</label>
+        <input class="form-control" type="text" id="add" name="name" ngModel>
+        <div class="buttons">
+          <button class="btn btn-primary ajouter" type="submit">Ajouter</button>
+          <button class="btn annuler" (click)="onAnnule()">Annuler</button>
+        </div>
       </form>
     </div>
   </div>

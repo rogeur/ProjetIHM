@@ -16,7 +16,7 @@ export class AddPlaylistComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value.name);
+    this.playlistService.addPlaylist(form.value.name);
   }
   onAnnule() {
     this.router.navigate(['home']);

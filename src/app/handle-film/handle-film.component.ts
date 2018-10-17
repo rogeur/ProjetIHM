@@ -1,20 +1,20 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Playlist, PlaylistService} from '../playlist.service';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {Subscription} from 'rxjs';
 
 @Component({
-  selector: 'app-remove-playlist',
-  templateUrl: './remove-playlist.component.html',
-  styleUrls: ['./remove-playlist.component.css']
+  selector: 'app-handle-film',
+  templateUrl: './handle-film.component.html',
+  styleUrls: ['./handle-film.component.css']
 })
-export class RemovePlaylistComponent implements OnInit {
+export class HandleFilmComponent implements OnInit {
   playlistSubscription: Subscription;
   playlists: Playlist[];
   constructor(private playlistService: PlaylistService, private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.playlistSubscription = this.playlistService.playlistSubject.subscribe(
       (playlists: Playlist[]) => {
         this.playlists = playlists;
@@ -24,10 +24,9 @@ export class RemovePlaylistComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value.name);
+    this.playlistService.addPlaylist(form.value.name);
   }
   onAnnule() {
     this.router.navigate(['home']);
   }
-
 }
