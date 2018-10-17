@@ -1,3 +1,33 @@
+<!--<h1>TMDB + Firebase</h1>-->
+<!--<nav *ngIf="user">-->
+  <!--<label>{{user.displayName}}</label>-->
+  <!--<img [src]="user.photoURL" />-->
+  <!--<button (click)="logout()">Déconnection</button>-->
+  <!--{{user.uid}}-->
+<!--</nav>-->
+<!--<nav *ngIf="!user">-->
+  <!--<button (click)="login()">Connection via Google</button>-->
+<!--</nav>-->
+
+<!--<hr/>-->
+<!--<pre *ngIf="lists">-->
+  <!--{{lists | async | json}}-->
+<!--</pre>-->
+
+<!--<hr/>-->
+<!--<section *ngIf="movie">-->
+  <!--<img [src]="getPath(movie.poster_path)" />-->
+  <!--<pre>{{movie | json}}</pre>-->
+<!--</section>-->
+<!--<section *ngIf="!movie">-->
+  <!--Pas encore de films à afficher...-->
+<!--</section>-->
+<router-outlet></router-outlet>
+<app-film id="12" type="petit" ></app-film>
+
+
+<!--
+<h1>TMDB + Firebase</h1>
 <!--<h1>TMDB + Firebase</h1>
 <nav *ngIf="user">
   <label>{{user.displayName}}</label>
@@ -9,11 +39,13 @@
   <button (click)="login()">Connection via Google</button>
 </nav>
 
-<hr/>
-<pre *ngIf="lists">
-  {{lists | async | json}}
-</pre>
+<app-film id="11" type="medium"></app-film>
 
+<app-film id="14" type="big"></app-film>
+
+<app-film id="15" type="playlist" [nbFilm]="4" nameplaylist="toto"></app-film>
+
+<!--<app-film id="15" type="medium"></app-film>-->
 <hr/>
 <section *ngIf="movie">
   <img [src]="getPath(movie.poster_path)" />
@@ -21,9 +53,11 @@
 </section>
 <section *ngIf="!movie">
   Pas encore de films à afficher...
-</section>-->
+</section>
 
 <section>
   <app-dropdown-list [playlists]=names>
   </app-dropdown-list>
 </section>
+
+-->

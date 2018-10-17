@@ -1,0 +1,24 @@
+h1 {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: bold;
+  padding-top: 9px;
+  font-size: medium;
+  color: rgb(91, 91, 91);
+}
+.icon {
+  border: none;
+  color: rgb(91, 91, 91);
+  background-color: white;
+}
+button:focus {
+  outline:0;
+}
+button:hover {
+  background-color: rgb(209, 209, 209);
+}
+button {
+  text-align: left;
+  min-width: 212px;
+  margin-right: auto;
+}

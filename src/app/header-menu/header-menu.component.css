@@ -1,0 +1,76 @@
+.row {
+  height: 58px;
+  padding-top: 9px;
+}
+.drop {
+  min-width: 110px;
+  color: black;
+  background-color: white;
+  border: none;
+}
+button > h1 {
+  margin-left: 5px;
+}
+h1 {
+  display: inline-block;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 10px;
+
+}
+.search {
+  min-width: 50%;
+}
+.search-input {
+  width: 41%;
+  left: 0;
+  display: inline-block;
+  border-radius: 0 0 0 0;
+}
+.search-button{
+  background-color: rgb(209, 33, 97);
+  border: none;
+  height: 37px;
+  width: 75px;
+  display: inline-block;
+  margin-left: 3px;
+  color: white;
+}
+a {
+  color: darkgray;
+  text-decoration: underline;
+  margin-left: 15px;
+}
+.lien {
+  display: inline-block;
+  min-width: 40px;
+
+}
+.user {
+  margin-top: 8px;
+  float: right;
+}
+
+.user > a {
+  color: black;
+}
+
+.container-fluid {
+  -webkit-box-shadow: 0 10px 49px -24px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 10px 49px -24px rgba(0,0,0,0.75);
+  box-shadow: 0 10px 49px -24px rgba(0,0,0,0.75);
+}
+a, button {
+  outline: 0;
+}
+/*
+[class*="col-"], footer {
+  background-color: lightblue;
+  border: 2px solid black;
+  border-radius: 6px;
+  /*
+  line-height: 40px;
+  text-align: center;
+
+}
+*/

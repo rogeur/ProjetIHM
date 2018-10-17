@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="colonne">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="select">
+          <label for="select">Choisir une playlist</label>
+          <select class="custom-select form-control" id="select">
+            <option class="" *ngFor="let playlist of playlists; let i = index;"
+                    (value)="playlist.getName()">{{playlist.getName()}}</option>
+          </select>
+        </div>
+
+        <label for="add">Nom de la playlist</label>
+        <input class="form-control" type="text" id="add" name="name" ngModel>
+        <div class="buttons">
+          <button class="btn btn-primary ajouter" type="submit">Ajouter</button>
+          <button class="btn annuler" (click)="onAnnule()">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
