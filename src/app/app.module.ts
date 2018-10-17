@@ -22,6 +22,7 @@ import {FormsModule} from '@angular/forms';
 import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
 import {PlaylistService} from './playlist.service';
 import { HandleFilmComponent } from './handle-film/handle-film.component';
+import { BandeauComponent } from './bandeau/bandeau.component';
 
 const appRoutes: Routes = [
   { path: '', component: HeaderMenuComponent },
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     AddPlaylistComponent,
     RemovePlaylistComponent,
     HandleFilmComponent,
+    BandeauComponent,
   ],
   imports: [
     BrowserModule,
