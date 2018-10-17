@@ -28,11 +28,16 @@ const appRoutes: Routes = [
   { path: 'playlistMenu', component: PlayslistMenuComponent},
   { path: 'home', component: HeaderMenuComponent}
 ];
+import {MatCardModule, MatSliderModule} from '@angular/material';
+import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
+import { BandeauAdvancedScearchComponent } from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmComponent,
+    BandeauResultSearchComponent,
+    BandeauAdvancedScearchComponent,
 
     AppComponent,
     HeaderMenuComponent,
@@ -50,15 +55,8 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatCardModule,
-    AngularFireDatabaseModule,
-    RouterModule.forRoot(appRoutes),
-    MatSelectModule,
-    FormsModule
   ],
-  providers: [
-    TmdbService,
-    PlaylistService
-  ],
+  providers: [TmdbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
