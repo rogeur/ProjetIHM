@@ -1,0 +1,38 @@
+.container-fluid {
+  -webkit-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.75);
+  margin: 10px 0 0 10px;
+  background-color: white;
+}
+.colonne {
+  width: 200px;
+
+}
+.form-control {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 0;
+  width: 190px;
+}
+button {
+  margin:  6px 0 6px 5px;
+  border-radius: 0;
+  float: right;
+  font-size: x-small;
+  font-weight: bold;
+  width: 70px;
+  text-align: center;
+}
+.ajouter {
+  display: inline-block;
+}
+.annuler {
+  color: black;
+  background-color: rgb(224, 224, 224);
+}
+label {
+  font-weight: bold;
+  margin-left: 5px;
+}
+

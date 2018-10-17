@@ -1,0 +1,47 @@
+<div class="container-fluid head">
+  <app-header-menu></app-header-menu>
+</div>
+<div class="container-fluid menu">
+  <div class="row">
+    <div class="colonne">
+
+      <div class="row">
+        <button class="icon cyven" (click)="handleClick()"><i class="fa fa-align-justify"></i><h1>Cyven</h1></button>
+      </div>
+
+      <div class="row">
+        <button class="icon"><i class="fa fa-home"></i><h1>Accueil</h1></button>
+      </div>
+
+      <div class="row">
+        <h1>MES PLAYLIST</h1>
+      </div>
+
+      <app-playlist *ngFor="let playlist of playlists; let i = index"
+                    [playlistName]="playlist.name"
+                    [index]="i">
+      </app-playlist>
+
+      <div class="row">
+        <h1>GERER PLAYLISTS</h1>
+      </div>
+
+      <div class="row">
+        <button class="icon" (click)="handleAdd()"><i class="fa fa-plus-circle"></i><h1>Créer une playlist</h1></button>
+      </div>
+
+      <div class="row">
+        <button class="icon"><i class="fa fa-minus-circle"></i><h1>Supprimer une playlist</h1></button>
+      </div>
+
+      <!--
+      <app-remove-playlist>[playlists]="playlists"></app-remove-playlist>
+      -->
+    </div>
+    <app-add-playlist class="addPopUp" *ngIf="add"></app-add-playlist>
+    <div class="filtre">
+    </div>
+
+  </div>
+</div>
+
