@@ -31,14 +31,4 @@ export class RechercheService {
     this.movies.results.slice();
     this.subjectMovies.next(this.movies);
   }
-  /*
-  getMovie(indice: number): object {
-    if (this.movies !== null) {
-      return this.movies.results[indice];
-    } else {
-      console.log('aucun résultat de recherche');
-      return null;
-    }
-  }
-  */
 }

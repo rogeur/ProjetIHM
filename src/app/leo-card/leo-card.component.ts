@@ -32,6 +32,7 @@ export class LeoCardComponent implements OnInit {
     this.search.emitMoviesSubject();
   }
   pretty (overview: string) {
+    overview.replace('\n', ' ');
     return overview.slice(0, 75) + ' ...';
   }
   get movie(): MovieResponse {

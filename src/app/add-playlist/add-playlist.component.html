@@ -1,12 +1,14 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="colonne">
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <label for="add">Nom de la playlist</label>
-        <input class="form-control" type="text" id="add" name="name" ngModel>
-        <button class="btn btn-primary ajouter" type="submit">Ajouter</button>
-        <button class="btn annuler" (click)="onAnnule()">Annuler</button>
-      </form>
+<div class="back">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="colonne">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <label for="add">Nom de la playlist</label>
+          <input class="form-control" type="text" id="add" name="name" ngModel>
+          <button class="btn btn-primary ajouter" type="submit">Ajouter</button>
+          <button class="btn annuler" (click)="onAnnule()">Annuler</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

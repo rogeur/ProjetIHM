@@ -1,4 +1,4 @@
-<div class="container-fluid head">
+<div class="head">
   <app-header-menu></app-header-menu>
 </div>
 <div class="container-fluid menu">
@@ -6,7 +6,7 @@
     <div class="colonne">
 
       <div class="row">
-        <button class="icon cyven" (click)="handleClick()"><i class="fa fa-align-justify"></i><h1>Cyven</h1></button>
+        <button class="icon cyven" (click)="handleClick()"><i class="fa fa-align-justify logo"></i><h1>Cyven</h1></button>
       </div>
 
       <div class="row">
@@ -33,15 +33,12 @@
       <div class="row">
         <button class="icon" (click)="handleDel()"><i class="fa fa-minus-circle"></i><h1>Supprimer une playlist</h1></button>
       </div>
+      <app-add-playlist class="addPopUp" *ngIf="add"></app-add-playlist>
 
-      <!--
-      <app-remove-playlist>[playlists]="playlists"></app-remove-playlist>
-      -->
+      <app-remove-playlist class="removePopUp" *ngIf="remove"></app-remove-playlist>
     </div>
-    <app-add-playlist class="addPopUp" *ngIf="add"></app-add-playlist>
 
-    <app-remove-playlist class="removePopUp" *ngIf="remove"></app-remove-playlist>
-    <div class="filtre">
+    <div class="filtre" (mouseenter)="handleClick()">
     </div>
 
   </div>

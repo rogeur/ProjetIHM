@@ -13,7 +13,12 @@ h1 {
   background-color: white;
 }
 .cyven {
-  height: 45px;
+  height: 59px;
+  padding-bottom: 30px;
+}
+.logo {
+  padding-left: 28px;
+  padding-top: 20px;
 }
 .colonne {
   -webkit-box-shadow: 15px 0 20px -8px rgba(0,0,0,0.55);
@@ -53,19 +58,16 @@ button {
   min-width: 212px;
   margin-right: auto;
 }
-.menu {
-  z-index: 0;
-}
 .addPopUp {
   z-index: 2;
   position: absolute;
-  top: 36%;
+  top: 22%;
   right: calc(85% - 212px);
 }
 .removePopUp {
   z-index: 2;
   position: absolute;
-  top: 36%;
+  top: 22%;
   right: calc(85% - 212px);
 }
 #select {

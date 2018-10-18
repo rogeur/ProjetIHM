@@ -33,6 +33,16 @@ export class PlaylistService {
     this.playlists.push(new Playlist(name));
     this.emitPlaylistSubject();
   }
+  delPlaylist(name: string) {
+    let i = 0;
+    for (const playlist of this.playlists) {
+      if (playlist.getName() === name) {
+        this.playlists.splice(i, 1);
+      }
+      i++;
+    }
+    this.emitPlaylistSubject();
+  }
 
 
 }

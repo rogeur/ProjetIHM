@@ -23,4 +23,7 @@ export class HeaderMenuComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.search.searchByName(form.value.searchReq);
   }
+  mouseEnter() {
+    this.router.navigate(['playlistMenu']);
+  }
 }

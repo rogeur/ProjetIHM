@@ -14,7 +14,6 @@ export class RemovePlaylistComponent implements OnInit {
 
   playlistSubscription: Subscription;
   playlists: Playlist[];
-
   constructor(private playlistService: PlaylistService, private router: Router) {}
 
   ngOnInit() {
@@ -28,6 +27,7 @@ export class RemovePlaylistComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form.value.name);
+    this.playlistService.delPlaylist(form.value.name);
   }
 
   onAnnule() {
