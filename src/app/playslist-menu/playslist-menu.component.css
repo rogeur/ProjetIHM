@@ -13,7 +13,7 @@ h1 {
   background-color: white;
 }
 .cyven {
-  height: 59px;
+  height: 57px;
   padding-bottom: 30px;
 }
 .logo {
@@ -28,6 +28,8 @@ h1 {
   background-color: white;
   min-width: 212px;
   padding-left: 15px;
+  transition-property: width;
+  transition-duration: 1s;
 }
 .filtre {
   background-color: black;
@@ -45,9 +47,6 @@ h1 {
 }
 button:focus {
   outline:0;
-  /*
-  background-color: rgb(209, 209, 209);
-  */
 }
 button:hover {
   background-color: rgb(209, 209, 209);
@@ -73,9 +72,3 @@ button {
 #select {
   margin: 0 10px 0 10px;
 }
-/*
-.colonne > .row {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-*/

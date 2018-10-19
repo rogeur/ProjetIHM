@@ -3,7 +3,7 @@ import {Playlist, PlaylistService} from '../playlist.service';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {Subscription} from 'rxjs';
-
+import {FormsModule} from '@angular/forms';
 @Component({
   selector: 'app-remove-playlist',
   templateUrl: './remove-playlist.component.html',
@@ -11,7 +11,7 @@ import {Subscription} from 'rxjs';
 })
 
 export class RemovePlaylistComponent implements OnInit {
-
+  selectedOption: string;
   playlistSubscription: Subscription;
   playlists: Playlist[];
   constructor(private playlistService: PlaylistService, private router: Router) {}
@@ -25,12 +25,11 @@ export class RemovePlaylistComponent implements OnInit {
     this.playlistService.emitPlaylistSubject();
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.value.name);
-    this.playlistService.delPlaylist(form.value.name);
+  onSubmit() {
+    this.playlistService.delPlaylist(this.selectedOption);
   }
 
   onAnnule() {
-    this.router.navigate(['home']);
+    this.router.navigate(['playlistMenu']);
   }
 }

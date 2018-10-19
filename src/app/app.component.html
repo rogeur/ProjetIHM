@@ -13,12 +13,10 @@
 <nav *ngIf="!user">
   <button (click)="login()">Connection via Google</button>
 </nav>
-
 <hr/>
 <pre *ngIf="lists">
   {{lists | async | json}}
 </pre>
-
 <hr/>
 <section *ngIf="movie">
   <img [src]="getPath(movie.poster_path)" />
