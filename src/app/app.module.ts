@@ -23,6 +23,7 @@ import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.compo
 import {PlaylistService} from './playlist.service';
 import { HandleFilmComponent } from './handle-film/handle-film.component';
 import { LeoCardComponent } from './leo-card/leo-card.component';
+import { HandleMoviesComponent } from './handle-movies/handle-movies.component';
 
 const appRoutes: Routes = [
   { path: '', component: HeaderMenuComponent },
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     RemovePlaylistComponent,
     HandleFilmComponent,
     LeoCardComponent,
+    HandleMoviesComponent,
   ],
   imports: [
     BrowserModule,

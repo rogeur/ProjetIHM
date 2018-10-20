@@ -2,11 +2,29 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Playlist, PlaylistService} from '../playlist.service';
 import {Subscription} from 'rxjs';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-playslist-menu',
   templateUrl: './playslist-menu.component.html',
-  styleUrls: ['./playslist-menu.component.css']
+  styleUrls: ['./playslist-menu.component.css'],
+  animations: [
+    trigger('openClose', [
+      state('open', style({
+        opacity: 1
+      })),
+      state('closed', style({
+        opacity: 0.1,
+        backgroundColor: 'grey'
+      })),
+      transition('open => closed', [
+        animate('0.2s 0s ease')
+      ]),
+      transition('closed => open', [
+        animate('0.2s 0s ease')
+      ]),
+    ]),
+  ]
 })
 
 export class PlayslistMenuComponent implements OnInit, OnDestroy {

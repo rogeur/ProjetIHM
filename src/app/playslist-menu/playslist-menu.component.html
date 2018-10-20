@@ -33,8 +33,9 @@
       <div class="row">
         <button class="icon" (click)="handleDel()"><i class="fa fa-minus-circle"></i><h1>Supprimer une playlist</h1></button>
       </div>
-      <app-add-playlist class="addPopUp" *ngIf="add"></app-add-playlist>
-
+      <div [@openClose]="add ? 'open' : 'closed'" class="open-close-container">
+        <app-add-playlist class="addPopUp" *ngIf="add"></app-add-playlist>
+      </div>
       <app-remove-playlist class="removePopUp" *ngIf="remove"></app-remove-playlist>
     </div>
 
