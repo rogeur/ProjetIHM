@@ -96,7 +96,7 @@ export class FilmComponent implements OnInit {
   // }
 
   getTime(): String{
-    return ((this._movie.runtime / 60) ^ 0).toString() + "h " + (this._movie.runtime % 60).toString() + "m";
+    return ( (this._movie.runtime / 60) ^ 0).toString() + 'h ' + (this._movie.runtime % 60).toString() + 'm';
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RechercheService} from '../recherche.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-handle-movies',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./handle-movies.component.css']
 })
 export class HandleMoviesComponent implements OnInit {
-
-  constructor() { }
+  moviesSubscription: Subscription;
+  movies = [];
+  constructor(private search: RechercheService) { }
 
   ngOnInit() {
+    this.moviesSubscription = this.search.subjectResult.subscribe(
+      (movies) => {
+        this.movies = movies;
+      }
+    );
+    // this.search.emitMoviesSubject();
   }
 
 }
