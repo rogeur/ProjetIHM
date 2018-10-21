@@ -1,3 +1,8 @@
+.menu {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
 h1 {
   display: inline-block;
   margin-left: 5px;
@@ -38,13 +43,14 @@ h1 {
   min-width: calc(100% - 212px);
   z-index: 0;
 }
-
+/*
 .head {
   position: absolute;
   z-index: -1;
   left: 0;
   right: 0;
 }
+*/
 button:focus {
   outline:0;
 }

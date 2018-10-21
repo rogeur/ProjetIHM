@@ -12,9 +12,20 @@ export class LeoCardComponent implements OnInit {
 
   constructor() {}
 
-  pretty (overview: string) {
-    overview.replace('\n', ' ');
-    return overview.slice(0, 75) + ' ...';
+  pretty (overview: string): string {
+    if (overview.length <= 65 ) {
+      return overview.replace('\n', ' ');
+    } else {
+      return overview.replace('\n', ' ').slice(0, 65) + ' ...';;
+    }
+  }
+
+  prettyTitle(title: string): string {
+    if (title.length <= 14) {
+      return title.replace('\n', ' ');
+    } else {
+      return title.replace('\n', ' ').slice(0, 14) + ' ...';
+    }
   }
 
   getPath(path: string): string {

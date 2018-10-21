@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {Playlist, PlaylistService} from '../playlist.service';
 import {Subscription} from 'rxjs';
@@ -28,7 +28,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 
 export class PlayslistMenuComponent implements OnInit, OnDestroy {
-
+  @Output() playlistStatut = new EventEmitter;
   remove = false;
   add = false;
   playlists: Playlist[];
@@ -45,8 +45,8 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
     this.playlistService.emitPlaylistSubject();
   }
 
-  handleClick() {
-    this.router.navigate(['/home']);
+  mouseOut() {
+    this.playlistStatut.emit(false);
   }
 
   handleAdd() {
@@ -61,5 +61,11 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.playlistSubscription.unsubscribe();
+  }
+  addClose(event) {
+    this.add = event;
+  }
+  delClose(event) {
+    this.remove = event;
   }
 }

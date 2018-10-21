@@ -16,6 +16,7 @@ export class HandleMoviesComponent implements OnInit {
     this.moviesSubscription = this.search.subjectResult.subscribe(
       (movies) => {
         this.movies = movies;
+        this.movies = this.movies.slice(0, 16);
       }
     );
     // this.search.emitMoviesSubject();

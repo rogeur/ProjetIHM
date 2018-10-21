@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Playlist, PlaylistService} from '../playlist.service';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms';
 })
 
 export class RemovePlaylistComponent implements OnInit {
+  @Output() delStatut = new EventEmitter();
   selectedOption: string;
   playlistSubscription: Subscription;
   playlists: Playlist[];
@@ -30,6 +31,6 @@ export class RemovePlaylistComponent implements OnInit {
   }
 
   onAnnule() {
-    this.router.navigate(['playlistMenu']);
+    this.delStatut.emit(false);
   }
 }

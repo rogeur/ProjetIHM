@@ -26,7 +26,6 @@ import { LeoCardComponent } from './leo-card/leo-card.component';
 import { HandleMoviesComponent } from './handle-movies/handle-movies.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HeaderMenuComponent },
   { path: 'playlistMenu', component: PlayslistMenuComponent},
   { path: 'home', component: HeaderMenuComponent}
 ];

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {PlaylistService} from '../playlist.service';
 import {Router} from '@angular/router';
@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 
 export class AddPlaylistComponent implements OnInit {
+  @Output() addStatut = new EventEmitter();
   constructor(private playlistService: PlaylistService, private router: Router) {}
 
   ngOnInit(): void {
@@ -18,8 +19,7 @@ export class AddPlaylistComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.playlistService.addPlaylist(form.value.name);
   }
-
-  onAnnule() {
-    this.router.navigate(['home']);
+  onClose() {
+    this.addStatut.emit(false);
   }
 }
