@@ -1,4 +1,6 @@
 import {Component, Input, NgModule, OnInit} from '@angular/core';
+import {Playlist, PlaylistService} from '../playlist.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dropdown-list',
@@ -7,17 +9,20 @@ import {Component, Input, NgModule, OnInit} from '@angular/core';
 })
 export class DropdownListComponent implements OnInit {
 
+  @Input() public playlists: Playlist[];
   public playlist: String;
+  public selectedPlaylist: Playlist;
 
-  @Input() playlists: String[];
+  // @Input() playlists: String[];
 
-  constructor() {
+  constructor(private playlistService: PlaylistService, private router: Router) {
+    this.playlists = this.playlistService.playlists;
   }
 
   ngOnInit() {
   }
 
-  getPlaylists(): String[] {
+  getPlaylists(): Playlist[] {
     return this.playlists;
   }
 

@@ -1,20 +1,32 @@
-<p>
-  okok
-  {{getPlaylists()}}
-  {{playlists}}
-  okok
-  {{playlist}}
-</p>
+<!--<p>-->
+  <!--okok-->
+  <!--{{getPlaylists()}}-->
+  <!--{{playlists}}-->
+  <!--okok-->
+  <!--{{playlist}}-->
+<!--</p>-->
 
-<p>Elément sélectionné : </p>
-<label>
-  <select ngModel="temp">
-    <option *ngFor="let item of playlists" [value]="item">{{item}}</option>
-  </select>
-</label>
+<!--<p>Elément sélectionné : </p>-->
+<!--<label>-->
+  <!--<select ngModel="temp">-->
+    <!--<option *ngFor="let item of playlists" [value]="item">{{item}}</option>-->
+  <!--</select>-->
+<!--</label>-->
 
-<select [(ngModel)]="playlist" id="category">
-  <option value="" disabled selected>select a category</option>
-  <option *ngFor="let item of playlists" [value]="item">{{item}}</option>
-</select>
-<span ng-bind="playlist"></span>
+<!--<select [(ngModel)]="playlist" id="category">-->
+  <!--<option value="" disabled selected>select a category</option>-->
+  <!--<option *ngFor="let item of playlists" [value]="item">{{item}}</option>-->
+<!--</select>-->
+<!--<span ng-bind="playlist"></span>-->
+
+<form>
+  <mat-form-field>
+    <mat-select placeholder="Favorite food" [(ngModel)]="selectedPlaylist" name="playlist">
+      <mat-option *ngFor="let playlist of playlists" [value]="playlist.getName()">
+        {{playlist.getName()}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p> Selected value: {{selectedPlaylist.getName()}} </p>
+</form>

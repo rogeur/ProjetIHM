@@ -6,6 +6,7 @@ import {auth, User} from 'firebase';
 import {Observable} from 'rxjs';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {filter} from 'rxjs/operators';
+import {Playlist} from './playlist.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent {
   private _movie: MovieResponse;
   private _user: User;
   private dbData: Observable<any>;
-  private names: String[];
+  public playlists: Playlist[];
+  private temp: Playlist;
 
   constructor(private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.anAuth.user.pipe(filter( u => !!u )).subscribe( u => {
@@ -25,7 +27,6 @@ export class AppComponent {
       const lists = db.list(listsPath);
       lists.push('coucou');
       this.dbData = lists.valueChanges();
-      this.names = ['1', 'deux', 'tres'];
     });
     setTimeout( () =>
       tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
@@ -33,7 +34,9 @@ export class AppComponent {
           .then( (m: MovieResponse) => console.log('Movie 13:', this._movie = m) )
           .catch( err => console.error('Error getting movie:', err) ),
       1000 );
-
+    this.temp = new Playlist('toto', []);
+    console.log(this.temp.getName());
+     this.playlists = [new Playlist('toto', []), new Playlist('titi', [this.movie])];
   }
 
   get movie(): MovieResponse {

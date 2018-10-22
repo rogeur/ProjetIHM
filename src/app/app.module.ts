@@ -29,13 +29,11 @@ const appRoutes: Routes = [
   { path: 'home', component: HeaderMenuComponent}
 ];
 import { DropdownListComponent } from './dropdown-list/dropdown-list.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownListComponent
-    AppComponent,
+    DropdownListComponent,
     FilmComponent,
 
     AppComponent,
@@ -52,8 +50,7 @@ import { FormsModule } from '@angular/forms';
     AngularFireModule.initializeApp( environment.firebase ),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    FormsModule
-    AngularFireDatabaseModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatCardModule,
     AngularFireDatabaseModule,

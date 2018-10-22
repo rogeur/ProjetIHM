@@ -5,8 +5,9 @@ import {Subject} from 'rxjs';
   providedIn: 'root',
 })
 export class Playlist {
-  private name: string;
+  private readonly name: string;
   private movies: MovieResponse[];
+
   constructor(name: string, ...movies) {
     this.name = name;
     this.movies = movies;
@@ -19,13 +20,14 @@ export class Playlist {
     this.movies.push(movie);
   }
   getName(): string {
+    console.log(this.name);
     return this.name;
   }
 }
 
 export class PlaylistService {
   playlistSubject = new Subject<Playlist[]>();
-  playlists = new Array<Playlist>();
+  playlists = [];
   emitPlaylistSubject() {
     this.playlistSubject.next(this.playlists.slice());
   }
