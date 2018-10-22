@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   { path: 'playlistMenu', component: PlayslistMenuComponent},
   { path: 'home', component: HeaderMenuComponent}
 ];
-import {MatCardModule, MatSliderModule} from '@angular/material';
+import { MatSliderModule} from '@angular/material';
 import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
 import { BandeauAdvancedScearchComponent } from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 
