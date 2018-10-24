@@ -17,7 +17,7 @@ export class AddPlaylistComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.playlistService.addPlaylist(form.value.name);
+    this.playlistService.addPlaylist(form.value.playlistName);
   }
   onClose() {
     this.addStatut.emit(false);

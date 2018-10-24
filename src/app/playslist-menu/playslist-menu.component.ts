@@ -34,7 +34,8 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
   playlists: Playlist[];
   playlistSubscription: Subscription;
 
-  constructor(private router: Router, private playlistService: PlaylistService) { }
+  constructor(private router: Router, private playlistService: PlaylistService) {
+  }
 
   ngOnInit() {
     this.playlistSubscription = this.playlistService.playlistSubject.subscribe(
