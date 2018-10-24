@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-form-field>
+    <div style="display: -webkit-box">
+      <p>Durée (en heure):</p>
+      <mat-slider></mat-slider>
+    </div>
+
+    <div style="display: flex">
+      <p>Genre:</p>
+      <mat-select placeholder="" style="border: solid">
+        <mat-option *ngFor="let genre of genres" [value]="genre.value">
+          {{genre.viewValue}}
+        </mat-option>
+      </mat-select>
+    </div>
+
+
+  <!--genre-->
+  <!--<mat-form-field>-->
+
+  <!--</mat-form-field>-->
+  <!--langue-->
+  <!--<mat-form-field>-->
+    <mat-select placeholder="Langue">
+      <mat-option *ngFor="let lang of langs" [value]="lang.value">
+        {{lang.viewValue}}
+      </mat-option>
+    </mat-select>
+  <!--</mat-form-field>-->
+  <!--annee-->
+  <!--<mat-form-field>-->
+    <mat-select placeholder="Annee:">
+      <mat-option *ngFor="let an of ans" [value]="an.value">
+        {{an.viewValue}}
+      </mat-option>
+    </mat-select>
+  <!--</mat-form-field>-->
+  <!--acteur -->
+  <!--<mat-form-field >-->
+    <input matInput placeholder="Acteur" value="Sushi">
+  </mat-form-field>
+</mat-card>
+
