@@ -36,9 +36,9 @@
         <button class="icon" (click)="handleDel()"><i class="fa fa-minus-circle"></i><h1>Supprimer une playlist</h1></button>
       </div>
       <!-- @openClose = animation -->
-      <div [@openClose]="add ? 'open' : 'closed'" class="open-close-container">
+      <!--<div [@openClose]="add ? 'open' : 'closed'" class="open-close-container">-->
         <app-add-playlist (addStatut)="addClose($event)" class="addPopUp" *ngIf="add"></app-add-playlist>
-      </div>
+      <!--</div>-->
       <app-remove-playlist (delStatut)="delClose($event)" class="removePopUp" *ngIf="remove"></app-remove-playlist>
     </div>
 
