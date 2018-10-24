@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {TmdbService} from './tmdb.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -13,14 +13,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { PlayslistMenuComponent } from './playslist-menu/playslist-menu.component';
-import {RouterModule} from '@angular/router';
 import { Routes } from '@angular/router';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
-import {MatSelectModule} from '@angular/material/select';
-import {FormsModule} from '@angular/forms';
 import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
-import {PlaylistService} from './playlist.service';
 import { HandleFilmComponent } from './handle-film/handle-film.component';
 
 const appRoutes: Routes = [
@@ -28,9 +24,43 @@ const appRoutes: Routes = [
   { path: 'playlistMenu', component: PlayslistMenuComponent},
   { path: 'home', component: HeaderMenuComponent}
 ];
-import { MatSliderModule} from '@angular/material';
 import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
 import { BandeauAdvancedScearchComponent } from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
+
+import {  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule, } from '@angular/material/';
 
 @NgModule({
   declarations: [
@@ -55,6 +85,43 @@ import { BandeauAdvancedScearchComponent } from './bandeau-advanced-scearch/band
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [TmdbService],
   bootstrap: [AppComponent]
