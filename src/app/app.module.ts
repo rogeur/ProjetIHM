@@ -24,7 +24,6 @@ const appRoutes: Routes = [
   { path: 'playlistMenu', component: PlayslistMenuComponent},
   { path: 'home', component: HeaderMenuComponent}
 ];
-import { DropdownListComponent } from './dropdown-list/dropdown-list.component';
 import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
 import { BandeauAdvancedScearchComponent } from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 
@@ -62,11 +61,11 @@ import {  MatAutocompleteModule,
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule, } from '@angular/material/';
+import { BandeauPlaylistFilmComponent } from './bandeau-playlist-film/bandeau-playlist-film.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownListComponent,
     FilmComponent,
     BandeauResultSearchComponent,
     BandeauAdvancedScearchComponent,
@@ -78,6 +77,7 @@ import {  MatAutocompleteModule,
     AddPlaylistComponent,
     RemovePlaylistComponent,
     HandleFilmComponent,
+    BandeauPlaylistFilmComponent,
   ],
   imports: [
     BrowserModule,

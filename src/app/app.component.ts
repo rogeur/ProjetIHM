@@ -18,7 +18,6 @@ export class AppComponent {
   private _user: User;
   private dbData: Observable<any>;
   public playlists: Playlist[];
-  private temp: Playlist;
 
   constructor(private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.anAuth.user.pipe(filter( u => !!u )).subscribe( u => {
@@ -34,9 +33,6 @@ export class AppComponent {
           .then( (m: MovieResponse) => console.log('Movie 13:', this._movie = m) )
           .catch( err => console.error('Error getting movie:', err) ),
       1000 );
-    this.temp = new Playlist('toto', []);
-    console.log(this.temp.getName());
-     this.playlists = [new Playlist('toto', []), new Playlist('titi', [this.movie])];
   }
 
   get movie(): MovieResponse {

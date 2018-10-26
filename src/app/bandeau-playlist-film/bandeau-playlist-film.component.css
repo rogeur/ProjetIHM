@@ -1,0 +1,33 @@
+.titlePlaylist{
+  text-transform: capitalize;
+  font-size: xx-large;
+  color: #757070;
+  font-family: 'Roboto', sans-serif;
+}
+
+.left {
+  background: #f2f2f2;
+  float: left;
+}
+
+.right {
+
+}
+
+.bandeauMoviesUp {
+  background: #ffc9ac;
+  vertical-align: top;
+}
+
+.bandeauMoviesBottom {
+  vertical-align: bottom;
+}
+
+.movieUp {
+  float: left;
+}
+
+.movieBottom {
+  float: left;
+}
+
