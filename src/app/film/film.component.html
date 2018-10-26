@@ -1,15 +1,15 @@
 <!--<section *ngIf="movie" class="movie-{{type}} type1" style="">-->
-  <!--<img class="movie-img-{{type}}" [src]="getPath(movie.poster_path)" />-->
-  <!--<div class="movie-body-{{type}}">-->
-    <!--<h1 class="movie-title-{{type}}">{{getTitle()}}</h1>-->
-    <!--<p class="movie-text-{{type}}">{{getSummary()}}</p>-->
-     <!--&lt;!&ndash;trouver la condition pour que il le montre ou non voir le ngid&ndash;&gt;-->
-    <!--<div class="movie-time-{{type}}" *ngIf="type == 'medium' || type == 'grand'">-->
-      <!--<p class="movie-time-name">Durée : </p>-->
-      <!--<p class="movie-time-var">{{getTime()}}</p>-->
-  <!--</div>-->
+<!--<img class="movie-img-{{type}}" [src]="getPath(movie.poster_path)" />-->
+<!--<div class="movie-body-{{type}}">-->
+<!--<h1 class="movie-title-{{type}}">{{getTitle()}}</h1>-->
+<!--<p class="movie-text-{{type}}">{{getSummary()}}</p>-->
+<!--&lt;!&ndash;trouver la condition pour que il le montre ou non voir le ngid&ndash;&gt;-->
+<!--<div class="movie-time-{{type}}" *ngIf="type == 'medium' || type == 'grand'">-->
+<!--<p class="movie-time-name">Durée : </p>-->
+<!--<p class="movie-time-var">{{getTime()}}</p>-->
+<!--</div>-->
 
-  <!--</div>-->
+<!--</div>-->
 <!--</section>-->
 
 <section *ngIf="movie" >
@@ -54,7 +54,7 @@
         <p class="var">${{getRecette()}}</p>
       </div>
 
-      </div>
+    </div>
 
     <div [ngClass]="{'body-big': big}">
       <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
@@ -68,18 +68,13 @@
 
   <section *ngIf="playlist" [ngClass]="{'playlist': playlist}">
 
-     <div ngClass="NB-film">
-       <!--<mat-icon></mat-icon>-->
-       <p>{{nameplaylist}} ({{nbFilm}} films)</p>
-     </div>
-
-      <div class="img-detail-playlist">
-        <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
-        <div class="detail-playlist">
-          <div [ngClass]="'Titre-playlist'">
-            <p class="name"> Titre Original : </p>
-            <p clasa="var">{{getOriginalTitle()}}</p>
-          </div>
+    <div class="img-detail-playlist">
+      <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
+      <div class="detail-playlist">
+        <div [ngClass]="'Titre-playlist'">
+          <p class="name"> Titre Original : </p>
+          <p clasa="var">{{getOriginalTitle()}}</p>
+        </div>
         <!--trouver la condition pour que il le montre ou non voir le ngid-->
         <div [ngClass]="{'Statut-playlist': playlist}">
           <p class="name">Status : </p>
@@ -98,34 +93,34 @@
           <p class="var">${{getRecette()}}</p>
         </div>
       </div>
-      </div>
+    </div>
 
-      <div [ngClass]="{'body-playlist': playlist}">
+    <div [ngClass]="{'body-playlist': playlist}">
 
-        <p class="name">Synopsis</p>
-        <p [ngClass]="{'text-playlist': playlist}">{{getSummary()}}</p>
-        <input type="button" class="btn-playlist" value="Supprimer">
-      </div>
+      <p class="name">Synopsis</p>
+      <p [ngClass]="{'text-playlist': playlist}">{{getSummary()}}</p>
+      <input type="button" class="btn-playlist" value="Supprimer">
+    </div>
 
 
 
-    </section>
+  </section>
 
 
   <!--<mat-card *ngIf="little || medium" [ngClass]="{'card-little' : little, 'card-medium': medium}" >-->
-    <!--<img mat-card-image [ngClass]="{'card-img-little' : little, 'card-img-medium': medium}" [src]="getPath(movie.poster_path)"/>-->
+  <!--<img mat-card-image [ngClass]="{'card-img-little' : little, 'card-img-medium': medium}" [src]="getPath(movie.poster_path)"/>-->
 
-    <!--<div [ngClass]="{'card-body-medium': medium}">-->
-      <!--<mat-card-title [ngClass]="{'card-title-little' : little, 'card-tittle-medium': medium}">{{getTitle()}}</mat-card-title>-->
-      <!--<mat-card-content [ngClass]="{'card-content-little' : little, 'card-content-medium': medium}">{{getSummary()}}</mat-card-content>-->
-      <!--<div [ngClass]="{'card-time-medium': medium}" *ngIf="medium">-->
-        <!--<p class="name">Durée : </p>-->
-        <!--<p class="var">{{getTime()}}</p>-->
-      <!--</div>-->
-      <!--<mat-card-actions>-->
-        <!--<input mat-button	 *ngIf="medium" type="button" value="Voir plus ..." class="card-medium-button">-->
-      <!--</mat-card-actions>-->
-    <!--</div>-->
+  <!--<div [ngClass]="{'card-body-medium': medium}">-->
+  <!--<mat-card-title [ngClass]="{'card-title-little' : little, 'card-tittle-medium': medium}">{{getTitle()}}</mat-card-title>-->
+  <!--<mat-card-content [ngClass]="{'card-content-little' : little, 'card-content-medium': medium}">{{getSummary()}}</mat-card-content>-->
+  <!--<div [ngClass]="{'card-time-medium': medium}" *ngIf="medium">-->
+  <!--<p class="name">Durée : </p>-->
+  <!--<p class="var">{{getTime()}}</p>-->
+  <!--</div>-->
+  <!--<mat-card-actions>-->
+  <!--<input mat-button	 *ngIf="medium" type="button" value="Voir plus ..." class="card-medium-button">-->
+  <!--</mat-card-actions>-->
+  <!--</div>-->
 
   <!--</mat-card>-->
 
@@ -140,9 +135,9 @@
 <!--<pre>{{movie | json}}</pre>-->
 
 <!--<div class="movie type1" style="width: 8rem;">-->
-  <!--<img class="movie-img-top img-responsive" src={{path}} alt={{title}}>-->
-  <!--<div class="movie-body">-->
-    <!--<p class="movie-title">{{title}}</p>-->
-    <!--<p class="movie-text">{{description}}</p>-->
-  <!--</div>-->
+<!--<img class="movie-img-top img-responsive" src={{path}} alt={{title}}>-->
+<!--<div class="movie-body">-->
+<!--<p class="movie-title">{{title}}</p>-->
+<!--<p class="movie-text">{{description}}</p>-->
+<!--</div>-->
 <!--</div>-->

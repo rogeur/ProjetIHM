@@ -9,7 +9,6 @@ import {MovieResponse} from "../tmdb-data/Movie";
 })
 export class FilmComponent implements OnInit {
 
-
   @Input()  id: number;
 
   @Input() filmResult : MovieResponse;
@@ -20,12 +19,7 @@ export class FilmComponent implements OnInit {
 
   @Input() nameplaylist: String;
 
-
-
-
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit() {
   }
@@ -91,8 +85,8 @@ export class FilmComponent implements OnInit {
   //   return this.type;
   // }
 
-  getTime(): String{
-    return ((this.filmResult.runtime / 60) ^ 0).toString() + "h " + (this.filmResult.runtime % 60).toString() + "m";
+  getTime(): String {
+    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
 }

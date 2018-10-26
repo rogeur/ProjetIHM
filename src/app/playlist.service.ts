@@ -1,10 +1,13 @@
 import {Injectable} from '@angular/core';
 import {MovieResponse} from './tmdb-data/Movie';
 import {Subject} from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class Playlist {
+
   private readonly name: string;
   private movies: MovieResponse[];
 
@@ -12,6 +15,7 @@ export class Playlist {
     this.name = name;
     this.movies = movies;
   }
+
   getNumberOfMovies(): number {
     return this.movies.length;
   }
@@ -19,22 +23,81 @@ export class Playlist {
   addMovie(movie: MovieResponse) {
     this.movies.push(movie);
   }
+
   getName(): string {
-    console.log(this.name);
     return this.name;
   }
+
+  getFirstMovie(): MovieResponse {
+    return this.movies[0];
+  }
+
+  getMovie(index: number): MovieResponse {
+    return this.movies[index];
+  }
+  delMovie(index: number): void {
+    this.movies.splice(index, 1);
+  }
+
 }
 
 export class PlaylistService {
   playlistSubject = new Subject<Playlist[]>();
   playlists = [];
+
   emitPlaylistSubject() {
     this.playlistSubject.next(this.playlists.slice());
   }
+
   addPlaylist(name: string) {
     this.playlists.push(new Playlist(name));
     this.emitPlaylistSubject();
   }
 
+  delPlaylistByName(name: string) {
+    let i = 0;
+    for (const playlist of this.playlists) {
+      if (playlist.getName() === name) {
+        this.playlists.splice(i, 1);
+      }
+      i++;
+    }
+    this.emitPlaylistSubject();
+  }
+
+  getPlaylistByName(name: string): Playlist {
+    for (const playlist of this.playlists) {
+      if (playlist.getName() === name) {
+        return playlist;
+      }
+    }
+    console.log('Aucune playlist correspondante');
+    return null;
+  }
+
+  delPlaylistByIndex(index: number): void {
+    this.playlists.splice(index, 1);
+    this.emitPlaylistSubject();
+  }
+
+  addOnPlaylistByName(name: string, movie: MovieResponse): void {
+    let add = false;
+    for (const playlist of this.playlists) {
+      if (playlist.getName() === name) {
+        playlist.addMovie(movie);
+        add = true;
+        console.log('adding OK');
+        this.emitPlaylistSubject();
+      }
+    }
+    if (add === false) {
+      alert('pas de playlist portant ce nom!');
+    }
+  }
+
+  addOnPlaylistByIndex(indice: number, movie: MovieResponse): void {
+    this.playlists[indice].addMovie(movie);
+    this.emitPlaylistSubject();
+  }
 
 }
