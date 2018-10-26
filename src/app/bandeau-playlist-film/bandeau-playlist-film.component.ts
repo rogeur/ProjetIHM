@@ -14,7 +14,7 @@ import {MovieResponse} from '../tmdb-data/Movie';
   providers: [PlaylistService]
 })
 export class BandeauPlaylistFilmComponent implements OnInit {
-
+  
   constructor(private playlistService: PlaylistService, private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.stuff();
     console.log(this.myPlaylist);
@@ -124,6 +124,5 @@ export class BandeauPlaylistFilmComponent implements OnInit {
          .catch( err => console.error('Error getting movie:', err) ),
      1000 );
  }
-
 
 }
