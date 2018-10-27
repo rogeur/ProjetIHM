@@ -1,3 +1,4 @@
+
 <div class='playlistFilm'>
 
   <div class="left">
@@ -14,19 +15,41 @@
   </div>
 
   <div class="right">
-    <div *ngFor="let movie of moviesWithoutFirst, let i = index">
-    <div ngClass="bandeauMoviesUp" *ngIf="indexUp(i)">
-      <div ngClass="movieUp">
-        <app-film [filmResult]="movie" type="petit"></app-film>
+
+    <div class="bandeauMoviesUp">
+      <div *ngFor="let movie of moviesUp, let i = index">
+        <div class="movieUp" *ngIf="indexUp(i)">
+          <app-film [filmResult]="movie" type="petit"></app-film>
+        </div>
       </div>
     </div>
 
-    <div ngClass="bandeauMoviesBottom" *ngIf="indexBottom(i)">
-      <div ngClass="movieBottom">
-        <app-film [filmResult]="movie" type="petit"></app-film>
+    <div class="bandeauMoviesBottom">
+      <div *ngFor="let movie of moviesBottom, let i = index">
+        <div class="movieBottom" *ngIf="indexBottom(i)">
+          <app-film [filmResult]="movie" type="petit"></app-film>
+        </div>
       </div>
     </div>
-    </div>
+
   </div>
 
+</div>
+
+
+<div class="left">
+  <div class="titlePlaylist">okokok</div>
+</div>
+<div class="right">
+  <div class="bandeauMoviesUp">
+    <div class="movieUp"> okok</div>
+    <div class="movieUp"> okok2</div>
+    <div class="movieUp"> okok3</div>
+  </div>
+
+  <div clear="left" class="bandeauMoviesBottom">
+    <div class="movieBottom">bottom1</div>
+    <div class="movieBottom">bottom2</div>
+    <div class="movieBottom">bottom3</div>
+  </div>
 </div>

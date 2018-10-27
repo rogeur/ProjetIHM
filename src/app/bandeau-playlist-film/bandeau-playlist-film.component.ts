@@ -14,7 +14,7 @@ import {MovieResponse} from '../tmdb-data/Movie';
   providers: [PlaylistService]
 })
 export class BandeauPlaylistFilmComponent implements OnInit {
-  
+
   constructor(private playlistService: PlaylistService, private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.stuff();
     console.log(this.myPlaylist);
@@ -24,15 +24,26 @@ export class BandeauPlaylistFilmComponent implements OnInit {
     return this.myPlaylist.getFirstMovie();
  }
 
- get moviesWithoutFirst(): MovieResponse[] {
+ get moviesUp(): MovieResponse[] {
     var movieResponse = [];
 
-    for (let i = 1; i <= this.numberMovie && i < 7; i++) {
+    for (let i = 1; i <= this.numberMovie && i < 4; i++) {
       movieResponse[i] = this.myPlaylist.getMovie(i);
     }
 
     return movieResponse;
  }
+
+  get moviesBottom(): MovieResponse[] {
+    var movieResponse = [];
+
+    for (let i = 4; i <= this.numberMovie && i < 7; i++) {
+      movieResponse[i] = this.myPlaylist.getMovie(i);
+    }
+
+    return movieResponse;
+  }
+
 
  get numberMovie(): number {
     if (this.myPlaylist != null) {

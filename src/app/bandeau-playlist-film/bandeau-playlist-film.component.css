@@ -3,31 +3,46 @@
   font-size: xx-large;
   color: #757070;
   font-family: 'Roboto', sans-serif;
+  border:1px dotted black;
 }
 
 .left {
   background: #f2f2f2;
   float: left;
+  padding: 20px 20px 20px 20px ;
+  border:1px dotted black;
 }
 
 .right {
-
+  border:1px dotted black;
 }
 
 .bandeauMoviesUp {
   background: #ffc9ac;
-  vertical-align: top;
+  border:1px dotted black;
+  display: inline-block;
+  /*display: inline-table;*/
 }
 
 .bandeauMoviesBottom {
-  vertical-align: bottom;
+  background: black;
+  border:1px dotted black;
+  display: inline-block;
+
+  /*display: inline-table;*/
+
 }
 
 .movieUp {
+  margin: 25px 50px 25px 50px;
+  background: brown;
+  display: inline-block;
   float: left;
 }
 
 .movieBottom {
+  margin: 25px 50px 50px 50px;
+  background: blue;
+  display: inline-block;
   float: left;
 }
-
