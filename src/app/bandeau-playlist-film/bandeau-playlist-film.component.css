@@ -20,29 +20,49 @@
 .bandeauMoviesUp {
   background: #ffc9ac;
   border:1px dotted black;
-  display: inline-block;
-  /*display: inline-table;*/
+  display: flex;
+  flex-flow: row nowrap; /* Align on the same line */
+  /*justify-content: space-between;  Equal margin between the child elements */
 }
 
 .bandeauMoviesBottom {
   background: black;
   border:1px dotted black;
-  display: inline-block;
-
-  /*display: inline-table;*/
-
+  display: flex;
+  flex-flow: row nowrap; /* Align on the same line */
+  justify-content: space-between; /* Equal margin between the child elements */
 }
 
-.movieUp {
+.movieUp1 {
   margin: 25px 50px 25px 50px;
   background: brown;
-  display: inline-block;
   float: left;
 }
 
-.movieBottom {
+.movieUp2 {
+  margin: 25px 50px 25px 50px;
+  background: brown;
+}
+
+.movieUp3 {
+  margin: 25px 50px 25px 50px;
+  background: brown;
+  float: right;
+}
+
+.movieBottom1 {
   margin: 25px 50px 50px 50px;
   background: blue;
-  display: inline-block;
   float: left;
+}
+
+.movieBottom2 {
+  background: blue;
+  margin:auto;
+}
+
+.movieBottom3 {
+  margin: 25px 50px 50px 50px;
+  background: blue;
+  float: right;
 }
