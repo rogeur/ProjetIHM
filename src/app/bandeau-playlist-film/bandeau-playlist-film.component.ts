@@ -25,19 +25,30 @@ export class BandeauPlaylistFilmComponent implements OnInit {
  }
 
  get moviesUp(): MovieResponse[] {
-    var movieResponse = [];
+    let movieResponse = [];
 
     for (let i = 1; i <= this.numberMovie && i < 4; i++) {
-      movieResponse[i] = this.myPlaylist.getMovie(i);
+      movieResponse[i - 1] = this.myPlaylist.getMovie(i);
     }
 
     return movieResponse;
  }
 
   get moviesBottom(): MovieResponse[] {
-    var movieResponse = [];
+    let movieResponse = [];
 
     for (let i = 4; i <= this.numberMovie && i < 7; i++) {
+      let j = i - 4;
+      movieResponse[j] = this.myPlaylist.getMovie(i);
+    }
+
+    return movieResponse;
+  }
+
+  get movies(): MovieResponse[] {
+    let movieResponse = [];
+
+    for (let i = 0; i <= this.numberMovie && i < 7; i++) {
       movieResponse[i] = this.myPlaylist.getMovie(i);
     }
 
@@ -61,8 +72,12 @@ export class BandeauPlaylistFilmComponent implements OnInit {
     return [1, 2, 3].includes(id);
   }
 
-   indexBottom(id: number) {
+  indexBottom(id: number) {
     return [4, 5, 6].includes(id);
+  }
+
+  indexFirst(id: number) {
+    return id == 0;
   }
 
   ngOnInit() {

@@ -18,7 +18,7 @@
 
     <div class="bandeauMoviesUp">
       <div *ngFor="let movie of moviesUp, let i = index">
-        <div class="movieUp2" *ngIf="indexUp(i)">
+        <div class="movie">
           <app-film [filmResult]="movie" type="petit"></app-film>
         </div>
       </div>
@@ -26,7 +26,7 @@
 
     <div clear="left" class="bandeauMoviesBottom">
       <div *ngFor="let movie of moviesBottom, let i = index">
-        <div class="movieBottom2" *ngIf="indexBottom(i)">
+        <div class="movie">
           <app-film [filmResult]="movie" type="petit"></app-film>
         </div>
       </div>
@@ -34,22 +34,4 @@
 
   </div>
 
-</div>
-
-
-<div class="left">
-  <div class="titlePlaylist">okokok</div>
-</div>
-<div class="right">
-  <div class="bandeauMoviesUp">
-    <div class="movieUp1"> okok</div>
-    <div class="movieUp2"> okok2</div>
-    <div class="movieUp3"> okok3</div>
-  </div>
-
-  <div clear="left" class="bandeauMoviesBottom">
-    <div class="movieBottom1">bottom1</div>
-    <div class="movieBottom2">bottom2</div>
-    <div class="movieBottom3">bottom3</div>
-  </div>
 </div>

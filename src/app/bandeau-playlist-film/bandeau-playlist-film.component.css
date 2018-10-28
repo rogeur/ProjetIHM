@@ -22,7 +22,7 @@
   border:1px dotted black;
   display: flex;
   flex-flow: row nowrap; /* Align on the same line */
-  /*justify-content: space-between;  Equal margin between the child elements */
+  justify-content: space-evenly; /* Equal margin between the child elements */
 }
 
 .bandeauMoviesBottom {
@@ -30,7 +30,7 @@
   border:1px dotted black;
   display: flex;
   flex-flow: row nowrap; /* Align on the same line */
-  justify-content: space-between; /* Equal margin between the child elements */
+  justify-content: space-evenly; /* Equal margin between the child elements */
 }
 
 .movieUp1 {
@@ -65,4 +65,9 @@
   margin: 25px 50px 50px 50px;
   background: blue;
   float: right;
+}
+
+.movie {
+  margin: 25px 50px 25px 50px;
+  background: brown;
 }
