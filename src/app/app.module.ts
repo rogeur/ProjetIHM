@@ -34,6 +34,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     FilmComponent,
+
     AppComponent,
     HeaderMenuComponent,
     PlayslistMenuComponent,
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     AddPlaylistComponent,
     RemovePlaylistComponent,
     HandleFilmComponent,
+    BandeauPlaylistFilmComponent,
     LeoCardComponent,
     HandleMoviesComponent,
   ],

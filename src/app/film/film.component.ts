@@ -9,9 +9,9 @@ import {MovieResponse} from "../tmdb-data/Movie";
 })
 export class FilmComponent implements OnInit {
 
-  private _movie: MovieResponse;
-
   @Input()  id: number;
+
+  @Input() filmResult : MovieResponse;
 
   @Input() type: String;
 
@@ -19,17 +19,7 @@ export class FilmComponent implements OnInit {
 
   @Input() nameplaylist: String;
 
-
-
-
-  constructor(private tmdb: TmdbService) {
-    setTimeout( () =>
-        tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
-          .getMovie(this.id)
-          .then( (m: MovieResponse) => console.log('Movie 12:', this._movie = m) )
-          .catch( err => console.error('Error getting movie:', err) ),
-      1000 );
-  }
+  constructor() {}
 
   ngOnInit() {
   }
@@ -60,7 +50,7 @@ export class FilmComponent implements OnInit {
 
 
   get movie(): MovieResponse {
-    return this._movie;
+    return this.filmResult;
   }
 
   getPath(path: string): string {
@@ -68,35 +58,35 @@ export class FilmComponent implements OnInit {
   }
 
   getTitle(): String {
-    return this._movie.title;
+    return this.filmResult.title;
   }
 
   getSummary(): String {
-    return this._movie.overview;
+    return this.filmResult.overview;
   }
 
   getStatus(): String {
-    return this._movie.status;
+    return this.filmResult.status;
   }
 
   getBudget(): number {
-    return this._movie.budget;
+    return this.filmResult.budget;
   }
 
   getRecette(): number {
-    return this._movie.revenue;
+    return this.filmResult.revenue;
   }
 
   getOriginalTitle(): String {
-    return  this._movie.original_title;
+    return  this.filmResult.original_title;
   }
 
   // get type(): String{
   //   return this.type;
   // }
 
-  getTime(): String{
-    return ( (this._movie.runtime / 60) ^ 0).toString() + 'h ' + (this._movie.runtime % 60).toString() + 'm';
+  getTime(): String {
+    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
 }
