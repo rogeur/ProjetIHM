@@ -1,7 +1,0 @@
-<div *ngIf="movie.backdrop_path" class="card type1" style="width: 8rem;">
-  <img style="height: 10rem;" class="card-img-top img-responsive" [src]="getPath(movie.poster_path)" [alt]="movie.original_title">
-  <div class="card-body">
-    <p class="card-title">{{prettyTitle(movie.original_title)}}</p>
-    <p class="card-text">{{pretty(movie.overview)}}</p>
-  </div>
-</div>

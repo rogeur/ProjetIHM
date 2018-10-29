@@ -22,8 +22,6 @@ import {FormsModule} from '@angular/forms';
 import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
 import {PlaylistService} from './playlist.service';
 import { HandleFilmComponent } from './handle-film/handle-film.component';
-import { LeoCardComponent } from './leo-card/leo-card.component';
-import { HandleMoviesComponent } from './handle-movies/handle-movies.component';
 import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {BandeauAdvancedScearchComponent} from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
@@ -45,8 +43,6 @@ const appRoutes: Routes = [
     RemovePlaylistComponent,
     HandleFilmComponent,
     BandeauPlaylistFilmComponent,
-    LeoCardComponent,
-    HandleMoviesComponent,
     BandeauAdvancedScearchComponent,
   ],
   imports: [
