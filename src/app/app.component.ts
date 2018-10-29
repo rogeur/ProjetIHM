@@ -6,7 +6,7 @@ import {auth, User} from 'firebase';
 import {Observable} from 'rxjs';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {filter} from 'rxjs/operators';
-import {Playlist} from './playlist.service';
+import {Playlist, PlaylistService} from './playlist.service';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +17,8 @@ export class AppComponent {
   private _movie: MovieResponse;
   private _user: User;
   private dbData: Observable<any>;
-  public playlists: Playlist[];
 
-  constructor(private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
+  constructor(private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase, private playlistService: PlaylistService) {
     this.anAuth.user.pipe(filter( u => !!u )).subscribe( u => {
       this._user = u;
       const listsPath = `lists/${u.uid}`;
@@ -33,6 +32,7 @@ export class AppComponent {
           .then( (m: MovieResponse) => console.log('Movie 13:', this._movie = m) )
           .catch( err => console.error('Error getting movie:', err) ),
       1000 );
+    this.stuff();
   }
 
   get movie(): MovieResponse {
@@ -59,5 +59,70 @@ export class AppComponent {
   get lists(): Observable<any> {
     return this.dbData;
   }
+
+  get playlist(): Playlist {
+    return this.playlistService.getPlaylistByName('benio');
+  }
+
+  stuff(): void {
+    this.playlistService.addPlaylist('benio');
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(12)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(14)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(15)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(16)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(17)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(18)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(19)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+
+    setTimeout( () =>
+        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
+          .getMovie(20)
+          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )
+          .catch( err => console.error('Error getting movie:', err) ),
+      1000 );
+  }
+
 }
 // /yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg

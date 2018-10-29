@@ -4,7 +4,6 @@ import {MovieResult} from '../tmdb-data/searchMovie';
 import {TmdbService} from '../tmdb.service';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
-import {filter} from 'rxjs/operators';
 import {MovieResponse} from '../tmdb-data/Movie';
 
 @Component({
@@ -15,20 +14,25 @@ import {MovieResponse} from '../tmdb-data/Movie';
 })
 export class BandeauPlaylistFilmComponent implements OnInit {
 
+  @Input() playlist: Playlist;
+
   constructor(private playlistService: PlaylistService, private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
-    this.stuff();
-    console.log(this.myPlaylist);
+    // this.stuff();
+    console.log(this.playlist);
   }
 
- get firstMovie(): MovieResult {
-    return this.myPlaylist.getFirstMovie();
+  ngOnInit() {
+  }
+
+  get firstMovie(): MovieResult {
+    return this.playlist.getFirstMovie();
  }
 
  get moviesUp(): MovieResponse[] {
     let movieResponse = [];
 
     for (let i = 1; i <= this.numberMovie && i < 4; i++) {
-      movieResponse[i - 1] = this.myPlaylist.getMovie(i);
+      movieResponse[i - 1] = this.playlist.getMovie(i);
     }
 
     return movieResponse;
@@ -39,26 +43,15 @@ export class BandeauPlaylistFilmComponent implements OnInit {
 
     for (let i = 4; i <= this.numberMovie && i < 7; i++) {
       let j = i - 4;
-      movieResponse[j] = this.myPlaylist.getMovie(i);
+      movieResponse[j] = this.playlist.getMovie(i);
     }
 
     return movieResponse;
   }
-
-  get movies(): MovieResponse[] {
-    let movieResponse = [];
-
-    for (let i = 0; i <= this.numberMovie && i < 7; i++) {
-      movieResponse[i] = this.myPlaylist.getMovie(i);
-    }
-
-    return movieResponse;
-  }
-
 
  get numberMovie(): number {
-    if (this.myPlaylist != null) {
-      return this.myPlaylist.getNumberOfMovies();
+    if (this.playlist != null) {
+      return this.playlist.getNumberOfMovies();
     } return 0;
  }
 
@@ -66,35 +59,18 @@ export class BandeauPlaylistFilmComponent implements OnInit {
     return this.playlistService.getPlaylistByName('benio');
  }
 
-  @Input() playlist: Playlist;
-
-  indexUp(id: number) {
-    return [1, 2, 3].includes(id);
-  }
-
-  indexBottom(id: number) {
-    return [4, 5, 6].includes(id);
-  }
-
-  indexFirst(id: number) {
-    return id == 0;
-  }
-
-  ngOnInit() {
-  }
-
  movie(id: number): MovieResponse {
-    return this.playlistService.getPlaylistByName('benio').getMovie(id);
+    return this.playlist.getMovie(id);
  }
 
  get titlePlaylist(): String {
-    return this.myPlaylist.getName();
+    return this.playlist.getName();
  }
 
  stuff(): void {
    this.playlistService.addPlaylist('benio');
 
-   setTimeout( () =>
+  setTimeout( () =>
        this.tmdb.init('76a1a345942fd69cde4370065fed299e') // Clef de TMDB
          .getMovie(12)
          .then( (m: MovieResponse) => this.playlistService.addOnPlaylistByName('benio', m) )

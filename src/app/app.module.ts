@@ -62,6 +62,7 @@ import {  MatAutocompleteModule,
   MatTooltipModule,
   MatTreeModule, } from '@angular/material/';
 import { BandeauPlaylistFilmComponent } from './bandeau-playlist-film/bandeau-playlist-film.component';
+import {PlaylistService} from './playlist.service';
 
 @NgModule({
   declarations: [
@@ -125,7 +126,7 @@ import { BandeauPlaylistFilmComponent } from './bandeau-playlist-film/bandeau-pl
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [TmdbService],
+  providers: [TmdbService, PlaylistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
