@@ -25,6 +25,8 @@ import { HandleFilmComponent } from './handle-film/handle-film.component';
 import { LeoCardComponent } from './leo-card/leo-card.component';
 import { HandleMoviesComponent } from './handle-movies/handle-movies.component';
 import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
+import {MatSliderModule} from '@angular/material/slider';
+import {BandeauAdvancedScearchComponent} from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 
 const appRoutes: Routes = [
   { path: 'playlistMenu', component: PlayslistMenuComponent},
@@ -35,7 +37,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     FilmComponent,
-
     AppComponent,
     HeaderMenuComponent,
     PlayslistMenuComponent,
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     BandeauPlaylistFilmComponent,
     LeoCardComponent,
     HandleMoviesComponent,
+    BandeauAdvancedScearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,9 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     RouterModule.forRoot(appRoutes),
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatSliderModule
+
   ],
   providers: [
     TmdbService,
