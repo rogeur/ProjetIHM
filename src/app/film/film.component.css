@@ -36,6 +36,18 @@
 
 /*}*/
 
+
+/*Partie general pour faire le petit les 2 point*/
+
+.petit-medium-general{
+  width: 12em;
+}
+
+.petit-medium-general:hover {
+  /*background-color: black;*/
+}
+
+
 /*!*part medium definition*!*/
 
 .time-medium {
@@ -115,7 +127,7 @@
 
 .petit {
   width: 10em;
-  margin: 10px 10px 10px 10px;
+  /*margin: 10px 10px 10px 10px;*/
   -webkit-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
