@@ -1,4 +1,4 @@
-<section *ngIf="movie && (petit || medium)" [ngClass]="{'petit-general':petit, 'medium-general':medium}">
+<section *ngIf="movie && (petit || medium)" [ngClass]="{'petit-general':petit, 'medium-general':medium, 'petit-playList':petit && isPlayList}">
 
   <section *ngIf="petit || medium" [ngClass]="{'petit': petit,'medium': medium}">
     <img [ngClass]="{'img-petit':petit,'img-medium': medium}" [src]="getPath(movie.poster_path)" />
@@ -14,7 +14,10 @@
     </div>
   </section>
 
-    <img [src]="buttonThreeVertical" ngClass="img-three-points" onclick="displayModalClick"/>
+    <img *ngIf="!isPlayList" [src]="buttonThreeVertical" ngClass="img-three-points" onclick="displayModalClick"/>
+
+    <img *ngIf="isPlayList" src='/assets/no-entry.svg' ngClass="img-forbidden"/>
+
 
 </section>
 
@@ -105,7 +108,7 @@
 </section>
 
 
-<!-- <app-handle-film *ngIf="displayModalR" movie="movie"></app-handle-film> -->
+<!--<app-handle-film *ngIf="displayModalR" movie="movie"></app-handle-film>-->
 
 
 

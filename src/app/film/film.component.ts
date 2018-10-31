@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MovieResponse} from '../tmdb-data/Movie';
 
 @Component({
@@ -14,16 +14,22 @@ export class FilmComponent implements OnInit {
   @Input() filmResult: MovieResponse;
 
   @Input() type: String;
-  
-  private displayModal = false;
 
+  @Input() playList: boolean;
+
+  private displayModal = false;
 
   constructor() {
   }
 
   ngOnInit() {
-
   }
+
+  get isPlayList(): boolean {
+    console.log(this.playList);
+    return this.playList === undefined ? false : true;
+  }
+
 
   get big(){
     return this.type == 'big';
@@ -77,14 +83,14 @@ export class FilmComponent implements OnInit {
     return '/assets/button-of-three-vertical-squares.svg';
   }
 
-  getTime(): String{
+  getTime(): String {
     return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
   get displayModalR(): boolean {
     return this.displayModal;
   }
-  
+
   displayModalClick() {
     this.displayModal ? this.displayModal = false : this.displayModal = true;
   }
