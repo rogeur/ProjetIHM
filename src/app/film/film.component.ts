@@ -26,7 +26,6 @@ export class FilmComponent implements OnInit {
   }
 
   get isPlayList(): boolean {
-    console.log(this.playList);
     return this.playList === undefined ? false : true;
   }
 
