@@ -11,41 +11,39 @@ export class FilmComponent implements OnInit {
 
   @Input()  id: number;
 
-  @Input() filmResult : MovieResponse;
+  @Input() filmResult: MovieResponse;
 
   @Input() type: String;
 
   @Input() nbFilm: number;
 
   @Input() nameplaylist: String;
-
   constructor() {}
 
   ngOnInit() {
   }
-
-  get big(){
-    return this.type== 'big';
+  get big() {
+    return this.type === 'big';
   }
 
   get petit() {
-    return this.type == 'petit';
+    return this.type === 'petit';
   }
 
   get little(){
-    return this.type == 'little';
+    return this.type === 'little';
   }
 
   get medium(){
     return this.type == 'medium';
   }
 
-   get playlist(){
+   get playlist() {
     return this.type == 'playlist';
    }
 
-   get toto(){
-    return this.type == 'toto';
+   get toto() {
+    return this.type === 'toto';
    }
 
 
@@ -86,7 +84,9 @@ export class FilmComponent implements OnInit {
   // }
 
   getTime(): String {
-    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
+    // return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
+    console.log(this.filmResult.runtime);
+    return '';
   }
 
 }
