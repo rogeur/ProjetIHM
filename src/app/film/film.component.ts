@@ -16,8 +16,7 @@ export class FilmComponent implements OnInit {
 
   @Input() type: String;
 
-
-
+  displayModal: boolean = false;
 
   constructor() {
 
