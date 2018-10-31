@@ -19,7 +19,7 @@
     <div class="bandeau">
       <div *ngFor="let movie of moviesUp">
         <div class="movie">
-          <app-film [filmResult]="movie" type="petit"></app-film>
+          <app-film [filmResult]="movie" type="petit" [playList]="true"></app-film>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
     <div class="bandeau">
       <div *ngFor="let movie of moviesBottom">
         <div class="movie">
-          <app-film [filmResult]="movie" type="petit"></app-film>
+          <app-film [filmResult]="movie" type="petit" [playList]="true"></app-film>
         </div>
       </div>
     </div>
