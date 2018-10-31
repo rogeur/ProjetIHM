@@ -15,8 +15,8 @@
       <input *ngIf="medium" type="button" value="Voir plus ..." class="medium-button">
     </div>
   </section>
-
-    <img *ngIf="!isPlayList" [src]="buttonThreeVertical" ngClass="img-three-points" onclick="displayModalClick"/>
+    <!-- reste à placer le modal en position relative au bon endroit -->
+    <a (click)="displayModalClick()"><img *ngIf="!isPlayList" [src]="buttonThreeVertical" ngClass="img-three-points"/></a>
 
     <img *ngIf="isPlayList" src='/assets/no-entry.svg' ngClass="img-forbidden"/>
 
