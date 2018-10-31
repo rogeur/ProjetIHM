@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import {TmdbService} from './tmdb.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -10,28 +10,14 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { FilmComponent } from './film/film.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material';
-import { HeaderMenuComponent } from './header-menu/header-menu.component';
-import { PlayslistMenuComponent } from './playslist-menu/playslist-menu.component';
-import { Routes } from '@angular/router';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
-import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
-import { HandleFilmComponent } from './handle-film/handle-film.component';
-
-const appRoutes: Routes = [
-  { path: '', component: HeaderMenuComponent },
-  { path: 'playlistMenu', component: PlayslistMenuComponent},
-  { path: 'home', component: HeaderMenuComponent}
-];
 import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
-import { BandeauAdvancedScearchComponent } from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
-
+import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import {  MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,
   MatButtonModule,
   MatButtonToggleModule,
+  MatCardModule,
   MatCheckboxModule,
   MatChipsModule,
   MatDatepickerModule,
@@ -61,24 +47,15 @@ import {  MatAutocompleteModule,
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule, } from '@angular/material/';
-import { BandeauPlaylistFilmComponent } from './bandeau-playlist-film/bandeau-playlist-film.component';
-import {PlaylistService} from './playlist.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmComponent,
     BandeauResultSearchComponent,
-    BandeauAdvancedScearchComponent,
+    AdvancedSearchComponent,
 
-    AppComponent,
-    HeaderMenuComponent,
-    PlayslistMenuComponent,
-    PlaylistComponent,
-    AddPlaylistComponent,
-    RemovePlaylistComponent,
-    HandleFilmComponent,
-    BandeauPlaylistFilmComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +64,6 @@ import {PlaylistService} from './playlist.service';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,
-    MatCardModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -123,10 +99,8 @@ import {PlaylistService} from './playlist.service';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    FormsModule,
-    ReactiveFormsModule,
   ],
-  providers: [TmdbService, PlaylistService],
+  providers: [TmdbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
