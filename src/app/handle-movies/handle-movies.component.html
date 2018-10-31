@@ -3,5 +3,6 @@
 -->
 <div class="conteneur">
   <h1 *ngIf="movies.length > 0">Résultat de la recherche</h1>
+  <div class="espace"></div>
   <app-film class="carte" [filmResult]="movie" type="medium" *ngFor="let movie of movies"></app-film>
 </div>
