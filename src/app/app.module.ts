@@ -20,6 +20,8 @@ import {FormsModule} from '@angular/forms';
 import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
 import {PlaylistService} from './playlist.service';
 import { HandleFilmComponent } from './handle-film/handle-film.component';
+import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
+import {BandeauAdvancedScearchComponent} from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 
 const appRoutes: Routes = [
   { path: '', component: HeaderMenuComponent },
@@ -79,6 +81,8 @@ import {  MatAutocompleteModule,
     AddPlaylistComponent,
     RemovePlaylistComponent,
     HandleFilmComponent,
+    BandeauPlaylistFilmComponent,
+    BandeauAdvancedScearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,6 +97,12 @@ import {  MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
+    AngularFireDatabaseModule,
+    RouterModule.forRoot(appRoutes),
+    MatSelectModule,
+    FormsModule,
+    MatSliderModule,
+
     MatCheckboxModule,
     MatChipsModule,
     MatDatepickerModule,
@@ -123,7 +133,10 @@ import {  MatAutocompleteModule,
     MatTooltipModule,
     MatTreeModule,
   ],
-  providers: [TmdbService],
+  providers: [
+    TmdbService,
+    PlaylistService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,7 +12,7 @@ export class FilmComponent implements OnInit {
 
   @Input() id: number;
 
-  @Input() filmResult: MovieResponse;
+  @Input() filmResult : MovieResponse;
 
   @Input() type: String;
 
@@ -77,12 +77,14 @@ export class FilmComponent implements OnInit {
     return '/assets/button-of-three-vertical-squares.svg';
   }
 
-  getTime(): String{
+  getTime(): String {
     return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
   get displayModalR(): boolean {
     return this.displayModal;
+  getTime(): String {
+    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
   displayModalClick() {
