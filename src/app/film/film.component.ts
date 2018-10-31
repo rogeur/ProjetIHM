@@ -31,10 +31,6 @@ export class FilmComponent implements OnInit {
     return this.type == 'petit';
   }
 
-  get little(){
-    return this.type == 'little';
-  }
-
   get medium(){
     return this.type == 'medium';
   }
@@ -42,11 +38,6 @@ export class FilmComponent implements OnInit {
    get playlist(){
     return this.type == 'playlist';
    }
-
-   get toto(){
-    return this.type == 'toto';
-   }
-
 
   get movie(): MovieResponse {
     return this.filmResult;
@@ -84,43 +75,9 @@ export class FilmComponent implements OnInit {
     return '/assets/button-of-three-vertical-squares.svg';
   }
 
-  // get type(): String{
-  //   return this.type;
-  // }
-
   getTime(): String{
     return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
 }
-
-//
-// import { Component, OnInit } from '@angular/core';
-//
-// @Component({
-//   selector: 'app-small-card',
-//   templateUrl: './small-card.component.html',
-//   styleUrls: ['./small-card.component.css']
-// })
-// export class SmallCardComponent implements OnInit {
-//   date: Date;
-//   title: string;
-//   path: string;
-//   description: string;
-//   constructor() {
-//     this.title = 'Kill Bill';
-//     this.path = 'assets/killBill.jpg';
-//     this.description = 'Au cours d\'une cérémonie de mariage en plein désert, ' +
-//       'un commando fait irruption dans la chapelle et tire sur les convives.' +
-//       ' Laissée pour morte, la Mariée enceinte retrouve ses esprits après un coma de quatre ans.';
-//   }
-//
-//   ngOnInit() {
-//     this.pretty();
-//   }
-//   pretty () {
-//     this.description = this.description.slice(0, 75) + ' ...';
-//   }
-//
-// }
 
