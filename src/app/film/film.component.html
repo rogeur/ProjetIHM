@@ -16,7 +16,8 @@
     </div>
   </section>
 
-    <img *ngIf="!isPlayList" [src]="buttonThreeVertical" ngClass="img-three-points" onclick="displayModalClick"/>
+    <img *ngIf="!isPlayList" [src]="buttonThreeVertical" ngClass="img-three-points" ng-click="displayModalClick()"/>
+
 
     <img *ngIf="isPlayList" src='/assets/no-entry.svg' ngClass="img-forbidden"/>
 
