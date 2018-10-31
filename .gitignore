@@ -39,6 +39,5 @@ testem.log
 Thumbs.db
 
 # component inutiles
-./src/app/leo-card
-./src/app/handle-film
+/src/app/leo-card
 

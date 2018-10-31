@@ -65,6 +65,7 @@ import {  MatAutocompleteModule,
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule, } from '@angular/material/';
+import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
 
 
 @NgModule({
@@ -73,7 +74,7 @@ import {  MatAutocompleteModule,
     FilmComponent,
     BandeauResultSearchComponent,
     AdvancedSearchComponent,
-
+    HandleMoviesComponent,
     AppComponent,
     HeaderMenuComponent,
     PlayslistMenuComponent,
