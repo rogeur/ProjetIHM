@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {MovieResponse} from '../tmdb-data/Movie';
 
 @Component({
@@ -16,13 +16,11 @@ export class FilmComponent implements OnInit {
   @Input() type: String;
 
 
-
-
   constructor() {
-
   }
 
   ngOnInit() {
+
   }
 
   get big(){
@@ -82,12 +80,16 @@ export class FilmComponent implements OnInit {
     return  this.filmResult.original_title;
   }
 
+  get buttonThreeVertical(): string {
+    return '/assets/button-of-three-vertical-squares.svg';
+  }
+
   // get type(): String{
   //   return this.type;
   // }
 
   getTime(): String{
-    return ((this.filmResult.runtime / 60) ^ 0).toString() + "h " + (this.filmResult.runtime % 60).toString() + "m";
+    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
 }

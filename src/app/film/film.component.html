@@ -12,7 +12,7 @@
   <!--</div>-->
 <!--</section>-->
 
-<section *ngIf="movie && (petit || medium)" ngClass="petit-medium-general">
+<section *ngIf="movie && (petit || medium)" [ngClass]="{'petit-general':petit, 'medium-general':medium}">
 
   <!--partie pour les film petit et les moyen-->
   <!--ne pas oublier de rajouter le bouton voir plus-->
@@ -29,6 +29,10 @@
       <input *ngIf="medium" type="button" value="Voir plus ..." class="medium-button">
     </div>
   </section>
+
+  <!--<div ngClass="div-for-three-button">-->
+    <img [src]="buttonThreeVertical" ngClass="img-three-points"/>
+  <!--</div>-->
 
 </section>
 

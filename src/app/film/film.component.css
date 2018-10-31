@@ -39,13 +39,35 @@
 
 /*Partie general pour faire le petit les 2 point*/
 
-.petit-medium-general{
+.petit-general {
   width: 12em;
+  display: -webkit-inline-box;
 }
 
-.petit-medium-general:hover {
+.petit-general:hover .img-three-points {
   /*background-color: black;*/
+  visibility: visible;
+
 }
+
+.img-three-points {
+  /*display: none;*/
+  width: 2em;
+  height: 2em;
+  visibility: hidden;
+}
+
+.medium-general {
+  width: 42em;
+  display: flex;
+}
+
+.medium-general:hover .img-three-points {
+  /*background-color: black;*/
+  visibility: visible;
+
+}
+
 
 
 /*!*part medium definition*!*/
@@ -59,7 +81,7 @@
 .medium {
   width: 40rem;
   /*display: block;*/
-  margin: 10px 10px 10px 10px;
+  /*margin: 10px 10px 10px 10px;*/
   -webkit-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
