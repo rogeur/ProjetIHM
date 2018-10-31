@@ -1,7 +1,5 @@
 <section *ngIf="movie && (petit || medium)" [ngClass]="{'petit-general':petit, 'medium-general':medium}">
 
-<section *ngIf="movie" >
-
   <!--partie pour les film petit et les moyen-->
   <!--ne pas oublier de rajouter le bouton voir plus-->
   <section *ngIf="petit || medium" [ngClass]="{'petit': petit,'medium': medium}">
@@ -69,16 +67,16 @@
 
      <div ngClass="NB-film">
        <!--<mat-icon></mat-icon>-->
-       <p>{{nameplaylist}} ({{nbFilm}} films)</p>
+       <!--<p>{{// nameplaylist}} ({{nbFilm}} films)</p>-->
      </div>
 
-      <div class="img-detail-playlist">
-        <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
-        <div class="detail-playlist">
-          <div [ngClass]="'Titre-playlist'">
-            <p class="name"> Titre Original : </p>
-            <p clasa="var">{{getOriginalTitle()}}</p>
-          </div>
+      <!--< class="img-detail-playlist">-->
+        <!--<img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />-->
+        <!--<div class="detail-playlist">-->
+          <!--<div [ngClass]="'Titre-playlist'">-->
+            <!--<p class="name"> Titre Original : </p>-->
+            <!--<p clasa="var">{{getOriginalTitle()}}</p>-->
+          <!--</div>-->
 
     <div class="img-detail-playlist">
       <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
@@ -117,25 +115,6 @@
 
 
   </section>
-
-
-  <!--<mat-card *ngIf="little || medium" [ngClass]="{'card-little' : little, 'card-medium': medium}" >-->
-    <!--<img mat-card-image [ngClass]="{'card-img-little' : little, 'card-img-medium': medium}" [src]="getPath(movie.poster_path)"/>-->
-
-    <!--<div [ngClass]="{'card-body-medium': medium}">-->
-      <!--<mat-card-title [ngClass]="{'card-title-little' : little, 'card-tittle-medium': medium}">{{getTitle()}}</mat-card-title>-->
-      <!--<mat-card-content [ngClass]="{'card-content-little' : little, 'card-content-medium': medium}">{{getSummary()}}</mat-card-content>-->
-      <!--<div [ngClass]="{'card-time-medium': medium}" *ngIf="medium">-->
-        <!--<p class="name">Durée : </p>-->
-        <!--<p class="var">{{getTime()}}</p>-->
-      <!--</div>-->
-      <!--<mat-card-actions>-->
-        <!--<input mat-button	 *ngIf="medium" type="button" value="Voir plus ..." class="card-medium-button">-->
-      <!--</mat-card-actions>-->
-    <!--</div>-->
-
-  <!--</mat-card>-->
-
 
 </section>
 

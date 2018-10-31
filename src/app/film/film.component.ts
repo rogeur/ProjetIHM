@@ -21,6 +21,7 @@ export class FilmComponent implements OnInit {
 
   }
 
+
   ngOnInit() {
   }
 
