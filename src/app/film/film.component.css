@@ -206,6 +206,10 @@
   text-align: center;
   float: bottom;
   float: right;
+  background-color: rgb(209, 33, 97);
+  color: white;
+  border: none;
+  margin: 10px 10px 10px 10px;
 
 }
 
@@ -275,7 +279,9 @@
   height: 3rem;
   text-align: center;
   float: right;
-
+  background-color: rgb(209, 33, 97);
+  color: white;
+  border: none;
 }
 
 
