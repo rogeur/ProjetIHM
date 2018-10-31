@@ -12,7 +12,6 @@
 }
 
 .img-three-points {
-  /*display: none;*/
   width: 2em;
   height: 2em;
   visibility: hidden;
@@ -27,6 +26,20 @@
   visibility: visible;
 }
 
+
+.img-forbidden{
+  position: absolute;
+  width: 2em;
+  padding-right: 1em;
+  right: -3.7em;
+}
+
+.petit-playList{
+  position: relative;
+  width : 10%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
 
 
 /*!*part medium definition*!*/
