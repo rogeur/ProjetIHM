@@ -14,6 +14,8 @@ export class FilmComponent implements OnInit {
   @Input() filmResult: MovieResponse;
 
   @Input() type: String;
+  
+  private displayModal = false;
 
 
   constructor() {
@@ -77,6 +79,14 @@ export class FilmComponent implements OnInit {
 
   getTime(): String{
     return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
+  }
+
+  get displayModalR(): boolean {
+    return this.displayModal;
+  }
+  
+  displayModalClick() {
+    this.displayModal ? this.displayModal = false : this.displayModal = true;
   }
 
 }

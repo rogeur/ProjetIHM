@@ -14,7 +14,7 @@
     </div>
   </section>
 
-    <img [src]="buttonThreeVertical" ngClass="img-three-points"/>
+    <img [src]="buttonThreeVertical" ngClass="img-three-points" onclick="displayModalClick"/>
 
 </section>
 
@@ -49,6 +49,9 @@
       <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
       <p class="name">Synopsis</p>
       <p [ngClass]="{'text-playlist': big}">{{getSummary()}}</p>
+      <img src='/assets/facebook.svg' style="width: 1em"/>
+      <img src='/assets/twitter.svg'style="width: 1em"/>
+      <img src='/assets/instagram.svg'style="width: 1.2em"/>
       <input type="button" class="btn-big" value="Ajouter à une playlist">
     </div>
 
@@ -102,7 +105,7 @@
 </section>
 
 
-
+<app-handle-film *ngIf="displayModalR" movie="movie"></app-handle-film>
 
 
 
