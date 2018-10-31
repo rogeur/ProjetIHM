@@ -16,7 +16,10 @@ export class BandeauPlaylistFilmComponent implements OnInit {
 
   @Input() playlist: Playlist;
 
-  constructor(private playlistService: PlaylistService, private tmdb: TmdbService, public anAuth: AngularFireAuth, private db: AngularFireDatabase) {
+  constructor(private playlistService: PlaylistService,
+              private tmdb: TmdbService,
+              public anAuth: AngularFireAuth,
+              private db: AngularFireDatabase) {
     // this.stuff();
     console.log(this.playlist);
   }
@@ -29,7 +32,7 @@ export class BandeauPlaylistFilmComponent implements OnInit {
  }
 
  get moviesUp(): MovieResponse[] {
-    let movieResponse = [];
+    const movieResponse = [];
 
     for (let i = 1; i <= this.numberMovie && i < 4; i++) {
       movieResponse[i - 1] = this.playlist.getMovie(i);
@@ -39,10 +42,10 @@ export class BandeauPlaylistFilmComponent implements OnInit {
  }
 
   get moviesBottom(): MovieResponse[] {
-    let movieResponse = [];
+    const movieResponse = [];
 
     for (let i = 4; i <= this.numberMovie && i < 7; i++) {
-      let j = i - 4;
+      const j = i - 4;
       movieResponse[j] = this.playlist.getMovie(i);
     }
 

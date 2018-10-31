@@ -8,7 +8,7 @@
 .playlistFilm {
   display: flex;
   flex-flow: row wrap; /* Align on the same line */
-  justify-content: space-around; /* Equal margin between the child elements */
+  justify-content: space-between; /* Equal margin between the child elements */
 }
 
 .left {
@@ -17,15 +17,19 @@
   flex-grow: 0;
 }
 
+.affiche-playlist {
+  width: 30rem;
+}
+
 .right {
   flex-grow: 1;
+  align-self: flex-end;
 }
 
 .bandeau {
   display: flex;
   flex-flow: row wrap; /* Align on the same line */
   justify-content: space-evenly; /* Equal margin between the child elements */
-
 }
 
 .movie {
