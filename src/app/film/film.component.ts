@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TmdbService} from "../tmdb.service";
-import {MovieResponse} from "../tmdb-data/Movie";
+import {MovieResponse} from '../tmdb-data/Movie';
 
 @Component({
   selector: 'app-film',
@@ -12,7 +11,7 @@ export class FilmComponent implements OnInit {
 
   @Input() id: number;
 
-  @Input() filmResult : MovieResponse;
+  @Input() filmResult: MovieResponse;
 
   @Input() type: String;
 
@@ -83,8 +82,6 @@ export class FilmComponent implements OnInit {
 
   get displayModalR(): boolean {
     return this.displayModal;
-  getTime(): String {
-    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
   displayModalClick() {
