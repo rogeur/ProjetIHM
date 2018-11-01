@@ -49,7 +49,15 @@
       </div>
 
     <div [ngClass]="{'body-big': big}">
-      <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
+      <div style="display: -webkit-inline-box;">
+        <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
+        <div ngClass="star-film" >
+          <img src="/assets/star.svg" />
+          <img src="/assets/star.svg" />
+        </div>
+      </div>
+
+
       <p class="name">Synopsis</p>
       <p [ngClass]="{'text-playlist': big}">{{getSummary()}}</p>
       <img src='/assets/facebook.svg' style="width: 1em"/>
