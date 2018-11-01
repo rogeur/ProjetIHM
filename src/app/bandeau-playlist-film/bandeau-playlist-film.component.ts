@@ -45,7 +45,7 @@ export class BandeauPlaylistFilmComponent implements OnInit {
     const movieResponse = [];
 
     for (let i = 4; i <= this.numberMovie && i < 7; i++) {
-      let j = i - 4;
+      const j = i - 4;
       movieResponse[j] = this.playlist.getMovie(i);
     }
 

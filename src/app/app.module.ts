@@ -65,6 +65,8 @@ import {  MatAutocompleteModule,
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule, } from '@angular/material/';
+import {PlaylistService} from './playlist.service';
+import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
 import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
 
 
@@ -74,6 +76,7 @@ import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
     FilmComponent,
     BandeauResultSearchComponent,
     AdvancedSearchComponent,
+    BandeauPlaylistFilmComponent
     HandleMoviesComponent,
     AppComponent,
     HeaderMenuComponent,
