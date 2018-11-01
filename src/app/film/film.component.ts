@@ -29,20 +29,20 @@ export class FilmComponent implements OnInit {
     return this.playList === undefined ? false : true;
   }
 
-  get big(){
-    return this.type == 'big';
+  get big() {
+    return this.type === 'big';
   }
 
   get petit() {
-    return this.type == 'petit';
+    return this.type === 'petit';
   }
 
-  get medium(){
-    return this.type == 'medium';
+  get medium() {
+    return this.type === 'medium';
   }
 
-   get playlist(){
-    return this.type == 'playlist';
+   get playlist() {
+    return this.type === 'playlist';
    }
 
   get movie(): MovieResponse {

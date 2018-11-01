@@ -68,27 +68,14 @@
 
   <section *ngIf="playlist" [ngClass]="{'playlist': playlist}">
 
-     <div ngClass="NB-film">
-       <!--<mat-icon></mat-icon>-->
-       <!--<p>{{// nameplaylist}} ({{nbFilm}} films)</p>-->
-     </div>
+      <div class="img-detail-playlist">
+        <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
+        <div class="detail-playlist">
+          <div [ngClass]="'Titre-playlist'">
+            <p class="name"> Titre Original : </p>
+            <p clasa="var">{{getOriginalTitle()}}</p>
+          </div>
 
-      <!--< class="img-detail-playlist">-->
-        <!--<img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />-->
-        <!--<div class="detail-playlist">-->
-          <!--<div [ngClass]="'Titre-playlist'">-->
-            <!--<p class="name"> Titre Original : </p>-->
-            <!--<p clasa="var">{{getOriginalTitle()}}</p>-->
-          <!--</div>-->
-
-    <div class="img-detail-playlist">
-      <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
-      <div class="detail-playlist">
-        <div [ngClass]="'Titre-playlist'">
-          <p class="name"> Titre Original : </p>
-          <p clasa="var">{{getOriginalTitle()}}</p>
-        </div>
-        <!--trouver la condition pour que il le montre ou non voir le ngid-->
         <div [ngClass]="{'Statut-playlist': playlist}">
           <p class="name">Status : </p>
           <p class="var">{{getStatus()}}</p>
@@ -106,14 +93,14 @@
           <p class="var">${{getRecette()}}</p>
         </div>
       </div>
-    </div>
+      </div>
 
-    <div [ngClass]="{'body-playlist': playlist}">
+      <div [ngClass]="{'body-playlist': playlist}">
 
-      <p class="name">Synopsis</p>
-      <p [ngClass]="{'text-playlist': playlist}">{{getSummary()}}</p>
-      <input type="button" class="btn-playlist" value="Supprimer">
-    </div>
+        <p class="name">Synopsis</p>
+        <p [ngClass]="{'text-playlist': playlist}">{{getSummary()}}</p>
+        <input type="button" class="btn-playlist" value="Supprimer">
+      </div>
 
 
 
@@ -122,7 +109,9 @@
 </section>
 
 
-<app-handle-film *ngIf="displayModalR" movie="movie"></app-handle-film>
+<!--<app-handle-film *ngIf="displayModalR" movie="movie"></app-handle-film>-->
+
+
 
 <!--<pre>{{movie | json}}</pre>-->
 

@@ -74,6 +74,7 @@ import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
     FilmComponent,
     BandeauResultSearchComponent,
     AdvancedSearchComponent,
+    BandeauPlaylistFilmComponent,
     HandleMoviesComponent,
     AppComponent,
     HeaderMenuComponent,
