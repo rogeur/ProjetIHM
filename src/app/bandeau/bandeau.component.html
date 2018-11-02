@@ -5,13 +5,13 @@
 </h3>
 
 
-<div *ngIf="nomBandeau.toString() === 'populaires'" >
+<div *ngIf="estBandeauPopulaire()" >
   <div [hidden]="!estAffichable" class="inline-block"*ngFor="let film of populaires">
     <app-film  [filmResult]="film" type="petit" ></app-film>
   </div>
 </div>
 
-<div *ngIf="nomBandeau.toString() === 'prochainement en salles'" >
+<div *ngIf="estBandeauProchainement()" >
   <div [hidden]="!estAffichable" class="inline-block" *ngFor="let film of prochainement">
     <app-film  [filmResult]="film" type="petit" ></app-film>
   </div>
