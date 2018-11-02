@@ -21,8 +21,9 @@
 
   <img *ngIf="isPlayList" src='/assets/no-entry.svg' ngClass="img-forbidden"/>
 
-  <app-handle-film *ngIf="displayModalR" [movie]="movie" style="display: inline-block"></app-handle-film>
-
+  <!--<mat-menu #menu="matmodal">-->
+      <app-handle-film *ngIf="displayModalR" [movie]="movie" ngClass="modal-three-point" style="display: inline-block" ></app-handle-film>
+  <!--</mat-menu>-->
 
 </section>
 

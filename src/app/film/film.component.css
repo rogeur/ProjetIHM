@@ -42,6 +42,16 @@
   padding-left: 0.5rem;
 }
 
+.modal-three-points {
+  background-attachment: initial;
+  background-clip: initial;
+  background-color: transparent;
+  /*background-image: url("/tests/images/DSCF4874_SURVOL.JPG");*/
+  background-origin: initial;
+  background-position: 0 0;
+  background-repeat: no-repeat no-repeat;
+}
+
 
 /*!*part medium definition*!*/
 

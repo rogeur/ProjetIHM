@@ -105,7 +105,6 @@ const appRoutes: Routes = [
     MatSelectModule,
     FormsModule,
     MatSliderModule,
-
     MatCheckboxModule,
     MatChipsModule,
     MatDatepickerModule,
