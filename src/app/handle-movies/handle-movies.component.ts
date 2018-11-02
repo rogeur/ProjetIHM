@@ -23,3 +23,6 @@ export class HandleMoviesComponent implements OnInit {
   }
 
 }
+
+
+
