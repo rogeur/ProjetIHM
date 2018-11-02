@@ -71,4 +71,8 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
   handleClickPlaylist(name: string) {
     this.router.navigate(['showPlaylist/' + name]);
   }
+
+  handleClickAccueil() {
+    this.router.navigate(['']);
+  }
 }
