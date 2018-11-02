@@ -1,56 +1,10 @@
-<!--<h1>TMDB + Firebase</h1>-->
-<!--<nav *ngIf="user">-->
-  <!--<label>{{user.displayName}}</label>-->
-  <!--<img [src]="user.photoURL" />-->
-  <!--<button (click)="logout()">Déconnection</button>-->
-  <!--{{user.uid}}-->
-<!--</nav>-->
-<!--<nav *ngIf="!user">-->
-  <!--<button (click)="login()">Connection via Google</button>-->
-<!--</nav>-->
 
-<!--<hr/>-->
-<!--<pre *ngIf="lists">-->
-  <!--{{lists | async | json}}-->
-<!--</pre>-->
-
-<!--<hr/>-->
-<!--<section *ngIf="movie">-->
-  <!--<img [src]="getPath(movie.poster_path)" />-->
-  <!--<pre>{{movie | json}}</pre>-->
-<!--</section>-->
-<!--<section *ngIf="!movie">-->
-  <!--Pas encore de films à afficher...-->
-<!--</section>-->
-<router-outlet></router-outlet>
-<app-film id="12" type="petit" ></app-film>
+<app-header-menu></app-header-menu>
+<div class="menuHandler" (mouseenter)="mouseEnter()"></div>
+<app-playslist-menu (playlistStatut)="mouseOut($event)" *ngIf="playlistMenu"></app-playslist-menu>
+<app-handle-movies></app-handle-movies>
+<app-bandeau nomBandeau="populaires"></app-bandeau>
+<app-bandeau nomBandeau="prochainement en salles"></app-bandeau>
 
 
-<!--
-<h1>TMDB + Firebase</h1>
-<nav *ngIf="user">
-  <label>{{user.displayName}}</label>
-  <img [src]="user.photoURL" />
-  <button (click)="logout()">Déconnection</button>
-  {{user.uid}}
-</nav>
-<nav *ngIf="!user">
-  <button (click)="login()">Connection via Google</button>
-</nav>
 
-<app-film id="11" type="medium"></app-film>
-
-<app-film id="14" type="big"></app-film>
-
-<app-film id="15" type="playlist" [nbFilm]="4" nameplaylist="toto"></app-film>
-
-<!--<app-film id="15" type="medium"></app-film>
-<hr/>
-<section *ngIf="movie">
-  <img [src]="getPath(movie.poster_path)" />
-  <pre>{{movie | json}}</pre>
-</section>
-<section *ngIf="!movie">
-  Pas encore de films à afficher...
-</section>
--->

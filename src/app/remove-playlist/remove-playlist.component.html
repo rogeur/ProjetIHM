@@ -1,17 +1,17 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="colonne">
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="select">
-          <label for="select">Choisir une playlist</label>
-          <select class="custom-select form-control" id="select">
-            <option class="" *ngFor="let playlist of playlists; let i = index;"
-                    (value)="playlist.getName()">{{playlist.getName()}}</option>
-          </select>
-        </div>
-        <button class="btn supprimer" type="submit">Supprimer</button>
-        <button class="btn annuler" (click)="onAnnule()">Annuler</button>
-      </form>
+<!--<div class="back" (mouseleave)="onAnnule()">-->
+<div class="back">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="colonne">
+            <label for="select">Choisir une playlist</label>
+            <select class="custom-select form-control" id="select" #listSelected>
+              <option  *ngFor="let playlist of playlists; let i = index" [value]="i">
+                {{playlist.getName()}}
+              </option>
+            </select>
+          <button class="btn supprimer" (click)="onSubmit(listSelected.value)">Supprimer</button>
+          <button class="btn annuler" (click)="onAnnule()">Annuler</button>
+      </div>
     </div>
   </div>
 </div>

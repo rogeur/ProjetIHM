@@ -1,0 +1,36 @@
+.titlePlaylist{
+  text-transform: capitalize;
+  font-size: xx-large;
+  color: #757070;
+  font-family: 'Roboto', sans-serif;
+}
+
+.playlistFilm {
+  display: flex;
+  flex-flow: row wrap; /* Align on the same line */
+  justify-content: space-between; /* Equal margin between the child elements */
+}
+
+.left {
+  background: #f2f2f2;
+  padding: 20px 20px 20px 20px ;
+  flex-grow: 0;
+}
+
+.affiche-playlist {
+  width: 30rem;
+}
+
+.right {
+  flex-grow: 1;
+}
+
+.bandeau {
+  display: flex;
+  flex-flow: row wrap; /* Align on the same line */
+  justify-content: space-evenly; /* Equal margin between the child elements */
+}
+
+.movie {
+  margin: 100px 50px 0px 50px;
+}
