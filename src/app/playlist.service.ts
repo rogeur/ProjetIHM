@@ -16,8 +16,22 @@ export class Playlist {
   }
 
   addMovie(movie: MovieResponse) {
-    this.movies.push(movie);
+    if (!this.movieAlreadyExists(movie)) {
+      this.movies.push(movie);
+    }
   }
+
+  movieAlreadyExists(movie: MovieResponse): boolean {
+    for (const movieExists of this.movies) {
+      console.log(movieExists.id);
+      console.log(movie.id);
+      if (movieExists.id === movie.id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   getName(): string {
     return this.name;
   }
