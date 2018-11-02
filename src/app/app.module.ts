@@ -69,8 +69,8 @@ const appRoutes: Routes = [
   { path: '', component: HandleBandeauComponent},
   { path: 'recherche', component: HandleMoviesComponent },
   { path: 'showPlaylist/:name', component: BandeauPlaylistFilmComponent },
-  { path: 'movie/:id', component: BandeauMovieComponent }
-
+  { path: 'movie/:id', component: BandeauMovieComponent },
+  { path: 'home', component: HandleBandeauComponent }
 ];
 
 @NgModule({
