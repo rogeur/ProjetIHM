@@ -21,7 +21,8 @@
 
       <app-playlist *ngFor="let playlist of playlists; let i = index"
                     [playlistName]="playlist.getName()"
-                    [index]="i">
+                    [index]="i"
+                    (click)="handleClickPlaylist(playlist.getName())">
       </app-playlist>
 
       <div class="row">

@@ -5,26 +5,32 @@ import {TmdbService} from '../tmdb.service';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {MovieResponse} from '../tmdb-data/Movie';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-bandeau-playlist-film',
   templateUrl: './bandeau-playlist-film.component.html',
   styleUrls: ['./bandeau-playlist-film.component.css'],
-  providers: [PlaylistService]
 })
 export class BandeauPlaylistFilmComponent implements OnInit {
 
-  @Input() playlist: Playlist;
+  // @Input() playlist: Playlist;
+  name: string;
+  playlist: Playlist;
 
   constructor(private playlistService: PlaylistService,
               private tmdb: TmdbService,
               public anAuth: AngularFireAuth,
-              private db: AngularFireDatabase) {
+              private db: AngularFireDatabase,
+              private route: ActivatedRoute) {
     // this.stuff();
-    console.log(this.playlist);
+    // console.log(this.playlist);
   }
 
   ngOnInit() {
+    this.name = this.route.snapshot.params['name'];
+    console.log(this.name);
+    this.playlist = this.playlistService.getPlaylistByName(this.name);
   }
 
   get firstMovie(): MovieResult {
