@@ -1,5 +1,6 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {MovieResponse} from '../tmdb-data/Movie';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-film',
@@ -9,7 +10,7 @@ import {MovieResponse} from '../tmdb-data/Movie';
 export class FilmComponent implements OnInit {
 
 
-  @Input() id: number;
+  // @Input() id: number;
 
   @Input() filmResult: MovieResponse;
 
@@ -19,10 +20,14 @@ export class FilmComponent implements OnInit {
 
   private displayModal = false;
 
-  constructor() {
+  constructor(private router: Router,) {
   }
 
   ngOnInit() {
+  }
+
+  get idMovie(): number {
+    return this.filmResult.id;
   }
 
   get isPlayList(): boolean {
@@ -98,9 +103,13 @@ export class FilmComponent implements OnInit {
     return this.displayModal;
   }
 
-
   displayModalClick() {
     this.displayModal ? this.displayModal = false : this.displayModal = true;
+  }
+
+  handleClickMovie(id: number) {
+    console.log("toto");
+    this.router.navigate(['movie/' + id]);
   }
 
 }

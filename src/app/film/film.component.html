@@ -12,7 +12,7 @@
         <p class="name">Durée : </p>
         <p class="var">{{getTime()}}</p>
       </div>
-      <input *ngIf="medium" type="button" value="Voir plus ..." class="medium-button">
+      <button class="medium-button" *ngIf="medium" (click)="handleClickMovie(idMovie)">Voir plus ...</button>
     </div>
   </section>
 
