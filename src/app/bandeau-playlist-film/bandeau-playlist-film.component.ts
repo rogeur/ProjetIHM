@@ -22,7 +22,6 @@ export class BandeauPlaylistFilmComponent implements OnInit {
 
   ngOnInit() {
     this.name = this.route.snapshot.params['name'];
-    console.log(this.name);
     this.playlist = this.playlistService.getPlaylistByName(this.name);
   }
 
