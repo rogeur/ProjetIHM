@@ -1,5 +1,15 @@
 # TmdbM1
 
+Groupe 1.3 : 
+	Tom BARTHELEMY
+	Leo BELLO
+	Benjamin BOUILLOT
+	Roger SIRITO-OLIVIER
+
+Lien du site : 
+	https://cyven-223eb.firebaseapp.com/
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
 ## Development server
