@@ -15,10 +15,13 @@
       <input *ngIf="medium" type="button" value="Voir plus ..." class="medium-button">
     </div>
   </section>
-    <!-- reste à placer le modal en position relative au bon endroit -->
-    <a (click)="displayModalClick()"><img *ngIf="!isPlayList" [src]="buttonThreeVertical" ngClass="img-three-points"/></a>
 
-    <img *ngIf="isPlayList" src='/assets/no-entry.svg' ngClass="img-forbidden"/>
+    <a (click)="displayModalClick()"><img *ngIf="!isPlayList" [src]="buttonThreeVertical" ngClass="img-three-points" ng-click="displayModalClick()"/></a>
+
+
+  <img *ngIf="isPlayList" src='/assets/no-entry.svg' ngClass="img-forbidden"/>
+
+  <app-handle-film *ngIf="displayModalR" [movie]="movie" style="display: inline-block"></app-handle-film>
 
 
 </section>
@@ -68,14 +71,27 @@
 
   <section *ngIf="playlist" [ngClass]="{'playlist': playlist}">
 
-      <div class="img-detail-playlist">
-        <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
-        <div class="detail-playlist">
-          <div [ngClass]="'Titre-playlist'">
-            <p class="name"> Titre Original : </p>
-            <p clasa="var">{{getOriginalTitle()}}</p>
-          </div>
+     <div ngClass="NB-film">
+       <!--<mat-icon></mat-icon>-->
+       <!--<p>{{// nameplaylist}} ({{nbFilm}} films)</p>-->
+     </div>
 
+      <!--< class="img-detail-playlist">-->
+        <!--<img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />-->
+        <!--<div class="detail-playlist">-->
+          <!--<div [ngClass]="'Titre-playlist'">-->
+            <!--<p class="name"> Titre Original : </p>-->
+            <!--<p clasa="var">{{getOriginalTitle()}}</p>-->
+          <!--</div>-->
+
+    <div class="img-detail-playlist">
+      <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
+      <div class="detail-playlist">
+        <div [ngClass]="'Titre-playlist'">
+          <p class="name"> Titre Original : </p>
+          <p clasa="var">{{getOriginalTitle()}}</p>
+        </div>
+        <!--trouver la condition pour que il le montre ou non voir le ngid-->
         <div [ngClass]="{'Statut-playlist': playlist}">
           <p class="name">Status : </p>
           <p class="var">{{getStatus()}}</p>
@@ -93,23 +109,20 @@
           <p class="var">${{getRecette()}}</p>
         </div>
       </div>
-      </div>
+    </div>
 
-      <div [ngClass]="{'body-playlist': playlist}">
+    <div [ngClass]="{'body-playlist': playlist}">
 
-        <p class="name">Synopsis</p>
-        <p [ngClass]="{'text-playlist': playlist}">{{getSummary()}}</p>
-        <input type="button" class="btn-playlist" value="Supprimer">
-      </div>
+      <p class="name">Synopsis</p>
+      <p [ngClass]="{'text-playlist': playlist}">{{getSummary()}}</p>
+      <input type="button" class="btn-playlist" value="Supprimer">
+    </div>
 
 
 
   </section>
 
 </section>
-
-
-<!--<app-handle-film *ngIf="displayModalR" movie="movie"></app-handle-film>-->
 
 
 

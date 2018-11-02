@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Playlist, PlaylistService} from '../playlist.service';
 import {Subscription} from 'rxjs';
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -34,8 +34,7 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
   playlists: Playlist[];
   playlistSubscription: Subscription;
 
-  constructor(private router: Router, private playlistService: PlaylistService) {
-  }
+  constructor(private router: Router, private playlistService: PlaylistService) { }
 
   ngOnInit() {
     this.playlistSubscription = this.playlistService.playlistSubject.subscribe(
@@ -68,5 +67,8 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
   }
   delClose(event) {
     this.remove = event;
+  }
+  handleClickPlaylist(name: string) {
+    this.router.navigate(['showPlaylist/' + name]);
   }
 }

@@ -23,11 +23,6 @@ import { HandleFilmComponent } from './handle-film/handle-film.component';
 import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
 import {BandeauAdvancedScearchComponent} from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 
-const appRoutes: Routes = [
-  { path: '', component: HeaderMenuComponent },
-  { path: 'playlistMenu', component: PlayslistMenuComponent},
-  { path: 'home', component: HeaderMenuComponent}
-];
 import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import {  MatAutocompleteModule,
@@ -68,6 +63,10 @@ import {  MatAutocompleteModule,
 import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
 import {BandeauComponent} from './bandeau/bandeau.component';
 
+const appRoutes: Routes = [
+  { path: 'recherche', component: HandleMoviesComponent },
+  { path: 'showPlaylist/:name', component: BandeauPlaylistFilmComponent }
+];
 
 @NgModule({
   declarations: [
