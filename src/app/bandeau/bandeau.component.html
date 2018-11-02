@@ -1,0 +1,19 @@
+
+
+<h3 (click)="setEstAffichable()">Films {{nomBandeau}} <i  *ngIf="!estAffichable" class="fa fa-angle-right"></i>
+                                                      <i  *ngIf="estAffichable"  class="fa fa-angle-down "></i>
+</h3>
+
+
+<div *ngIf="nomBandeau.toString() === 'populaires'" >
+  <div [hidden]="!estAffichable" class="inline-block"*ngFor="let film of populaires">
+    <app-film  [filmResult]="film" type="petit" ></app-film>
+  </div>
+</div>
+
+<div *ngIf="nomBandeau.toString() === 'prochainement en salles'" >
+  <div [hidden]="!estAffichable" class="inline-block" *ngFor="let film of prochainement">
+    <app-film  [filmResult]="film" type="petit" ></app-film>
+  </div>
+</div>
+<br>

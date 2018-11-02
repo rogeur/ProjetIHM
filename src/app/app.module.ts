@@ -61,6 +61,7 @@ import {  MatAutocompleteModule,
   MatTooltipModule,
   MatTreeModule, } from '@angular/material/';
 import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
+import {BandeauComponent} from './bandeau/bandeau.component';
 
 const appRoutes: Routes = [
   { path: 'recherche', component: HandleMoviesComponent },
@@ -84,6 +85,7 @@ const appRoutes: Routes = [
     HandleFilmComponent,
     BandeauPlaylistFilmComponent,
     BandeauAdvancedScearchComponent,
+    BandeauComponent
   ],
   imports: [
     BrowserModule,
