@@ -51,9 +51,8 @@
     <div [ngClass]="{'body-big': big}">
       <div style="display: -webkit-inline-box;">
         <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
-        <div ngClass="star-film" >
-          <img src="/assets/star.svg" />
-          <img src="/assets/star.svg" />
+        <div ngClass="star-film" ng-repeat="i in range(NBStar())" >
+          <img  src="/assets/star.svg" />
         </div>
       </div>
 

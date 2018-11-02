@@ -83,11 +83,16 @@ export class FilmComponent implements OnInit {
   }
 
   getTime(): String {
+    console.log(this.filmResult.vote_average/2);
     return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
   get displayModalR(): boolean {
     return this.displayModal;
+  }
+
+  NBStar(): number {
+    return this.filmResult.vote_average / 2;
   }
 
   displayModalClick() {
