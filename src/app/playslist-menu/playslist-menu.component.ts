@@ -73,5 +73,6 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
   }
   handleClickAccueil() {
     this.router.navigate(['home']);
+    this.mouseOut();
   }
 }
