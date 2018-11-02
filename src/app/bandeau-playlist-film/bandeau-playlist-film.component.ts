@@ -26,7 +26,7 @@ export class BandeauPlaylistFilmComponent implements OnInit {
     this.playlist = this.playlistService.getPlaylistByName(this.name);
   }
 
-  get firstMovie(): MovieResult {
+  get firstMovie(): MovieResponse {
     return this.playlist.getMovie(0);
  }
 
