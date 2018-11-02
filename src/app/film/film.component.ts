@@ -82,12 +82,14 @@ export class FilmComponent implements OnInit {
   }
 
   getTime(): String {
-    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
+    console.log(this.filmResult.vote_average);
+    return (( this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
   get displayModalR(): boolean {
     return this.displayModal;
   }
+
 
   displayModalClick() {
     this.displayModal ? this.displayModal = false : this.displayModal = true;
