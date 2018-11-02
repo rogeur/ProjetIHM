@@ -73,6 +73,6 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
   }
 
   handleClickAccueil() {
-    this.router.navigate(['']);
+    this.router.navigate(['home']);
   }
 }

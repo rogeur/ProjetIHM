@@ -67,7 +67,8 @@ import { HandleBandeauComponent } from './handle-bandeau/handle-bandeau.componen
 const appRoutes: Routes = [
   { path: '', component: HandleBandeauComponent},
   { path: 'recherche', component: HandleMoviesComponent },
-  { path: 'showPlaylist/:name', component: BandeauPlaylistFilmComponent }
+  { path: 'showPlaylist/:name', component: BandeauPlaylistFilmComponent },
+  { path: 'home', component: HandleBandeauComponent }
 ];
 
 @NgModule({
