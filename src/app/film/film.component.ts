@@ -54,11 +54,19 @@ export class FilmComponent implements OnInit {
   }
 
   getTitle(): String {
-    return this.filmResult.title;
+    if (this.filmResult.title.length > 17) {
+      return this.filmResult.title.slice(0, 17) + ' ...';
+    } else {
+      return this.filmResult.title;
+    }
   }
 
   getSummary(): String {
-    return this.filmResult.overview;
+    if (this.filmResult.overview.length > 180) {
+      return this.filmResult.overview.slice(0, 180) + ' ...';
+    } else {
+      return this.filmResult.overview;
+    }
   }
 
   getStatus(): String {

@@ -51,6 +51,7 @@ export class PlaylistService {
   }
 
   getPlaylistByName(name: string): Playlist {
+    console.log('service ' + name + ' ' + this.playlists.length);
     for (const playlist of this.playlists) {
       if (playlist.getName() === name) {
         return playlist;
