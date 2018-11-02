@@ -71,7 +71,6 @@ export class PlaylistService {
       if (playlist.getName() === name) {
         playlist.addMovie(movie);
         add = true;
-        console.log('adding OK');
         this.emitPlaylistSubject();
       }
     }

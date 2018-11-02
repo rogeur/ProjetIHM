@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {MovieResponse} from '../tmdb-data/Movie';
 
 @Component({
@@ -90,26 +90,14 @@ export class FilmComponent implements OnInit {
   }
 
   getTime(): String {
-    return ((this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
+    // console.log(this.filmResult.vote_average);
+    return (( this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
   get displayModalR(): boolean {
     return this.displayModal;
   }
 
-  get NBStar(): string[] {
-    if (this.filmResult.vote_average > 8) {
-      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
-    } else if (this.filmResult.vote_average > 6) {
-      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
-    } else if (this.filmResult.vote_average > 4) {
-      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
-    } else if (this.filmResult.vote_average > 2) {
-      return ['/assets/star.svg', '/assets/star.svg'];
-    } else {
-      return ['/assets/star.svg'];
-    }
-  }
 
   displayModalClick() {
     this.displayModal ? this.displayModal = false : this.displayModal = true;
