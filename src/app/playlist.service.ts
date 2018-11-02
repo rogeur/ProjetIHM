@@ -72,6 +72,7 @@ export class PlaylistService {
         playlist.addMovie(movie);
         add = true;
         console.log('adding OK');
+        console.log(movie);
         this.emitPlaylistSubject();
       }
     }
@@ -80,7 +81,9 @@ export class PlaylistService {
     }
   }
   addOnPlaylistByIndex(indice: number, movie: MovieResponse): void {
+    console.log(movie);
     this.playlists[indice].addMovie(movie);
+    console.log('adding OK');
     this.emitPlaylistSubject();
   }
 }

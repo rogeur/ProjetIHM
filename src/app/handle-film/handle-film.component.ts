@@ -29,7 +29,7 @@ export class HandleFilmComponent implements OnInit {
   }
 
   onSubmit(i: string) {
-    if ( this.text.length > 0) {
+    if (this.text) {
       // créer playlist + ajouter film
       this.playlistService.addPlaylist(this.text);
       this.playlistService.addOnPlaylistByName(this.text, this.movie);

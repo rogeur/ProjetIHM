@@ -90,7 +90,7 @@ export class FilmComponent implements OnInit {
   }
 
   getTime(): String {
-    console.log(this.filmResult.vote_average);
+    // console.log(this.filmResult.vote_average);
     return (( this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 
