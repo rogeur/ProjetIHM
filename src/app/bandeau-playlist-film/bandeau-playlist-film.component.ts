@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Playlist, PlaylistService} from '../playlist.service';
 import {MovieResult} from '../tmdb-data/searchMovie';
 import {AngularFireDatabase} from '@angular/fire/database';
@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './bandeau-playlist-film.component.html',
   styleUrls: ['./bandeau-playlist-film.component.css'],
 })
-export class BandeauPlaylistFilmComponent implements OnInit {
+export class BandeauPlaylistFilmComponent implements OnInit, OnChanges {
 
   name: string;
   playlist: Playlist;
@@ -63,4 +63,9 @@ export class BandeauPlaylistFilmComponent implements OnInit {
  get titlePlaylist(): String {
     return this.playlist.getName();
  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.name = this.route.snapshot.params['name'];
+    this.playlist = this.playlistService.getPlaylistByName(this.name);
+  }
 }
