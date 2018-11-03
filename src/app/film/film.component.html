@@ -57,13 +57,11 @@
     <div [ngClass]="{'body-big': big}">
       <div style="display: -webkit-inline-box;">
         <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
-        <div ngClass="star-film"  *ngFor="let star of NBStar" >
-          <img  src="{{star}}" />
-        </div>
       </div>
 
+    <br/>
 
-      <p class="name">Synopsis</p>
+      <div class="name">Synopsis</div>
       <p [ngClass]="{'text-playlist': big}">{{getSummary()}}</p>
       <img src='/assets/facebook.svg' style="width: 1em"/>
       <img src='/assets/twitter.svg'style="width: 1em"/>

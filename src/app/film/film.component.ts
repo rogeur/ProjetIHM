@@ -64,7 +64,7 @@ export class FilmComponent implements OnInit {
   }
 
   getTitle(): String {
-    if (this.filmResult.title.length > 17) {
+    if (this.filmResult.title.length > 17 && !this.big) {
       return this.filmResult.title.slice(0, 17) + ' ...';
     } else {
       return this.filmResult.title;
