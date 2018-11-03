@@ -1,6 +1,7 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {MovieResponse} from '../tmdb-data/Movie';
 import {Router} from '@angular/router';
+import {RechercheService} from '../recherche.service';
 
 @Component({
   selector: 'app-film',
@@ -20,10 +21,14 @@ export class FilmComponent implements OnInit {
 
   private displayModal = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private rechercher: RechercheService) {
   }
 
   ngOnInit() {
+    this.rechercher.convertMovieResult(this.filmResult)
+      .then((m: MovieResponse) => this.filmResult = m )
+      .catch(err => console.log('film non existant : ', err));
+    console.log(this.filmResult);
   }
 
   get idMovie(): number {
@@ -108,7 +113,6 @@ export class FilmComponent implements OnInit {
   }
 
   handleClickMovie(id: number) {
-    console.log("toto");
     this.router.navigate(['movie/' + id]);
   }
 
