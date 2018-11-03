@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {RechercheService} from '../recherche.service';
@@ -11,12 +11,19 @@ import {RechercheService} from '../recherche.service';
 })
 
 export class HeaderMenuComponent implements OnInit {
+  @Output() playlistStatut = new EventEmitter;
 
   constructor(private router: Router, private search: RechercheService) { }
+
   ngOnInit() {
   }
+
   onSubmit(form: NgForm) {
     this.search.searchByName(form.value.searchReq);
     this.router.navigate(['recherche']);
+  }
+
+  mouseEnter() {
+    this.playlistStatut.emit(true);
   }
 }
