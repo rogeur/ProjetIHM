@@ -1,7 +1,6 @@
 <section *ngIf="movie && (petit || medium)" [ngClass]="{'petit-general':petit, 'medium-general':medium, 'petit-playList':petit && isPlayList}">
 
-  <!--partie pour les film petit et les moyen-->
-  <!--ne pas oublier de rajouter le bouton voir plus-->
+
   <section (click)="handleClickMovie(idMovie)" *ngIf="petit || medium" [ngClass]="{'petit': petit,'medium': medium}">
     <img [ngClass]="{'img-petit':petit,'img-medium': medium}" [src]="getPath(movie.poster_path)" />
     <div [ngClass]="{'body-petit': petit, 'body-medium': medium}">
@@ -76,17 +75,7 @@
   <section *ngIf="playlist" [ngClass]="{'playlist': playlist}">
 
      <div ngClass="NB-film">
-       <!--<mat-icon></mat-icon>-->
-       <!--<p>{{// nameplaylist}} ({{nbFilm}} films)</p>-->
      </div>
-
-      <!--< class="img-detail-playlist">-->
-        <!--<img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />-->
-        <!--<div class="detail-playlist">-->
-          <!--<div [ngClass]="'Titre-playlist'">-->
-            <!--<p class="name"> Titre Original : </p>-->
-            <!--<p clasa="var">{{getOriginalTitle()}}</p>-->
-          <!--</div>-->
 
     <div class="img-detail-playlist">
       <img [ngClass]="{'img-playlist':playlist}" [src]="getPath(movie.poster_path)" />
@@ -95,7 +84,6 @@
           <p class="name"> Titre Original : </p>
           <p clasa="var">{{getOriginalTitle()}}</p>
         </div>
-        <!--trouver la condition pour que il le montre ou non voir le ngid-->
         <div [ngClass]="{'Statut-playlist': playlist}">
           <p class="name">Status : </p>
           <p class="var">{{getStatus()}}</p>
@@ -127,15 +115,3 @@
   </section>
 
 </section>
-
-
-
-<!--<pre>{{movie | json}}</pre>-->
-
-<!--<div class="movie type1" style="width: 8rem;">-->
-  <!--<img class="movie-img-top img-responsive" src={{path}} alt={{title}}>-->
-  <!--<div class="movie-body">-->
-    <!--<p class="movie-title">{{title}}</p>-->
-    <!--<p class="movie-text">{{description}}</p>-->
-  <!--</div>-->
-<!--</div>-->
