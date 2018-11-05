@@ -54,6 +54,9 @@
     <div [ngClass]="{'body-big': big}">
       <div style="display: -webkit-inline-box;">
         <h1 [ngClass]="{'title-big': big}">{{getTitle()}}</h1>
+        <div ngClass="star-film"  *ngFor="let star of NBStar" >
+          <img  src="{{star}}" />
+        </div>
       </div>
 
     <br/>
