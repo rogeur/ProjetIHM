@@ -108,6 +108,20 @@ export class FilmComponent implements OnInit {
     return this.displayModal;
   }
 
+  get NBStar(): string[] {
+    if (this.filmResult.vote_average > 8) {
+      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
+    } else if (this.filmResult.vote_average > 6) {
+      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
+    } else if (this.filmResult.vote_average > 4) {
+      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
+    } else if (this.filmResult.vote_average > 2) {
+      return ['/assets/star.svg', '/assets/star.svg'];
+    } else {
+      return ['/assets/star.svg'];
+    }
+  }
+
   displayModalClick() {
     this.displayModal ? this.displayModal = false : this.displayModal = true;
   }
