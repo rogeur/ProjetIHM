@@ -1,0 +1,115 @@
+.img-three-points {
+  width: 2em;
+  height: 2em;
+  visibility: hidden;
+}
+
+.medium-general {
+  width: 42em;
+  display: flex;
+}
+
+.medium-general:hover .img-three-points {
+  visibility: visible;
+}
+
+.modal-three-point {
+  /*background-attachment: initial;*/
+  /*background-clip: initial;*/
+  /*background-color: transparent;*/
+  /*!*background-image: url("/tests/images/DSCF4874_SURVOL.JPG");*!*/
+  /*background-origin: initial;*/
+  /*background-position: 0 0;*/
+  /*background-repeat: no-repeat no-repeat;*/
+  position: absolute;
+  display: inline-block;
+}
+
+
+/*!*part medium definition*!*/
+
+.time-medium {
+  /*font-size: 1.5em;*/
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.medium {
+  width: 40rem;
+  -webkit-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 49px -24px rgba(0,0,0,0.75);
+  border-radius: 0 0 0 0;
+  border: none;
+  display: -webkit-inline-box;
+}
+
+.img-medium{
+  width : 8rem;
+}
+.body-medium {
+  padding: 2px;
+  font-size: 1em;
+  width: 30.3em;
+  margin-left: 0.7rem;
+
+}
+
+.title-medium {
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.text-medium {
+  margin-top: 0px;
+  color: grey;
+  margin-bottom: 0;
+}
+
+.medium-button{
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  float: right;
+
+}
+
+/*!*part general*!*/
+.name {
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.var {
+  color: grey;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0.2em;
+  display: inline-block;
+}
+
+.card-medium{
+  width: 40%;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  display: -webkit-box;
+
+}
+
+.card-img-medium{
+  width: 30%;
+  margin-right: 0px;
+  padding-left: 0px;
+
+}
+
+.card-body-medium {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
