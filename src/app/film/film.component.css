@@ -42,6 +42,18 @@
   padding-left: 0.5rem;
 }
 
+.modal-three-point {
+  /*background-attachment: initial;*/
+  /*background-clip: initial;*/
+  /*background-color: transparent;*/
+  /*!*background-image: url("/tests/images/DSCF4874_SURVOL.JPG");*!*/
+  /*background-origin: initial;*/
+  /*background-position: 0 0;*/
+  /*background-repeat: no-repeat no-repeat;*/
+  position: absolute;
+  display: inline-block;
+}
+
 
 /*!*part medium definition*!*/
 
@@ -182,7 +194,21 @@
   padding-top: 0.5rem;
   margin-bottom: 0px;
   margin-top: 0px;
+  display: -webkit-inline-box;
+
 }
+
+.star-film {
+  padding-left: 0.5em;
+}
+
+.star-film  > *{
+  width: 1em;
+  padding-top: 0.3em;
+  margin-left: 0.2em;
+}
+
+
 
 .text-big {
   margin-top: 0px;
@@ -211,7 +237,7 @@
   color: white;
   border: none;
   margin: 10px 10px 10px 10px;
-
+  font-size: 1rem;
 }
 
 

@@ -63,11 +63,14 @@ import {  MatAutocompleteModule,
 import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
 import {BandeauComponent} from './bandeau/bandeau.component';
 import { HandleBandeauComponent } from './handle-bandeau/handle-bandeau.component';
+import { BandeauMovieComponent } from './bandeau-movie/bandeau-movie.component';
 
 const appRoutes: Routes = [
   { path: '', component: HandleBandeauComponent},
   { path: 'recherche', component: HandleMoviesComponent },
-  { path: 'showPlaylist/:name', component: BandeauPlaylistFilmComponent }
+  { path: 'showPlaylist/:name', component: BandeauPlaylistFilmComponent },
+  { path: 'movie/:id', component: BandeauMovieComponent },
+  { path: 'home', component: HandleBandeauComponent }
 ];
 
 @NgModule({
@@ -88,7 +91,8 @@ const appRoutes: Routes = [
     BandeauPlaylistFilmComponent,
     BandeauAdvancedScearchComponent,
     BandeauComponent,
-    HandleBandeauComponent
+    HandleBandeauComponent,
+    BandeauMovieComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +112,6 @@ const appRoutes: Routes = [
     MatSelectModule,
     FormsModule,
     MatSliderModule,
-
     MatCheckboxModule,
     MatChipsModule,
     MatDatepickerModule,

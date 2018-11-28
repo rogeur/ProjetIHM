@@ -69,6 +69,10 @@ export class PlayslistMenuComponent implements OnInit, OnDestroy {
     this.remove = event;
   }
   handleClickPlaylist(name: string) {
-    this.router.navigate(['showPlaylist/' + name]);
+    this.router.navigate(['showPlaylist/' + name + '/']);
+  }
+  handleClickAccueil() {
+    this.router.navigate(['home']);
+    this.mouseOut();
   }
 }

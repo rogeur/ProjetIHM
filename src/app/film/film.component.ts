@@ -1,5 +1,7 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {MovieResponse} from '../tmdb-data/Movie';
+import {Router} from '@angular/router';
+import {RechercheService} from '../recherche.service';
 
 @Component({
   selector: 'app-film',
@@ -9,7 +11,7 @@ import {MovieResponse} from '../tmdb-data/Movie';
 export class FilmComponent implements OnInit {
 
 
-  @Input() id: number;
+  // @Input() id: number;
 
   @Input() filmResult: MovieResponse;
 
@@ -19,10 +21,18 @@ export class FilmComponent implements OnInit {
 
   private displayModal = false;
 
-  constructor() {
+  constructor(private router: Router, private rechercher: RechercheService) {
   }
 
   ngOnInit() {
+    this.rechercher.convertMovieResult(this.filmResult)
+      .then((m: MovieResponse) => this.filmResult = m )
+      .catch(err => console.log('film non existant : ', err));
+    console.log(this.filmResult);
+  }
+
+  get idMovie(): number {
+    return this.filmResult.id;
   }
 
   get isPlayList(): boolean {
@@ -54,7 +64,7 @@ export class FilmComponent implements OnInit {
   }
 
   getTitle(): String {
-    if (this.filmResult.title.length > 17) {
+    if (this.filmResult.title.length > 17 && !this.big) {
       return this.filmResult.title.slice(0, 17) + ' ...';
     } else {
       return this.filmResult.title;
@@ -98,9 +108,26 @@ export class FilmComponent implements OnInit {
     return this.displayModal;
   }
 
+  get NBStar(): string[] {
+    if (this.filmResult.vote_average > 8) {
+      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
+    } else if (this.filmResult.vote_average > 6) {
+      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
+    } else if (this.filmResult.vote_average > 4) {
+      return ['/assets/star.svg', '/assets/star.svg', '/assets/star.svg'];
+    } else if (this.filmResult.vote_average > 2) {
+      return ['/assets/star.svg', '/assets/star.svg'];
+    } else {
+      return ['/assets/star.svg'];
+    }
+  }
 
   displayModalClick() {
     this.displayModal ? this.displayModal = false : this.displayModal = true;
+  }
+
+  handleClickMovie(id: number) {
+    this.router.navigate(['movie/' + id]);
   }
 
 }

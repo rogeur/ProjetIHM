@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {MovieResult, SearchMovieResponse} from './tmdb-data/searchMovie';
 import {TmdbService} from './tmdb.service';
 import {Subject} from 'rxjs';
+import {MovieResponse} from './tmdb-data/Movie';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,8 @@ export class RechercheService {
   }
   emitMoviesSubject() {
     this.subjectResult.next(this.results);
+  }
+  async convertMovieResult(movie: MovieResult) {
+    return await this.tmdb.getMovie(movie.id);
   }
 }

@@ -16,8 +16,22 @@ export class Playlist {
   }
 
   addMovie(movie: MovieResponse) {
-    this.movies.push(movie);
+    if (!this.movieAlreadyExists(movie)) {
+      this.movies.push(movie);
+    }
   }
+
+  movieAlreadyExists(movie: MovieResponse): boolean {
+    for (const movieExists of this.movies) {
+      console.log(movieExists.id);
+      console.log(movie.id);
+      if (movieExists.id === movie.id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   getName(): string {
     return this.name;
   }
@@ -35,11 +49,13 @@ export class PlaylistService {
   emitPlaylistSubject() {
     this.playlistSubject.next(this.playlists.slice());
   }
-  addPlaylist(name: string) {
-    this.playlists.push(new Playlist(name));
-    this.emitPlaylistSubject();
+  addPlaylist(name: string): void {
+    if (!this.playlistAlreadyExist(name)) {
+      this.playlists.push(new Playlist(name));
+      this.emitPlaylistSubject();
+    }
   }
-  delPlaylistByName(name: string) {
+  delPlaylistByName(name: string): void {
     let i = 0;
     for (const playlist of this.playlists) {
       if (playlist.getName() === name) {
@@ -80,5 +96,13 @@ export class PlaylistService {
   addOnPlaylistByIndex(indice: number, movie: MovieResponse): void {
     this.playlists[indice].addMovie(movie);
     this.emitPlaylistSubject();
+  }
+  playlistAlreadyExist(name: string): boolean {
+    for (const playlist of this.playlists) {
+      if (playlist.getName() === name) {
+        return true;
+      }
+    }
+    return false;
   }
 }
