@@ -56,6 +56,14 @@ export class BandeauPlaylistFilmComponent implements OnInit, OnChanges {
     } return 0;
  }
 
+ get oneMovie(): boolean {
+    return this.numberMovie === 1;
+ }
+
+  get multiMovie(): boolean {
+    return this.numberMovie > 1;
+  }
+
  movie(id: number): MovieResponse {
     return this.playlist.getMovie(id);
  }

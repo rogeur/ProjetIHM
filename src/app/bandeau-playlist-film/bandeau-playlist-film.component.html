@@ -3,8 +3,15 @@
   <div class="left">
 
     <div class="titlePlaylist">
-      <i class="fa fa-play-circle"></i>
-      {{titlePlaylist}} ({{numberMovie}} films)
+      {{titlePlaylist}}
+    </div>
+
+    <div *ngIf="oneMovie" class="numberMovie">
+      Film à voir, {{numberMovie}}
+    </div>
+
+    <div *ngIf="multiMovie" class="numberMovie">
+      Films à voir, {{numberMovie}}
     </div>
 
     <div class="affiche-playlist">
