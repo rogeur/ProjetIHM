@@ -64,6 +64,7 @@ import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
 import {BandeauComponent} from './bandeau/bandeau.component';
 import { HandleBandeauComponent } from './handle-bandeau/handle-bandeau.component';
 import { BandeauMovieComponent } from './bandeau-movie/bandeau-movie.component';
+import { LittleFilmComponent } from './little-film/little-film.component';
 
 const appRoutes: Routes = [
   { path: '', component: HandleBandeauComponent},
@@ -92,7 +93,8 @@ const appRoutes: Routes = [
     BandeauAdvancedScearchComponent,
     BandeauComponent,
     HandleBandeauComponent,
-    BandeauMovieComponent
+    BandeauMovieComponent,
+    LittleFilmComponent
   ],
   imports: [
     BrowserModule,
