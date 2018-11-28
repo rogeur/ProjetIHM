@@ -1,0 +1,24 @@
+<section ngClass='medium-general'>
+
+
+  <section (click)="handleClickMovie(idMovie)"  ngClass='medium'>
+    <img ngClass='img-medium'[src]="getPath(movie.poster_path)" />
+    <div ngClass='body-medium'>
+      <h1 ngClass='title-medium'>{{getTitle()}}</h1>
+      <p ngClass='text-medium'>{{getSummary()}}</p>
+
+      <div ngClass='time-medium'>
+        <p class="name">Durée : </p>
+        <p class="var">{{getTime()}}</p>
+      </div>
+      <button class="medium-button"  (click)="handleClickMovie(idMovie)">Voir plus ...</button>
+    </div>
+  </section>
+
+  <a (click)="displayModalClick()">
+    <img [src]="buttonThreeVertical" ngClass="img-three-points" ng-click="displayModalClick()"/>
+  </a>
+
+  <app-handle-film *ngIf="displayModalR" [movie]="movie" style="display: inline-block"  ></app-handle-film>
+
+</section>
