@@ -44,6 +44,13 @@
   justify-content: space-evenly; /* Equal margin between the child elements */
 }
 
-.movieTemp {
+.bandeau {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+}
+
+.movie {
   margin: 100px 50px 0px 50px;
+  justify-self: center;
 }

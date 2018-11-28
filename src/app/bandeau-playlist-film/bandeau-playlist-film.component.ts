@@ -25,30 +25,15 @@ export class BandeauPlaylistFilmComponent implements OnInit, OnChanges {
     this.playlist = this.playlistService.getPlaylistByName(this.name);
   }
 
-  get firstMovie(): MovieResponse {
-    return this.playlist.getMovie(0);
- }
-
- get moviesUp(): MovieResponse[] {
+ get movies(): MovieResponse[] {
     const movieResponse = [];
 
-    for (let i = 1; i <= this.numberMovie && i < 4; i++) {
-      movieResponse[i - 1] = this.playlist.getMovie(i);
+    for (let i = 0; i < this.numberMovie; i++) {
+      movieResponse[i] = this.playlist.getMovie(i);
     }
 
     return movieResponse;
  }
-
-  get moviesBottom(): MovieResponse[] {
-    const movieResponse = [];
-
-    for (let i = 4; i <= this.numberMovie && i < 7; i++) {
-      const j = i - 4;
-      movieResponse[j] = this.playlist.getMovie(i);
-    }
-
-    return movieResponse;
-  }
 
  get numberMovie(): number {
     if (this.playlist != null) {
