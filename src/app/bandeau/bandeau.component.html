@@ -6,8 +6,8 @@
 
 
 <div *ngIf="estBandeauPopulaire()" >
-  <div [hidden]="!estAffichable" class="inline-block"*ngFor="let film of populaires">
-    <app-little-film  [filmResult]="film" ></app-little-film>
+  <div [hidden]="!estAffichable" class="inline-block" *ngFor="let film of populaires">
+    <app-little-film  [filmResult]="film" [playList]="true"></app-little-film>
   </div>
 </div>
 
