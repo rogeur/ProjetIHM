@@ -22,6 +22,7 @@ import {PlaylistService} from './playlist.service';
 import { HandleFilmComponent } from './handle-film/handle-film.component';
 import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
 import {BandeauAdvancedScearchComponent} from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
+import {BigFilmComponent} from './big-film/big-film.component';
 
 import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
@@ -96,7 +97,8 @@ const appRoutes: Routes = [
     HandleBandeauComponent,
     BandeauMovieComponent,
     LittleFilmComponent,
-    MediumFlimComponent
+    MediumFlimComponent,
+    BigFilmComponent
   ],
   imports: [
     BrowserModule,
@@ -145,6 +147,7 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    BigFilmComponent
   ],
   providers: [
     TmdbService,
