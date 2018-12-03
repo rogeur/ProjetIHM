@@ -8,7 +8,6 @@ import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
-import { FilmComponent } from './film/film.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { PlayslistMenuComponent } from './playslist-menu/playslist-menu.component';
@@ -79,7 +78,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    FilmComponent,
     BandeauResultSearchComponent,
     AdvancedSearchComponent,
     BandeauPlaylistFilmComponent,
