@@ -52,7 +52,6 @@ export class MediumFlimComponent implements OnInit {
   }
 
   get buttonThreeVertical(): string {
-    console.log('est appeler yolo');
     return '/assets/button-of-three-vertical-squares.svg';
   }
 
