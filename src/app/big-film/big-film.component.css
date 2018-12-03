@@ -89,13 +89,12 @@
   width: 10rem;
   height: 3rem;
   text-align: center;
-  float: bottom;
-  float: right;
   background-color: rgb(209, 33, 97);
   color: white;
   border: none;
-  margin: 10px 10px 10px 10px;
   font-size: 1rem;
+  margin: 10px 10px 0;
+  float: right;
 }
 
 .text-playlist {
@@ -103,4 +102,23 @@
   color: grey;
   margin-bottom: 0;
   font-size: 1rem;
+}
+
+.modal-ajout {
+  font-size: 1rem;
+  padding-top: 0;
+  margin-top: 0;
+  padding-right: 10px;
+  float: right;
+
+  /*position: absolute;*/
+  /*right: 1.8rem;*/
+  /*bottom: 23.1rem;*/
+
+}
+
+.btn-modal{
+  float: bottom;
+  float: right;
+  width: 5rem;
 }

@@ -146,8 +146,7 @@ const appRoutes: Routes = [
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule,
-    BigFilmComponent
+    MatTreeModule
   ],
   providers: [
     TmdbService,

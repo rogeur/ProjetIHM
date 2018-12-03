@@ -95,7 +95,7 @@ export class FilmComponent implements OnInit {
     return  this.filmResult.original_title;
   }
 
-  get buttonThreeVertical(): string {
+  static get buttonThreeVertical(): string {
     return '/assets/button-of-three-vertical-squares.svg';
   }
 
