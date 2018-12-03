@@ -10,6 +10,7 @@ import {RechercheService} from '../recherche.service';
 export class BigFilmComponent implements OnInit {
 
   @Input() filmResult: MovieResponse;
+  private _modalAjout = false;
 
   constructor( private rechercher: RechercheService) { }
 
@@ -19,7 +20,13 @@ export class BigFilmComponent implements OnInit {
       .catch(err => console.log('film non existant : ', err));
     console.log(this.filmResult);
   }
+  get modalAjout(): boolean {
+    return this._modalAjout;
+  }
 
+  displaymodalAjout() {
+    this._modalAjout = !this._modalAjout;
+  }
 
   get movie(): MovieResponse {
     return this.filmResult;

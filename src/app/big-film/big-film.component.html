@@ -39,7 +39,13 @@
       <img src='/assets/facebook.svg' style="width: 1em"/>
       <img src='/assets/twitter.svg'style="width: 1em"/>
       <img src='/assets/instagram.svg'style="width: 1.2em"/>
-      <input type="button" class="btn-big" value="Ajouter à une playlist">
+      <div ngClass="btn-modal">
+        <input type="button" class="btn-big" value="Ajouter à une playlist" (click)="displaymodalAjout()">
+        <!--<app-add-playlist ngClass="modal-ajout" *ngIf="modalAjout"></app-add-playlist>-->
+        <app-handle-film *ngIf="modalAjout" [movie]="movie" ngClass="modal-ajout"  ></app-handle-film>
+
+      </div>
+
     </div>
 
   </section>
