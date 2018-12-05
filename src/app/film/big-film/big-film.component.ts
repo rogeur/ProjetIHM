@@ -18,7 +18,6 @@ export class BigFilmComponent implements OnInit {
     this.rechercher.convertMovieResult(this.filmResult)
       .then((m: MovieResponse) => this.filmResult = m )
       .catch(err => console.log('film non existant : ', err));
-    console.log(this.filmResult);
   }
   get modalAjout(): boolean {
     return this._modalAjout;
@@ -65,7 +64,6 @@ export class BigFilmComponent implements OnInit {
   }
 
   getTime(): String {
-    // console.log(this.filmResult.vote_average);
     return (( this.filmResult.runtime / 60) ^ 0).toString() + 'h ' + (this.filmResult.runtime % 60).toString() + 'm';
   }
 

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Playlist, PlaylistService} from '../playlist.service';
+import {Playlist, PlaylistService} from '../../playlist.service';
 import {Subscription} from 'rxjs';
 @Component({
   selector: 'app-remove-playlist',

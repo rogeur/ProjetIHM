@@ -23,8 +23,6 @@ export class Playlist {
 
   movieAlreadyExists(movie: MovieResponse): boolean {
     for (const movieExists of this.movies) {
-      console.log(movieExists.id);
-      console.log(movie.id);
       if (movieExists.id === movie.id) {
         return true;
       }

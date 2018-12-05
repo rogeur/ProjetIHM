@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {PlaylistService} from '../playlist.service';
-import {Router} from '@angular/router';
+import {PlaylistService} from '../../playlist.service';
 
 @Component({
   selector: 'app-add-playlist',
@@ -11,7 +10,7 @@ import {Router} from '@angular/router';
 
 export class AddPlaylistComponent implements OnInit {
   @Output() addStatut = new EventEmitter();
-  constructor(private playlistService: PlaylistService, private router: Router) {}
+  constructor(private playlistService: PlaylistService) {}
 
   ngOnInit(): void {
   }

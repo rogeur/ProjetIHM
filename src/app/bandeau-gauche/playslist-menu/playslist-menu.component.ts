@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Playlist, PlaylistService} from '../playlist.service';
+import {Router} from '@angular/router';
+import {Playlist, PlaylistService} from '../../playlist.service';
 import {Subscription} from 'rxjs';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 

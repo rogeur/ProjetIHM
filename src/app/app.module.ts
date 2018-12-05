@@ -10,21 +10,19 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
-import { PlayslistMenuComponent } from './playslist-menu/playslist-menu.component';
+import { PlayslistMenuComponent } from './bandeau-gauche/playslist-menu/playslist-menu.component';
 import {RouterModule} from '@angular/router';
 import { Routes } from '@angular/router';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
+import { PlaylistComponent } from './bandeau-gauche/playlist/playlist.component';
+import { AddPlaylistComponent } from './modal/add-playlist/add-playlist.component';
 import {FormsModule} from '@angular/forms';
-import { RemovePlaylistComponent } from './remove-playlist/remove-playlist.component';
+import { RemovePlaylistComponent } from './modal/remove-playlist/remove-playlist.component';
 import {PlaylistService} from './playlist.service';
-import { HandleFilmComponent } from './handle-film/handle-film.component';
+import {HandleFilmComponent } from './bandeau-gauche/handle-playlist/handle-film.component';
 import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
-import {BandeauAdvancedScearchComponent} from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 import {BigFilmComponent} from './film/big-film/big-film.component';
 
 import { BandeauResultSearchComponent } from './affichage-film/result-search/bandeau-result-search.component';
-import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import {  MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,
@@ -79,7 +77,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     BandeauResultSearchComponent,
-    AdvancedSearchComponent,
     BandeauPlaylistFilmComponent,
     HandleMoviesComponent,
     AppComponent,
@@ -90,7 +87,6 @@ const appRoutes: Routes = [
     RemovePlaylistComponent,
     HandleFilmComponent,
     BandeauPlaylistFilmComponent,
-    BandeauAdvancedScearchComponent,
     BandeauComponent,
     HandleBandeauComponent,
     BandeauMovieComponent,

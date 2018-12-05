@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Playlist, PlaylistService} from '../playlist.service';
+import {Playlist, PlaylistService} from '../../playlist.service';
 import {Router} from '@angular/router';
-import {NgForm} from '@angular/forms';
 import {Subscription} from 'rxjs';
-import {MovieResponse} from '../tmdb-data/Movie';
+import {MovieResponse} from '../../tmdb-data/Movie';
 
 @Component({
   selector: 'app-handle-film',
