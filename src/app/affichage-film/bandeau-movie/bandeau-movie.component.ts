@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {MovieResponse} from '../tmdb-data/Movie';
-import {PlaylistService} from '../playlist.service';
-import {AngularFireDatabase} from '@angular/fire/database';
+import {MovieResponse} from '../../tmdb-data/Movie';
+import {PlaylistService} from '../../playlist.service';
 import {ActivatedRoute} from '@angular/router';
-import {TmdbService} from '../tmdb.service';
+import {TmdbService} from '../../tmdb.service';
 
 @Component({
   selector: 'app-bandeau-movie',

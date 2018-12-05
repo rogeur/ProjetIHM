@@ -23,7 +23,7 @@ import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-play
 import {BandeauAdvancedScearchComponent} from './bandeau-advanced-scearch/bandeau-advanced-scearch.component';
 import {BigFilmComponent} from './film/big-film/big-film.component';
 
-import { BandeauResultSearchComponent } from './bandeau-result-search/bandeau-result-search.component';
+import { BandeauResultSearchComponent } from './affichage-film/result-search/bandeau-result-search.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import {  MatAutocompleteModule,
   MatBadgeModule,
@@ -60,10 +60,10 @@ import {  MatAutocompleteModule,
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule, } from '@angular/material/';
-import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
-import {BandeauComponent} from './bandeau/bandeau.component';
+import {HandleMoviesComponent} from './affichage-film/handle-movies/handle-movies.component';
+import {BandeauComponent} from './affichage-film/bandeau/bandeau.component';
 import { HandleBandeauComponent } from './handle-bandeau/handle-bandeau.component';
-import { BandeauMovieComponent } from './bandeau-movie/bandeau-movie.component';
+import { BandeauMovieComponent } from './affichage-film/bandeau-movie/bandeau-movie.component';
 import { LittleFilmComponent } from './film/little-film/little-film.component';
 import { MediumFlimComponent } from './film/medium-flim/medium-flim.component';
 

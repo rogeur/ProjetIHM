@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MovieResponse} from '../tmdb-data/Movie';
-import {SearchMovieResponse} from '../tmdb-data/searchMovie';
+import {MovieResponse} from '../../tmdb-data/Movie';
+import {SearchMovieResponse} from '../../tmdb-data/searchMovie';
 
 @Component({
   selector: 'app-bandeau-result-search',

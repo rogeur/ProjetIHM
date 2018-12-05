@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MovieResponse} from '../tmdb-data/Movie';
-import {TmdbService} from '../tmdb.service';
+import {MovieResponse} from '../../tmdb-data/Movie';
+import {TmdbService} from '../../tmdb.service';
 
 @Component({
   selector: 'app-bandeau',
@@ -26,11 +26,7 @@ export class BandeauComponent implements OnInit {
   }
 
   setEstAffichable() {
-    if (this.estAffichable === true) {
-      this.estAffichable = false;
-    } else {
-      this.estAffichable = true;
-    }
+    this.estAffichable = this.estAffichable !== true;
   }
 
   estBandeauPopulaire() {
