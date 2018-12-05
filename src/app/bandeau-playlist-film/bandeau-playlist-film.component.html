@@ -17,7 +17,7 @@
 
       <div *ngFor="let movie of movies">
         <div class="movie">
-          <app-little-film [filmResult]="movie" [playList]="true"></app-little-film>
+          <app-little-film [filmResult]="movie" [playList]="true" (movieDel)="delMovie($event)"></app-little-film>
         </div>
       </div>
 

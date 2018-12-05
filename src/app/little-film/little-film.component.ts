@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MovieResponse} from '../tmdb-data/Movie';
 import {RechercheService} from '../recherche.service';
 import {Router} from '@angular/router';
+import {Playlist} from '../playlist.service';
 
 
 @Component({
@@ -14,6 +15,8 @@ export class LittleFilmComponent implements OnInit {
   @Input() filmResult: MovieResponse;
 
   @Input() playList: boolean;
+
+  @Output() movieDel = new EventEmitter<MovieResponse>();
 
   private displayModal = false;
 
@@ -64,6 +67,10 @@ export class LittleFilmComponent implements OnInit {
 
   get idMovie(): number {
     return this.filmResult.id;
+  }
+
+  delMovie(): void {
+    this.movieDel.emit(this.movie);
   }
 
 }

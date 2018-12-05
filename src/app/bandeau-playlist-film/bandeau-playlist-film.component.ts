@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Playlist, PlaylistService} from '../playlist.service';
 import {MovieResult} from '../tmdb-data/searchMovie';
 import {AngularFireDatabase} from '@angular/fire/database';
@@ -60,5 +60,9 @@ export class BandeauPlaylistFilmComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.name = this.route.snapshot.params['name'];
     this.playlist = this.playlistService.getPlaylistByName(this.name);
+  }
+
+  delMovie(movie: MovieResponse) {
+    this.playlistService.delMovieFromPlaylistByName(this.playlist.getName(), movie);
   }
 }

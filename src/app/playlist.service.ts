@@ -38,8 +38,13 @@ export class Playlist {
   getMovie(index: number): MovieResponse {
     return this.movies[index];
   }
-  delMovie(index: number): void {
-    this.movies.splice(index, 1);
+
+  delMovie(movie: MovieResponse): void {
+    for (let i = 0; i < this.movies.length; i++) {
+      if (this.movies[i].id === movie.id) {
+        this.movies.splice(i, 1);
+      }
+    }
   }
 }
 
@@ -80,6 +85,7 @@ export class PlaylistService {
     this.playlists.splice(index, 1);
     this.emitPlaylistSubject();
   }
+
   addOnPlaylistByName(name: string, movie: MovieResponse): void {
     let add = false;
     for (const playlist of this.playlists) {
@@ -93,10 +99,21 @@ export class PlaylistService {
       alert('pas de playlist portant ce nom!');
     }
   }
+
   addOnPlaylistByIndex(indice: number, movie: MovieResponse): void {
     this.playlists[indice].addMovie(movie);
     this.emitPlaylistSubject();
   }
+
+  delMovieFromPlaylistByName(name: string, movie: MovieResponse): void {
+    for (const playlist of this.playlists) {
+      if (playlist.getName() === name) {
+        playlist.delMovie(movie);
+        this.emitPlaylistSubject();
+      }
+    }
+  }
+
   playlistAlreadyExist(name: string): boolean {
     for (const playlist of this.playlists) {
       if (playlist.getName() === name) {
