@@ -64,6 +64,8 @@ import { HandleBandeauComponent } from './handle-bandeau/handle-bandeau.componen
 import { BandeauMovieComponent } from './affichage-film/bandeau-movie/bandeau-movie.component';
 import { LittleFilmComponent } from './film/little-film/little-film.component';
 import { MediumFlimComponent } from './film/medium-flim/medium-flim.component';
+import { RechercheAvanceeComponent } from './recherche-avancee/recherche-avancee.component';
+import { AdvancedSearchPipe } from './advanced-search.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HandleBandeauComponent},
@@ -92,7 +94,9 @@ const appRoutes: Routes = [
     BandeauMovieComponent,
     LittleFilmComponent,
     MediumFlimComponent,
-    BigFilmComponent
+    BigFilmComponent,
+    RechercheAvanceeComponent,
+    AdvancedSearchPipe
   ],
   imports: [
     BrowserModule,

@@ -4,5 +4,5 @@
 <div class="conteneur">
   <h1 *ngIf="movies.length > 0">Résultat de la recherche</h1>
   <div class="espace"></div>
-  <app-medium-flim [filmResult]="movie" *ngFor="let movie of movies"></app-medium-flim>
+  <app-medium-flim class="carte" [filmResult]="movie" *ngFor="let movie of movies | advancedSearch : duree"></app-medium-flim>
 </div>

@@ -23,7 +23,7 @@ export class RemovePlaylistComponent implements OnInit {
   }
 
   onSubmit(i: string) {
-    // +i is to cast string on number
+    // +i to cast string on number
     this.playlistService.delPlaylistByIndex(+i);
   }
 

@@ -21,6 +21,14 @@ button {
   text-align: left;
   min-width: 212px;
   margin-right: auto;
+  position: relative;
+}
+.fa-minus-circle {
+  position: absolute;
+  right: 0;
+  color: red;
+  margin-top: 4px;
+  margin-right: 5px;
 }
 
 .img-forbidden {

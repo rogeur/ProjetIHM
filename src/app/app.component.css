@@ -2,5 +2,14 @@
   height: 100%;
   width: 10px;
   position: fixed;
+  z-index: 2;
+}
+.r-avancee {
+  position: absolute;
   z-index: 1;
+  width: 100%;
+  -webkit-box-shadow: 0px 34px 45px -8px rgba(105,105,105,1);
+  -moz-box-shadow: 0px 34px 45px -8px rgba(105,105,105,1);
+  box-shadow: 0px 34px 45px -8px rgba(105,105,105,1);
+  background-color: white;
 }
