@@ -64,6 +64,8 @@ import {HandleMoviesComponent} from './handle-movies/handle-movies.component';
 import {BandeauComponent} from './bandeau/bandeau.component';
 import { HandleBandeauComponent } from './handle-bandeau/handle-bandeau.component';
 import { BandeauMovieComponent } from './bandeau-movie/bandeau-movie.component';
+import { RechercheAvanceeComponent } from './recherche-avancee/recherche-avancee.component';
+import { AdvancedSearchPipe } from './advanced-search.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HandleBandeauComponent},
@@ -92,7 +94,9 @@ const appRoutes: Routes = [
     BandeauAdvancedScearchComponent,
     BandeauComponent,
     HandleBandeauComponent,
-    BandeauMovieComponent
+    BandeauMovieComponent,
+    RechercheAvanceeComponent,
+    AdvancedSearchPipe
   ],
   imports: [
     BrowserModule,

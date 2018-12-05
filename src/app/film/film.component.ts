@@ -28,7 +28,6 @@ export class FilmComponent implements OnInit {
     this.rechercher.convertMovieResult(this.filmResult)
       .then((m: MovieResponse) => this.filmResult = m )
       .catch(err => console.log('film non existant : ', err));
-    console.log(this.filmResult);
   }
 
   get idMovie(): number {

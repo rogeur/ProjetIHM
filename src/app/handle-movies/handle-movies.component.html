@@ -3,6 +3,7 @@
 -->
 <div class="conteneur">
   <h1 *ngIf="movies.length > 0">Résultat de la recherche</h1>
+  <h1>{{nbResultat}} Résultats</h1>
   <div class="espace"></div>
-  <app-film class="carte" [filmResult]="movie" type="medium" *ngFor="let movie of movies"></app-film>
+  <app-film class="carte" [filmResult]="movie" type="medium" *ngFor="let movie of movies | advancedSearch : duree"></app-film>
 </div>
