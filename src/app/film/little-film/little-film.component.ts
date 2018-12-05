@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {MovieResponse} from '../tmdb-data/Movie';
-import {RechercheService} from '../recherche.service';
+import {MovieResponse} from '../../tmdb-data/Movie';
+import {RechercheService} from '../../recherche.service';
 import {Router} from '@angular/router';
-import {Playlist} from '../playlist.service';
 
 
 @Component({

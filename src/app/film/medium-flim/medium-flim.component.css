@@ -11,6 +11,7 @@
 
 .medium-general:hover .img-three-points {
   visibility: visible;
+  margin-top: 1em;
 }
 
 .modal-three-point {

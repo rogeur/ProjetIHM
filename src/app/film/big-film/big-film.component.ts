@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MovieResponse} from '../tmdb-data/Movie';
-import {RechercheService} from '../recherche.service';
+import {MovieResponse} from '../../tmdb-data/Movie';
+import {RechercheService} from '../../recherche.service';
 
 @Component({
   selector: 'app-big-film',

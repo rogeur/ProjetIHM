@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MovieResponse} from '../tmdb-data/Movie';
+import {MovieResponse} from '../../tmdb-data/Movie';
 import {Router} from '@angular/router';
-import {RechercheService} from '../recherche.service';
+import {RechercheService} from '../../recherche.service';
 
 @Component({
   selector: 'app-medium-flim',
