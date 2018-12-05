@@ -22,7 +22,7 @@ import {HandlePlaylistComponent } from './bandeau-gauche/handle-playlist/handle-
 import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
 import {BigFilmComponent} from './film/big-film/big-film.component';
 
-import { BandeauResultSearchComponent } from './affichage-film/result-search/bandeau-result-search.component';
+import { ResultSearchComponent } from './affichage-film/result-search/result-search.component';
 import {  MatAutocompleteModule,
   MatBadgeModule,
   MatBottomSheetModule,
@@ -76,7 +76,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BandeauResultSearchComponent,
+    ResultSearchComponent,
     BandeauPlaylistFilmComponent,
     HandleMoviesComponent,
     AppComponent,

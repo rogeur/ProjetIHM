@@ -3,11 +3,11 @@ import {MovieResponse} from '../../tmdb-data/Movie';
 import {SearchMovieResponse} from '../../tmdb-data/searchMovie';
 
 @Component({
-  selector: 'app-bandeau-result-search',
-  templateUrl: './bandeau-result-search.component.html',
-  styleUrls: ['./bandeau-result-search.component.css']
+  selector: 'app-result-search',
+  templateUrl: './result-search.component.html',
+  styleUrls: ['./result-search.component.css']
 })
-export class BandeauResultSearchComponent implements OnInit {
+export class ResultSearchComponent implements OnInit {
 
   @Input() filmarray: SearchMovieResponse;
 
