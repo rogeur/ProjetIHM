@@ -18,7 +18,7 @@ import { AddPlaylistComponent } from './modal/add-playlist/add-playlist.componen
 import {FormsModule} from '@angular/forms';
 import { RemovePlaylistComponent } from './modal/remove-playlist/remove-playlist.component';
 import {PlaylistService} from './playlist.service';
-import {HandleFilmComponent } from './bandeau-gauche/handle-playlist/handle-film.component';
+import {HandlePlaylistComponent } from './bandeau-gauche/handle-playlist/handle-playlist.component';
 import {BandeauPlaylistFilmComponent} from './bandeau-playlist-film/bandeau-playlist-film.component';
 import {BigFilmComponent} from './film/big-film/big-film.component';
 
@@ -85,7 +85,7 @@ const appRoutes: Routes = [
     PlaylistComponent,
     AddPlaylistComponent,
     RemovePlaylistComponent,
-    HandleFilmComponent,
+    HandlePlaylistComponent,
     BandeauPlaylistFilmComponent,
     BandeauComponent,
     HandleBandeauComponent,

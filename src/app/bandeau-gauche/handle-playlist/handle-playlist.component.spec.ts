@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HandleFilmComponent } from './handle-film.component';
+import { HandlePlaylistComponent } from './handle-playlist.component';
 
-describe('HandleFilmComponent', () => {
-  let component: HandleFilmComponent;
-  let fixture: ComponentFixture<HandleFilmComponent>;
+describe('HandlePlaylistComponent', () => {
+  let component: HandlePlaylistComponent;
+  let fixture: ComponentFixture<HandlePlaylistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HandleFilmComponent ]
+      declarations: [ HandlePlaylistComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HandleFilmComponent);
+    fixture = TestBed.createComponent(HandlePlaylistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,7 +2,7 @@
 
 
   <section (click)="handleClickMovie(idMovie)"  ngClass='medium'>
-    <img ngClass='img-medium'[src]="getPath(movie.poster_path)" />
+    <img ngClass='img-medium' [src]="getPath(movie.poster_path)" />
     <div ngClass='body-medium'>
       <h1 ngClass='title-medium'>{{getTitle()}}</h1>
       <p ngClass='text-medium'>{{getSummary()}}</p>
@@ -19,6 +19,6 @@
     <img [src]="buttonThreeVertical" ngClass="img-three-points" ng-click="displayModalClick()"/>
   </a>
 
-  <app-handle-film *ngIf="displayModalR" [movie]="movie" style="display: inline-block"  ></app-handle-film>
+  <app-handle-playlist *ngIf="displayModalR" [movie]="movie" style="display: inline-block"  ></app-handle-playlist>
 
 </section>

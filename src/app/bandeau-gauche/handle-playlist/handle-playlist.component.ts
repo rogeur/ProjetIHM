@@ -5,12 +5,12 @@ import {Subscription} from 'rxjs';
 import {MovieResponse} from '../../tmdb-data/Movie';
 
 @Component({
-  selector: 'app-handle-film',
-  templateUrl: './handle-film.component.html',
-  styleUrls: ['./handle-film.component.css']
+  selector: 'app-handle-playlist',
+  templateUrl: './handle-playlist.component.html',
+  styleUrls: ['./handle-playlist.component.css']
 })
 
-export class HandleFilmComponent implements OnInit {
+export class HandlePlaylistComponent implements OnInit {
 
   playlistSubscription: Subscription;
   playlists: Playlist[];
