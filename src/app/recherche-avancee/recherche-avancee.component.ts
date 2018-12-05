@@ -8,13 +8,17 @@ import {FormControl} from '@angular/forms';
   templateUrl: './recherche-avancee.component.html',
   styleUrls: ['./recherche-avancee.component.css']
 })
-export class RechercheAvanceeComponent implements OnInit, OnChanges {
+export class RechercheAvanceeComponent implements OnInit {
   @Input() value: Subject<number> = new Subject<number>();
   @Input() valueF: FormControl = new FormControl();
   categorie = [
     {
+      id: 0,
+      genre: 'Aucune'
+    },
+    {
       id: 28,
-      genre: 'Action'
+      genre : 'Action'
     },
     {
       id: 878,
@@ -75,16 +79,20 @@ export class RechercheAvanceeComponent implements OnInit, OnChanges {
     return value + 'h';
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('ok');
-    if (this.value) {
-      this.value.subscribe((value) => {
-        console.log('valeur: ' + value);
-      }, (error) => console.log('erreur: ', error));
-    }
-  }
-  searchButton() {
+  searchButton(value: string) {
+    // console.log('categorie: ' + this.getId(value));
     this.rechercheAvancee.emitDureeSub(this.valueF);
+    this.rechercheAvancee.emitCategorieSub(this.getId(value));
   }
+  getId(categorie: string): number {
+    console.log('argument: ' + categorie);
+    this.categorie.forEach((categ) => {
+      if (categ.genre === categorie) {
+        console.log('argument2: ' + categ.id);
+        return categ.id;
+      }
+    });
+    return 0;
 
+  }
 }

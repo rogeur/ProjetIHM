@@ -12,6 +12,7 @@ import {RechercheService} from '../recherche.service';
 
 export class HeaderMenuComponent implements OnInit {
   @Output() playlistStatut = new EventEmitter;
+  rechercheAvancee = false;
 
   constructor(private router: Router, private search: RechercheService) { }
 
@@ -25,5 +26,9 @@ export class HeaderMenuComponent implements OnInit {
 
   mouseEnter() {
     this.playlistStatut.emit(true);
+  }
+  advanced() {
+    console.log('advanced');
+    this.rechercheAvancee = !this.rechercheAvancee;
   }
 }

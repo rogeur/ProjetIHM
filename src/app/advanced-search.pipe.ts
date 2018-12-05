@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {MovieResult} from './tmdb-data/searchMovie';
 import {MovieResponse} from './tmdb-data/Movie';
 
 @Pipe({
@@ -7,13 +6,30 @@ import {MovieResponse} from './tmdb-data/Movie';
 })
 export class AdvancedSearchPipe implements PipeTransform {
 
-  transform(movies: MovieResponse[], duration?: number, genre?: string): MovieResponse[] {
+  transform(movies: MovieResponse[], duration?: number, genre?: number): MovieResponse[] {
+    let filtredTab = movies;
     if (movies && movies.length) {
-      return movies.filter((movie) => {
-        return movie.runtime <= duration;
-      });
-    } else {
-      return movies;
+      if (duration) {
+        filtredTab = movies.filter((movie) => movie.runtime <= duration);
+      }
+      if (genre) {
+        filtredTab = movies.filter( (movie) => {
+          movie.genres.forEach( (categ) => {
+            return genre === categ;
+          });
+        });
+      }
     }
+    return filtredTab;
   }
+  /*
+  gotGender(moviesGenre: MovieGenre[], genre: number) : boolean {
+    moviesGenre.forEach( (element) => {
+      if (element.id = genre) {
+        return true;
+      }
+    });
+    return false;
+  }
+  */
 }

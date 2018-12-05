@@ -14,13 +14,13 @@
     </div>
     <div class="col-4">
       <select class="custom-select form-control" id="select" #listSelected>
-        <option *ngFor="let genre of categorie; let i = index" [value]="i">
+        <option *ngFor="let genre of categorie; let i = index" [value]="genre.genre">
           {{genre.genre}}
         </option>
       </select>
     </div>
     <div class="col-4">
-      <button class="btn btn-primary" (click)="searchButton()">recherche</button>
+      <button class="btn btn-primary" (click)="searchButton(listSelected.value)">Filtrer les résultats</button>
     </div>
   </div>
 </div>
