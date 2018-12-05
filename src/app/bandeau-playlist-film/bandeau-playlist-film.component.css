@@ -15,8 +15,8 @@
 
 .playlistFilmTemp {
   display: flex;
-  flex-flow: row wrap; /* Align on the same line */
-  justify-content: space-between; /* Equal margin between the child elements */
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 .playlistFilm {
@@ -40,8 +40,8 @@
 
 .bandeauTemp {
   display: flex;
-  flex-flow: row wrap; /* Align on the same line */
-  justify-content: space-evenly; /* Equal margin between the child elements */
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 .bandeau {
@@ -51,6 +51,6 @@
 }
 
 .movie {
-  margin: 100px 50px 0px 50px;
+  margin: 100px 50px 0 50px;
   justify-self: center;
 }

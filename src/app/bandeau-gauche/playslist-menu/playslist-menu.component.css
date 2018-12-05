@@ -12,7 +12,6 @@ h1 {
   color: rgb(91, 91, 91);
 }
 .icon {
-  /*height: 37px;*/
   border: none;
   color: rgb(91, 91, 91);
   background-color: white;
@@ -43,14 +42,7 @@ h1 {
   min-width: calc(100% - 212px);
   z-index: 0;
 }
-/*
-.head {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-}
-*/
+
 button:focus {
   outline:0;
 }

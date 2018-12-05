@@ -20,9 +20,6 @@
   display: inline-block;
 }
 
-
-/*!*part medium definition*!*/
-
 .time-medium {
   margin-bottom: 0;
   margin-top: 0;
@@ -70,7 +67,6 @@
 
 }
 
-/*!*part general*!*/
 .name {
   font-weight: bold;
   margin-bottom: 0;
