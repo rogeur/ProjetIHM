@@ -22,3 +22,9 @@ button {
   min-width: 212px;
   margin-right: auto;
 }
+
+.img-forbidden {
+  height: 1.5em;
+  width: 1.5em;
+  float: right;
+}

@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {PlaylistService} from '../playlist.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-playlist',
@@ -11,8 +13,13 @@ export class PlaylistComponent implements OnInit {
   @Input() playlistName: string;
   @Input() index: number;
 
-  constructor() { }
+  constructor(private router: Router, private playlistService: PlaylistService) { }
 
   ngOnInit() {
+  }
+
+  handleClickRemove() {
+    this.playlistService.delPlaylistByName(this.playlistName);
+    this.router.navigate(['home']);
   }
 }
