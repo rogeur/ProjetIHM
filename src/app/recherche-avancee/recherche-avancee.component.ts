@@ -1,6 +1,6 @@
-import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RechercheAvanceeService} from '../recherche-avancee.service';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 import {FormControl} from '@angular/forms';
 
 @Component({
@@ -54,23 +54,10 @@ export class RechercheAvanceeComponent implements OnInit {
     }
   ];
 
-  constructor(private rechercheAvancee: RechercheAvanceeService) {
-  }
+  constructor(private rechercheAvancee: RechercheAvanceeService) { }
 
 
-  ngOnInit() {
-    /*
-    this.value.next(10);
-    console.log('valeur1' + this.value);
-    if (this.value) {
-      this.value.subscribe((value) => {
-        console.log('valeur2' + value);
-      }, (error) => {
-        console.log('erreur' + error);
-        });
-    }
-    */
-  }
+  ngOnInit() { }
 
   formatValue(value: number | null) {
     if (!value) {
@@ -80,19 +67,16 @@ export class RechercheAvanceeComponent implements OnInit {
   }
 
   searchButton(value: string) {
-    // console.log('categorie: ' + this.getId(value));
     this.rechercheAvancee.emitDureeSub(this.valueF);
     this.rechercheAvancee.emitCategorieSub(this.getId(value));
   }
+
   getId(categorie: string): number {
-    console.log('argument: ' + categorie);
     this.categorie.forEach((categ) => {
       if (categ.genre === categorie) {
-        console.log('argument2: ' + categ.id);
         return categ.id;
       }
     });
     return 0;
-
   }
 }

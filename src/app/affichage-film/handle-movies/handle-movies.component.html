@@ -2,7 +2,7 @@
 <app-leo-card class="carte" [movie]="movie" *ngFor="let movie of movies"></app-leo-card>
 -->
 <div class="conteneur">
-  <h1 *ngIf="movies.length > 0">Résultat de la recherche</h1>
+  <h1 *ngIf="movies.length > 0">Résultats de recherche</h1>
   <div class="espace"></div>
   <app-medium-flim class="carte" [filmResult]="movie" *ngFor="let movie of movies | advancedSearch : duree"></app-medium-flim>
 </div>

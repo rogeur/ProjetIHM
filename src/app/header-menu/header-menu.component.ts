@@ -28,7 +28,6 @@ export class HeaderMenuComponent implements OnInit {
     this.playlistStatut.emit(true);
   }
   advanced() {
-    console.log('advanced');
     this.rechercheAvancee = !this.rechercheAvancee;
   }
 }

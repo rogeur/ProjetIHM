@@ -11,6 +11,7 @@ import {RechercheAvanceeService} from '../../recherche-avancee.service';
 export class HandleMoviesComponent implements OnInit {
   moviesSubscription: Subscription;
   dureeSubscription: Subscription;
+  nbResultSubscription : Subscription;
   movies = [];
   duree: number;
   nbResultat: number;
@@ -22,15 +23,16 @@ export class HandleMoviesComponent implements OnInit {
       (movies) => {
         this.movies = movies;
         this.movies = this.movies.slice(0, 16);
-        this.nbResultat = this.movies.length;
       });
-    this.nbResultat = this.movies.length;
     this.dureeSubscription = this.advancedSearch.dureeSubject.subscribe(
       (duree) => {
         this.duree = duree;
       }
     );
-    // this.search.emitMoviesSubject();
+    this.nbResultSubscription = this.search.subjectNbResult.subscribe(
+      (nbRes) => {
+        this.nbResultat = nbRes;
+      }
+    );
   }
-
 }

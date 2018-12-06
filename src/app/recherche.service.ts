@@ -13,6 +13,7 @@ export class RechercheService {
   results = new Array<MovieResult>();
   movies = new Array<MovieResponse>();
   nbResult: number;
+  subjectNbResult = new Subject<number>();
 
   constructor(private tmdb: TmdbService) {
     this.tmdb.init('76a1a345942fd69cde4370065fed299e');
@@ -27,32 +28,36 @@ export class RechercheService {
       .then((m: SearchMovieResponse) => {
         this.results = m.results.slice();
         this.nbResult = this.results.length;
-        this.emitMoviesSubject();
+        this.genResponseTab();
       })
-      .then( () => this.emitMovieResponseTab())
       .catch(err => console.error('Error getting movie:', err));
-     // convertion MovieResult -> MovieRespons
   }
+
   emitMoviesSubject() {
     this.subjectResult.next(this.results);
   }
   emitResponsSubject() {
     this.subjectRespons.next(this.movies);
   }
+  emitNbResult() {
+    this.subjectNbResult.next(this.nbResult);
+  }
+
   async convertMovieResult(movie: MovieResult) {
     return await this.tmdb.getMovie(movie.id);
   }
-
-  emitMovieResponseTab() {
+  // génère un tableau de MovieRespons depuis les MovieResult
+  genResponseTab() {
+    this.movies = [];
     this.results.forEach((movieResult) => {
       this.convertMovieResult(movieResult)
         .then((movie) => {
           this.movies.push(movie);
-        })
-        .then( () => {
           this.emitResponsSubject();
+          this.nbResult = this.movies.length;
+          this.emitNbResult();
         })
-        .catch((err) => console.log('erreur', err));
+        .catch( err => console.log('Error getting movie: ', err));
     });
   }
 }
