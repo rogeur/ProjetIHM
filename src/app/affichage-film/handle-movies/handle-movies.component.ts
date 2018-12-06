@@ -11,7 +11,7 @@ import {RechercheAvanceeService} from '../../recherche-avancee.service';
 export class HandleMoviesComponent implements OnInit {
   moviesSubscription: Subscription;
   dureeSubscription: Subscription;
-  nbResultSubscription : Subscription;
+  nbResultSubscription: Subscription;
   movies = [];
   duree: number;
   nbResultat: number;
